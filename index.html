@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sporting CP · Mercado Verão 2026</title>
+  <style>
+    :root {
+      --green: #07A04A;
+      --green-dark: #056635;
+      --green-light: #e8f7ef;
+      --white: #ffffff;
+      --bg: #f2f4f7;
+      --card: #ffffff;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+
+      --status-oficial: #07A04A;
+      --status-oficial-bg: #e8f7ef;
+      --status-fechado: #2563eb;
+      --status-fechado-bg: #eff6ff;
+      --status-negociacao: #d97706;
+      --status-negociacao-bg: #fffbeb;
+      --status-analise: #6b7280;
+      --status-analise-bg: #f3f4f6;
+      --status-saida: #dc2626;
+      --status-saida-bg: #fef2f2;
+      --status-risco: #ea580c;
+      --status-risco-bg: #fff7ed;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--green);
+      color: white;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .02em;
+    }
+    .header-brand .lion { font-size: 1.4rem; }
+    .header-date { font-size: .8rem; opacity: .8; }
+
+    /* ── LAYOUT ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── LIST VIEW ── */
+    #list-view { padding: 24px 16px 48px; max-width: 720px; margin: 0 auto; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 24px 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    /* ── PLAYER CARD ── */
+    .player-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: box-shadow .15s, transform .1s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .player-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      transform: translateY(-1px);
+    }
+    .player-card-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+    .player-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .player-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .player-info { min-width: 0; }
+    .player-name {
+      font-weight: 600;
+      font-size: .95rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .player-meta {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .player-card-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    .chevron { color: var(--muted); font-size: .9rem; }
+
+    /* ── STATUS BADGE ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .badge.oficial     { background: var(--status-oficial-bg);     color: var(--status-oficial); }
+    .badge.fechado     { background: var(--status-fechado-bg);     color: var(--status-fechado); }
+    .badge.negociacao  { background: var(--status-negociacao-bg);  color: var(--status-negociacao); }
+    .badge.analise     { background: var(--status-analise-bg);     color: var(--status-analise); }
+    .badge.saida       { background: var(--status-saida-bg);       color: var(--status-saida); }
+    .badge.risco       { background: var(--status-risco-bg);       color: var(--status-risco); }
+
+    /* ── DETAIL VIEW ── */
+    #detail-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
+
+    .detail-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 16px;
+      font-size: .85rem;
+      color: var(--green);
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+    .detail-back:hover { background: var(--green-light); }
+
+    .detail-hero {
+      background: var(--green);
+      color: white;
+      padding: 28px 20px 24px;
+    }
+    .detail-hero-inner { max-width: 680px; margin: 0 auto; }
+    .detail-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      overflow: hidden;
+      border: 3px solid rgba(255,255,255,.4);
+    }
+    .detail-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .detail-name { font-size: 1.5rem; font-weight: 800; line-height: 1.2; }
+    .detail-subtitle { opacity: .85; font-size: .9rem; margin-top: 4px; }
+    .detail-badge-wrap { margin-top: 14px; }
+
+    .detail-body { padding: 20px 16px; }
+    .detail-section { margin-bottom: 20px; }
+    .detail-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .detail-text { font-size: .9rem; line-height: 1.6; color: var(--text); }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .detail-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .detail-stat-value { font-size: 1.05rem; font-weight: 700; }
+    .detail-stat-label { font-size: .72rem; color: var(--muted); margin-top: 2px; }
+
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .sources-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .82rem;
+      color: var(--green-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .sources-list a:hover { text-decoration: underline; }
+
+    .warning-box {
+      background: var(--status-negociacao-bg);
+      border: 1px solid #fcd34d;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: .82rem;
+      color: #92400e;
+      margin-top: 8px;
+      display: flex;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <span class="lion">🦁</span>
+    <span>Sporting CP · Mercado 2026</span>
+  </div>
+  <span class="header-date" id="header-date"></span>
+</header>
+
+<!-- LIST VIEW -->
+<div id="list-view" class="page active"></div>
+
+<!-- DETAIL VIEW -->
+<div id="detail-view" class="page">
+  <div class="detail-back" onclick="showList()">← Voltar</div>
+  <div id="detail-content"></div>
+</div>
+
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────────
+const STATUS = {
+  oficial:    { label: "✅ Oficial",          cls: "oficial" },
+  fechado:    { label: "🤝 Negócio Fechado",  cls: "fechado" },
+  negociacao: { label: "🔄 Em Negociação",    cls: "negociacao" },
+  analise:    { label: "🔍 Em Análise",       cls: "analise" },
+  saida:      { label: "🚨 Saída",            cls: "saida" },
+  risco:      { label: "⚠️ Em Risco",         cls: "risco" },
+};
+
+const PLAYERS = [
+  {
+    id: "rodrigo-zalazar",
+    name: "Rodrigo Zalazar",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/606752-1771936397.png?lm=1",
+    emoji: "🇺🇾",
+    position: "MC", age: 26,
+    fromClub: "SC Braga", toClub: "Sporting CP",
+    status: "oficial",
+    fee: "€30M", contract: "até 2031",
+    description: "Médio uruguaio contratado ao SC Braga por €30 milhões. Internacional pelo Uruguai de Marcelo Bielsa, junta-se ao Sporting após uma temporada de destaque em Braga. A apresentação oficial foi adiada para depois da final da Taça de Portugal.",
+    notes: null,
+    sources: [
+      { label: "Record", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/zalazar-tem-de-esperar" },
+    ]
+  },
+  {
+    id: "issa-doumbia",
+    name: "Issa Doumbia",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/924349-1730186334.jpg?lm=1",
+    emoji: "🇮🇹",
+    position: "MC", age: 22,
+    fromClub: "Venezia FC", toClub: "Sporting CP",
+    status: "fechado",
+    fee: "€20M + €3M bónus", contract: "até 2031",
+    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. O negócio foi fechado e a viagem para Lisboa marcada para o início da próxima semana. Fará os exames médicos e assinará o contrato após a resolução das questões de elegibilidade para a Champions League. Tem uma cláusula de rescisão de €80 milhões.",
+    notes: "⚠️ Aguarda luz verde da UEFA para inscrição na Champions. Interesse da Premier League (Everton, Newcastle) foi ultrapassado pelo Sporting.",
+    sources: [
+      { label: "Record — Negócio fechado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-e-viagem-marcada-issa-doumbia-e-reforco-do-sporting" },
+      { label: "O Jogo — Concorrência da PL", url: "https://www.ojogo.pt/futebol/artigo/doumbia-interesse-da-premier-league-preocupa-o-sporting/18085867" },
+    ]
+  },
+  {
+    id: "pedro-lima",
+    name: "Pedro Lima",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/816135-1670964723.jpg?lm=1",
+    emoji: "🇧🇷",
+    position: "MC", age: 23,
+    fromClub: "AVS Futebol", toClub: "Sporting CP",
+    status: "fechado",
+    fee: "€4M + €2M bónus", contract: "até 2031",
+    description: "Médio brasileiro formado no Palmeiras, destacou-se no AVS SAD com 6 golos e 2 assistências apesar da descida do clube. Já se encontra em Lisboa para os exames médicos e assinatura do contrato. O Sporting retém percentagem em futura venda.",
+    notes: null,
+    sources: [
+      { label: "Record — Em Lisboa para exames", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-pedro-lima-ja-esta-em-lisboa-para-os-exames-medicos-e-assinar-contrato-com-o-sporting" },
+      { label: "Maisfutebol — Negócio fechado", url: "https://maisfutebol.iol.pt/sporting/pedro-lima/pedro-lima-fechado-no-sporting-negocio-pode-chegar-aos-seis-milhoes" },
+    ]
+  },
+  {
+    id: "ibrahima-ba",
+    name: "Ibrahima Ba",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/1191154-1758311322.jpg?lm=1",
+    emoji: "🇸🇳",
+    position: "DC", age: 20,
+    fromClub: "FC Famalicão", toClub: "Sporting CP",
+    status: "negociacao",
+    fee: "Sporting €14M ↔ Famalicão €20M", contract: "até 2031 (proposto)",
+    description: "Defesa central senegalês de 20 anos, titular indiscutível no Famalicão com 24 jogos esta época. O acordo pessoal com o jogador já está fechado — contrato de 5 anos até 2031. O principal obstáculo é o gap entre as partes: o Sporting propõe €14 milhões mas o Famalicão, que o renovou recentemente, exige €20 milhões.",
+    notes: "⚠️ Acordo pessoal fechado com o jogador. Sem acordo entre clubes ainda.",
+    sources: [
+      { label: "Noticiasaominuto — Sem acordo ainda", url: "https://www.noticiasaominuto.com/desporto/2989638/sporting-ainda-sem-acordo-com-ibrahima-ba" },
+      { label: "Noticiasaominuto — Oferta €14M", url: "https://www.noticiasaominuto.com/desporto/2991599/sporting-prepara-oferta-por-ibrahima-ba-os-milhoes-em-cima-da-mesa" },
+    ]
+  },
+  {
+    id: "yeremay-hernandez",
+    name: "Yeremay Hernández",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/636385-1762939146.jpg?lm=1",
+    emoji: "🇪🇸",
+    position: "Ala esq.", age: 23,
+    fromClub: "Deportivo da Corunha", toClub: "Sporting CP",
+    status: "analise",
+    fee: "Cláusula €40M", contract: null,
+    description: "Extremo esquerdo espanhol com uma época excecional: 11 golos e 10 assistências em 38 jogos na segunda divisão espanhola. O Sporting já tentou a sua contratação no verão passado com uma oferta de €35 milhões. Surge agora no topo das pesquisas do Transfermarkt e há relatos de que está a procurar casa em Portugal.",
+    notes: null,
+    sources: [
+      { label: "Transfermarkt — Sporting volta à carga", url: "https://www.transfermarkt.pt/sporting-volta-a-carga-pelo-extremo-espanhol-yeremay-hernandez-quot-esta-melhor-do-que-nunca-quot-/view/news/462867" },
+    ]
+  },
+  {
+    id: "joao-palhinha",
+    name: "João Palhinha",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/257455-1684773447.jpg?lm=1",
+    emoji: "🇵🇹",
+    position: "MD", age: 30,
+    fromClub: "Bayern / Tottenham", toClub: "Sporting CP",
+    status: "analise",
+    fee: "Opção de compra ~€30M", contract: null,
+    description: "Internacional português com 37 caps, excluído da convocatória de Roberto Martínez para o Mundial 2026. Pertence ao Bayern de Munique mas está emprestado ao Tottenham, que pode activar uma opção de compra de €30 milhões. Palhinha prefere regressar a Portugal por razões familiares e o Sporting vê-o como o 'grande sonho' para o meio-campo. Cenário mais provável: empréstimo com opção de compra.",
+    notes: "⚠️ Semana decisiva. O Tottenham ainda pode activar a opção de compra. Palhinha tem poder de negociação dado o desejo de regressar.",
+    sources: [
+      { label: "Abola — Sporting não quer só Palhinha", url: "https://www.abola.pt/noticias/sporting-nao-quer-so-palhinha-quer-outro-seis-2026051823050822544" },
+      { label: "Noticiasaominuto — Semana decisiva", url: "https://www.noticiasaominuto.com/desporto/2992870/adeus-mundial-ola-sporting-joao-palhinha-enfrenta-semana-decisiva" },
+    ]
+  },
+  {
+    id: "silas-andersen",
+    name: "Silas Andersen",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/685657-1723460472.jpg?lm=1",
+    emoji: "🇩🇰",
+    position: "MD", age: 21,
+    fromClub: "BK Häcken", toClub: "Sporting CP",
+    status: "analise",
+    fee: "~€7M", contract: null,
+    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia. Visto como o 'novo Hjulmand' pelo Sporting, é um dos alvos prioritários para o 'número 6' após a saída esperada do capitão. Contactos em curso.",
+    notes: null,
+    sources: [
+      { label: "Record — Sporting avança por Andersen", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-avanca-por-andersen" },
+      { label: "Abola — O 'novo Hjulmand'", url: "https://www.abola.pt/noticias/sporting-silas-andersen-o-novo-hjulmand-que-encantou-o-leao-2026052017371448449" },
+    ]
+  },
+  {
+    id: "sergi-altimira",
+    name: "Sergi Altimira",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/466801-1744375696.jpg?lm=1",
+    emoji: "🇪🇸",
+    position: "MD", age: 24,
+    fromClub: "Real Betis", toClub: "Sporting CP",
+    status: "analise",
+    fee: "Betis pede ~€30M", contract: null,
+    description: "Médio defensivo espanhol de 24 anos no Real Betis, com 40 jogos esta época (2 golos, 3 assistências). Surge como alternativa ao 'número 6' caso o negócio de Palhinha ou Andersen não avance. O Betis inicialmente exigia €30 milhões mas a posição pode ser negociável.",
+    notes: null,
+    sources: [
+      { label: "Abola — Sporting quer outro seis", url: "https://www.abola.pt/noticias/sporting-nao-quer-so-palhinha-quer-outro-seis-2026051823050822544" },
+    ]
+  },
+  {
+    id: "chiquinho",
+    name: "Chiquinho",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/695454-1641552728.png?lm=1",
+    emoji: "🇵🇹",
+    position: "Ala esq.", age: null,
+    fromClub: "FC Alverca", toClub: "Sporting CP",
+    status: "analise",
+    fee: null, contract: null,
+    description: "Extremo esquerdo português a jogar no FC Alverca. O Sporting está a acompanhar a sua situação e pondera avançar com a contratação. O treinador do Alverca elogiou as suas capacidades para jogar num grande.",
+    notes: null,
+    sources: [
+      { label: "Record — Treinador do Alverca elogia", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/bruno-pinheiro-ve-chiquinho-a-jogar-num-grande-com-bola-vai-para-cima-deles-e-e-muito-dificil-de-segurar" },
+    ]
+  },
+  {
+    id: "morten-hjulmand",
+    name: "Morten Hjulmand",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/461496-1725633200.jpg?lm=1",
+    emoji: "🇩🇰",
+    position: "MD", age: 26,
+    fromClub: "Sporting CP", toClub: "Real Madrid",
+    status: "saida",
+    fee: "€40M", contract: null,
+    description: "Capitão do Sporting CP, o médio dinamarquês deverá abandonar Alvalade no próximo verão. O Sporting aceitou liberá-lo por €40 milhões e José Mourinho, no Real Madrid, identifica-o como reforço prioritário. O próprio clube prometeu a saída ao jogador após mais uma época de excelência.",
+    notes: null,
+    sources: [
+      { label: "@DTransferencias / X", url: "https://x.com/DTransferencias/status/2038559813366370627" },
+      { label: "Noticiasaominuto — Mourinho quer Hjulmand", url: "https://www.noticiasaominuto.com/desporto/2992842/mourinho-quer-levar-peca-do-benfica-e-hjulmand-para-o-real-madrid" },
+    ]
+  },
+  {
+    id: "hidemasa-morita",
+    name: "Hidemasa Morita",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/524315-1765307094.jpg?lm=1",
+    emoji: "🇯🇵",
+    position: "MC", age: 29,
+    fromClub: "Sporting CP", toClub: "Livre",
+    status: "saida",
+    fee: null, contract: null,
+    description: "Médio japonês cujo contrato com o Sporting CP expirou. Após vários anos em Alvalade, despediu-se com uma sentida ovação de pé do público. Declarou: 'Este clube é tudo para mim, é uma família.' Sai em fim de contrato.",
+    notes: null,
+    sources: [
+      { label: "Record — Despedida em Alvalade", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/morita-emocionado-na-despedida-de-alvalade-este-clube-e-tudo-para-mim-e-uma-familia" },
+    ]
+  },
+  {
+    id: "geovany-quenda",
+    name: "Geovany Quenda",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/1138758-1761232238.jpg?lm=1",
+    emoji: "🇵🇹",
+    position: "Ala dto.", age: 17,
+    fromClub: "Sporting CP", toClub: "Chelsea",
+    status: "saida",
+    fee: null, contract: null,
+    description: "Jovem extremo direito português, uma das maiores promessas formadas em Alvalade. A transferência para o Chelsea foi confirmada para este verão de 2026.",
+    notes: null,
+    sources: [
+      { label: "Record", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
+    ]
+  },
+  {
+    id: "david-moreira",
+    name: "David Moreira",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/1044831-1757439840.jpg?lm=1",
+    emoji: "🇵🇹",
+    position: "LD", age: 22,
+    fromClub: "Sporting CP", toClub: "Liga portuguesa (por confirmar)",
+    status: "saida",
+    fee: null, contract: null,
+    description: "Lateral esquerdo que conheceu apenas o Sporting CP em 15 épocas de carreira, desde os 5 anos. Fez a sua carreira nas camadas jovens e na equipa B, com uma única aparição na equipa principal. Tem propostas de três clubes da Liga portuguesa e a saída é considerada provável.",
+    notes: null,
+    sources: [
+      { label: "Abola — 15 épocas depois", url: "https://www.abola.pt/noticias/so-conheceu-o-sporting-e-esta-perto-de-deixar-alvalade-15-epocas-depois-2026052022000823046" },
+    ]
+  },
+  {
+    id: "luis-suarez",
+    name: "Luís Suárez",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/424784-1761232078.jpg?lm=1",
+    emoji: "🇵🇹",
+    position: "Avançado", age: null,
+    fromClub: "Sporting CP", toClub: "?",
+    status: "risco",
+    fee: null, contract: "até 2030",
+    description: "Avançado português contratado em julho de 2025. Assinou até 2030, mas o seu desempenho atraiu interesse de clubes de topo. Ekrem Konur reporta interesse concreto do Barcelona, Newcastle United e Liverpool. O Sporting não tem intenção de vender.",
+    notes: null,
+    sources: [
+      { label: "@Ekremkonur / X", url: "https://x.com/Ekremkonur/status/2048125609092530379" },
+    ]
+  },
+];
+
+// ── SECTIONS ────────────────────────────────────────────────────────────────
+const SECTIONS = [
+  { key: "oficial",    label: "Entradas Confirmadas" },
+  { key: "fechado",    label: "Negócio Fechado" },
+  { key: "negociacao", label: "Em Negociação" },
+  { key: "analise",    label: "Em Análise" },
+  { key: "saida",      label: "Saídas" },
+  { key: "risco",      label: "Em Risco de Sair" },
+];
+
+// ── HELPERS ─────────────────────────────────────────────────────────────────
+function badge(statusKey) {
+  const s = STATUS[statusKey];
+  return `<span class="badge ${s.cls}">${s.label}</span>`;
+}
+
+function formatDate() {
+  return new Date().toLocaleDateString("pt-PT", { day: "numeric", month: "long", year: "numeric" });
+}
+
+// ── RENDER LIST ─────────────────────────────────────────────────────────────
+function renderList() {
+  const container = document.getElementById("list-view");
+  let html = "";
+
+  for (const section of SECTIONS) {
+    const players = PLAYERS.filter(p => p.status === section.key);
+    if (!players.length) continue;
+
+    html += `<div class="section-title">${STATUS[section.key].label.slice(0,2)} ${section.label}</div>`;
+
+    for (const p of players) {
+      const meta = [p.position, p.age ? `${p.age} anos` : null,
+        p.status === "saida" || p.status === "risco" ? p.fromClub : p.fromClub
+      ].filter(Boolean).join(" · ");
+
+      const feeLabel = p.fee || "";
+
+      const avatarImg = p.photo
+        ? `<img src="${p.photo}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=this.parentNode.dataset.emoji" />`
+        : p.emoji;
+
+      html += `
+        <div class="player-card" onclick="showDetail('${p.id}')">
+          <div class="player-card-left">
+            <div class="player-avatar" data-emoji="${p.emoji}">${avatarImg}</div>
+            <div class="player-info">
+              <div class="player-name">${p.name}</div>
+              <div class="player-meta">${meta}</div>
+            </div>
+          </div>
+          <div class="player-card-right">
+            ${badge(p.status)}
+            ${feeLabel ? `<span style="font-size:.75rem;color:var(--muted)">${feeLabel}</span>` : ""}
+          </div>
+        </div>`;
+    }
+  }
+
+  container.innerHTML = html;
+}
+
+// ── RENDER DETAIL ────────────────────────────────────────────────────────────
+function renderDetail(id) {
+  const p = PLAYERS.find(x => x.id === id);
+  if (!p) return;
+
+  const isIn = ["oficial","fechado","negociacao","analise"].includes(p.status);
+  const clubLine = isIn
+    ? `${p.fromClub} <span style="opacity:.7">→</span> Sporting CP`
+    : `Sporting CP <span style="opacity:.7">→</span> ${p.toClub}`;
+
+  const stats = [
+    p.position  ? { value: p.position,  label: "Posição" } : null,
+    p.age       ? { value: `${p.age} anos`, label: "Idade" } : null,
+    p.fee       ? { value: p.fee,        label: "Valor estimado" } : null,
+    p.contract  ? { value: p.contract,   label: "Contrato" } : null,
+  ].filter(Boolean);
+
+  const statsHtml = stats.length
+    ? `<div class="detail-grid">${stats.map(s =>
+        `<div class="detail-stat">
+          <div class="detail-stat-value">${s.value}</div>
+          <div class="detail-stat-label">${s.label}</div>
+        </div>`).join("")}</div>` : "";
+
+  const sourcesHtml = p.sources.length
+    ? `<div class="detail-section">
+        <div class="detail-label">Fontes</div>
+        <ul class="sources-list">${p.sources.map(s =>
+          `<li><a href="${s.url}" target="_blank">↗ ${s.label}</a></li>`
+        ).join("")}</ul>
+       </div>` : "";
+
+  const notesHtml = p.notes
+    ? `<div class="warning-box"><span>ℹ️</span><span>${p.notes}</span></div>` : "";
+
+  document.getElementById("detail-content").innerHTML = `
+    <div class="detail-hero">
+      <div class="detail-hero-inner">
+        <div class="detail-avatar" data-emoji="${p.emoji}">${p.photo ? `<img src="${p.photo}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=this.parentNode.dataset.emoji" />` : p.emoji}</div>
+        <div class="detail-name">${p.name}</div>
+        <div class="detail-subtitle">${clubLine}</div>
+        <div class="detail-badge-wrap">${badge(p.status)}</div>
+      </div>
+    </div>
+    <div class="detail-body">
+      ${statsHtml}
+      <div class="detail-section">
+        <div class="detail-label">Situação</div>
+        <div class="detail-text">${p.description}</div>
+        ${notesHtml}
+      </div>
+      ${sourcesHtml}
+    </div>`;
+}
+
+// ── ROUTING ──────────────────────────────────────────────────────────────────
+function showList() {
+  document.getElementById("list-view").classList.add("active");
+  document.getElementById("detail-view").classList.remove("active");
+  window.location.hash = "";
+}
+
+function showDetail(id) {
+  renderDetail(id);
+  document.getElementById("list-view").classList.remove("active");
+  document.getElementById("detail-view").classList.add("active");
+  window.location.hash = `player/${id}`;
+  window.scrollTo(0, 0);
+}
+
+function handleRoute() {
+  const hash = window.location.hash.replace("#", "");
+  if (hash.startsWith("player/")) {
+    const id = hash.replace("player/", "");
+    renderDetail(id);
+    document.getElementById("list-view").classList.remove("active");
+    document.getElementById("detail-view").classList.add("active");
+  } else {
+    showList();
+  }
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+document.getElementById("header-date").textContent = formatDate();
+renderList();
+handleRoute();
+window.addEventListener("hashchange", handleRoute);
+</script>
+
+</body>
+</html>
