@@ -24,8 +24,10 @@
       --status-negociacao-bg: #fffbeb;
       --status-analise: #6b7280;
       --status-analise-bg: #f3f4f6;
-      --status-saida: #dc2626;
-      --status-saida-bg: #fef2f2;
+      --status-saida-oficial: #dc2626;
+      --status-saida-oficial-bg: #fef2f2;
+      --status-saida-fechada: #7c3aed;
+      --status-saida-fechada-bg: #f5f3ff;
       --status-risco: #ea580c;
       --status-risco-bg: #fff7ed;
     }
@@ -61,8 +63,15 @@
       font-size: 1rem;
       letter-spacing: .02em;
     }
-    .header-brand .lion { font-size: 1.4rem; }
-    .header-date { font-size: .8rem; opacity: .8; }
+    .header-badge { width: 34px; height: 34px; object-fit: contain; }
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1px;
+    }
+    .header-date { font-size: .78rem; opacity: .85; }
+    .header-updated { font-size: .68rem; opacity: .65; }
 
     /* ── LAYOUT ── */
     .page { display: none; }
@@ -165,12 +174,13 @@
       letter-spacing: .04em;
       white-space: nowrap;
     }
-    .badge.oficial     { background: var(--status-oficial-bg);     color: var(--status-oficial); }
-    .badge.fechado     { background: var(--status-fechado-bg);     color: var(--status-fechado); }
-    .badge.negociacao  { background: var(--status-negociacao-bg);  color: var(--status-negociacao); }
-    .badge.analise     { background: var(--status-analise-bg);     color: var(--status-analise); }
-    .badge.saida       { background: var(--status-saida-bg);       color: var(--status-saida); }
-    .badge.risco       { background: var(--status-risco-bg);       color: var(--status-risco); }
+    .badge.oficial        { background: var(--status-oficial-bg);        color: var(--status-oficial); }
+    .badge.fechado        { background: var(--status-fechado-bg);        color: var(--status-fechado); }
+    .badge.negociacao     { background: var(--status-negociacao-bg);     color: var(--status-negociacao); }
+    .badge.analise        { background: var(--status-analise-bg);        color: var(--status-analise); }
+    .badge.saida-oficial  { background: var(--status-saida-oficial-bg);  color: var(--status-saida-oficial); }
+    .badge.saida-fechada  { background: var(--status-saida-fechada-bg);  color: var(--status-saida-fechada); }
+    .badge.risco          { background: var(--status-risco-bg);          color: var(--status-risco); }
 
     /* ── DETAIL VIEW ── */
     #detail-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
@@ -274,10 +284,13 @@
 
 <header>
   <div class="header-brand">
-    <span class="lion">🦁</span>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Sporting_CP.png/40px-Sporting_CP.png" alt="Sporting CP" class="header-badge" />
     <span>Sporting CP · Mercado 2026</span>
   </div>
-  <span class="header-date" id="header-date"></span>
+  <div class="header-right">
+    <span class="header-date" id="header-date"></span>
+    <span class="header-updated" id="header-updated"></span>
+  </div>
 </header>
 
 <!-- LIST VIEW -->
@@ -290,14 +303,18 @@
 </div>
 
 <script>
+// ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
+const LAST_UPDATED = "2026-05-22 09:07";
+
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
-  oficial:    { label: "✅ Oficial",          cls: "oficial" },
-  fechado:    { label: "🤝 Negócio Fechado",  cls: "fechado" },
-  negociacao: { label: "🔄 Em Negociação",    cls: "negociacao" },
-  analise:    { label: "🔍 Em Análise",       cls: "analise" },
-  saida:      { label: "🚨 Saída",            cls: "saida" },
-  risco:      { label: "⚠️ Em Risco",         cls: "risco" },
+  oficial:       { label: "✅ Oficial",          cls: "oficial" },
+  fechado:       { label: "🤝 Negócio Fechado",  cls: "fechado" },
+  negociacao:    { label: "🔄 Em Negociação",    cls: "negociacao" },
+  analise:       { label: "🔍 Em Análise",       cls: "analise" },
+  saida_oficial: { label: "🚨 Saída Oficial",    cls: "saida-oficial" },
+  saida_fechada: { label: "📤 Saída Fechada",    cls: "saida-fechada" },
+  risco:         { label: "⚠️ Em Risco",         cls: "risco" },
 };
 
 const PLAYERS = [
@@ -346,21 +363,6 @@ const PLAYERS = [
     sources: [
       { label: "Record — Em Lisboa para exames", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-pedro-lima-ja-esta-em-lisboa-para-os-exames-medicos-e-assinar-contrato-com-o-sporting" },
       { label: "Maisfutebol — Negócio fechado", url: "https://maisfutebol.iol.pt/sporting/pedro-lima/pedro-lima-fechado-no-sporting-negocio-pode-chegar-aos-seis-milhoes" },
-    ]
-  },
-  {
-    id: "bruno-ramos",
-    name: "Bruno Ramos",
-    photo: "https://img.a.transfermarkt.technology/portrait/big/1092432-1766504864.jpg?lm=1",
-    emoji: "🇧🇷",
-    position: "DC", age: 21,
-    fromClub: "Académico de Viseu", toClub: "Sporting CP",
-    status: "fechado",
-    fee: "€2M", contract: null,
-    description: "Defesa central brasileiro de 21 anos, duas épocas emprestado à equipa B do Sporting proveniente do Académico de Viseu. O Sporting exerceu a opção de compra de €2 milhões para o integrar definitivamente no plantel principal. Destaca-se pela rapidez de reacção, jogo aéreo e conforto na saída a jogar.",
-    notes: null,
-    sources: [
-      { label: "Record — Opção de compra €2M", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-opcao-do-sporting-por-bruno-ramos-e-de-2-milhoes-de-euros" },
     ]
   },
   {
@@ -419,10 +421,10 @@ const PLAYERS = [
     fromClub: "BK Häcken", toClub: "Sporting CP",
     status: "analise",
     fee: "~€7M", contract: null,
-    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia. Visto como o 'novo Hjulmand' pelo Sporting, é um dos alvos prioritários para o 'número 6' após a saída esperada do capitão. Contactos em curso.",
+    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia. Visto como o 'novo Hjulmand' pelo Sporting, é um dos alvos prioritários para o 'número 6' após a saída esperada do capitão. Contratação prevista para os próximos dias segundo o Record.",
     notes: null,
     sources: [
-      { label: "Record — Sporting avança por Andersen", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-avanca-por-andersen" },
+      { label: "Record — Contratação prevista para os próximos dias", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/contratacao-de-andersen-prevista-para-os-proximos-dias" },
       { label: "Abola — O 'novo Hjulmand'", url: "https://www.abola.pt/noticias/sporting-silas-andersen-o-novo-hjulmand-que-encantou-o-leao-2026052017371448449" },
     ]
   },
@@ -472,13 +474,28 @@ const PLAYERS = [
     ]
   },
   {
+    id: "bruno-ramos",
+    name: "Bruno Ramos",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/1092432-1766504864.jpg?lm=1",
+    emoji: "🇧🇷",
+    position: "DC", age: 21,
+    fromClub: "Académico de Viseu", toClub: "Sporting CP",
+    status: "analise",
+    fee: "€2M", contract: null,
+    description: "Defesa central brasileiro de 21 anos, duas épocas emprestado à equipa B do Sporting proveniente do Académico de Viseu. O Sporting tem uma opção de compra de €2 milhões e pondera exercê-la para o integrar definitivamente no plantel principal. Destaca-se pela rapidez de reacção, jogo aéreo e conforto na saída a jogar.",
+    notes: null,
+    sources: [
+      { label: "Record — Opção de compra €2M", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-opcao-do-sporting-por-bruno-ramos-e-de-2-milhoes-de-euros" },
+    ]
+  },
+  {
     id: "morten-hjulmand",
     name: "Morten Hjulmand",
     photo: "https://img.a.transfermarkt.technology/portrait/big/461496-1725633200.jpg?lm=1",
     emoji: "🇩🇰",
     position: "MD", age: 26,
     fromClub: "Sporting CP", toClub: "Real Madrid",
-    status: "saida",
+    status: "saida_fechada",
     fee: "€40M", contract: null,
     description: "Capitão do Sporting CP, o médio dinamarquês deverá abandonar Alvalade no próximo verão. O Sporting aceitou liberá-lo por €40 milhões e José Mourinho, no Real Madrid, identifica-o como reforço prioritário. O próprio clube prometeu a saída ao jogador após mais uma época de excelência.",
     notes: null,
@@ -494,7 +511,7 @@ const PLAYERS = [
     emoji: "🇯🇵",
     position: "MC", age: 29,
     fromClub: "Sporting CP", toClub: "Livre",
-    status: "saida",
+    status: "saida_oficial",
     fee: null, contract: null,
     description: "Médio japonês cujo contrato com o Sporting CP expirou. Após vários anos em Alvalade, despediu-se com uma sentida ovação de pé do público. Declarou: 'Este clube é tudo para mim, é uma família.' Sai em fim de contrato.",
     notes: null,
@@ -509,7 +526,7 @@ const PLAYERS = [
     emoji: "🇵🇹",
     position: "Ala dto.", age: 17,
     fromClub: "Sporting CP", toClub: "Chelsea",
-    status: "saida",
+    status: "saida_oficial",
     fee: null, contract: null,
     description: "Jovem extremo direito português, uma das maiores promessas formadas em Alvalade. A transferência para o Chelsea foi confirmada para este verão de 2026.",
     notes: null,
@@ -523,13 +540,13 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/549006-1716296254.jpg?lm=1",
     emoji: "🇵🇹",
     position: "DC", age: 24,
-    fromClub: "Sporting CP", toClub: "Manchester United",
-    status: "saida",
+    fromClub: "Sporting CP", toClub: "Manchester United (rumor)",
+    status: "risco",
     fee: null, contract: null,
-    description: "Defesa central português formado em Alvalade, um dos mais completos da sua geração. Transferência confirmada para o Manchester United de Rúben Amorim, que o identificou como peça central da sua reconstrução no clube inglês.",
+    description: "Defesa central português formado em Alvalade, um dos mais completos da sua geração. Rúben Amorim, no Manchester United, é apontado como interessado, mas não há acordo nem negociação confirmada. O Sporting não quer vender a menos do valor de mercado.",
     notes: null,
     sources: [
-      { label: "TransferFeed — Transferência confirmada", url: "https://www.transferfeed.com/transfers/goncalo-inacio-sporting-cp-manchester-united/288988" },
+      { label: "TransferFeed — Rumor Man United", url: "https://www.transferfeed.com/transfers/goncalo-inacio-sporting-cp-manchester-united/288988" },
     ]
   },
   {
@@ -539,7 +556,7 @@ const PLAYERS = [
     emoji: "🇵🇹",
     position: "LD", age: 22,
     fromClub: "Sporting CP", toClub: "Liga portuguesa (por confirmar)",
-    status: "saida",
+    status: "risco",
     fee: null, contract: null,
     description: "Lateral esquerdo que conheceu apenas o Sporting CP em 15 épocas de carreira, desde os 5 anos. Fez a sua carreira nas camadas jovens e na equipa B, com uma única aparição na equipa principal. Tem propostas de três clubes da Liga portuguesa e a saída é considerada provável.",
     notes: null,
@@ -581,22 +598,19 @@ const PLAYERS = [
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
 const SECTIONS = [
-  { key: "oficial",    label: "Entradas Confirmadas" },
-  { key: "fechado",    label: "Negócio Fechado" },
-  { key: "negociacao", label: "Em Negociação" },
-  { key: "analise",    label: "Em Análise" },
-  { key: "saida",      label: "Saídas" },
-  { key: "risco",      label: "Em Risco de Sair" },
+  { key: "oficial",       label: "Entradas Confirmadas" },
+  { key: "fechado",       label: "Negócio Fechado" },
+  { key: "negociacao",    label: "Em Negociação" },
+  { key: "analise",       label: "Em Análise" },
+  { key: "saida_oficial", label: "Saídas Oficiais" },
+  { key: "saida_fechada", label: "Saídas Fechadas" },
+  { key: "risco",         label: "Em Risco de Sair" },
 ];
 
 // ── HELPERS ─────────────────────────────────────────────────────────────────
 function badge(statusKey) {
   const s = STATUS[statusKey];
   return `<span class="badge ${s.cls}">${s.label}</span>`;
-}
-
-function formatDate() {
-  return new Date().toLocaleDateString("pt-PT", { day: "numeric", month: "long", year: "numeric" });
 }
 
 // ── RENDER LIST ─────────────────────────────────────────────────────────────
@@ -611,8 +625,9 @@ function renderList() {
     html += `<div class="section-title">${STATUS[section.key].label.slice(0,2)} ${section.label}</div>`;
 
     for (const p of players) {
+      const isOutgoing = ["saida_oficial","saida_fechada","risco"].includes(p.status);
       const meta = [p.position, p.age ? `${p.age} anos` : null,
-        p.status === "saida" || p.status === "risco" ? p.fromClub : p.fromClub
+        isOutgoing ? p.toClub : p.fromClub
       ].filter(Boolean).join(" · ");
 
       const feeLabel = p.fee || "";
@@ -724,7 +739,9 @@ function handleRoute() {
 }
 
 // ── INIT ─────────────────────────────────────────────────────────────────────
-document.getElementById("header-date").textContent = formatDate();
+document.getElementById("header-date").textContent =
+  new Date().toLocaleDateString("pt-PT", { day: "numeric", month: "long", year: "numeric" });
+document.getElementById("header-updated").textContent = "Actualizado: " + LAST_UPDATED;
 renderList();
 handleRoute();
 window.addEventListener("hashchange", handleRoute);
