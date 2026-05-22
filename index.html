@@ -304,7 +304,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-22 09:07";
+const LAST_UPDATED = "2026-05-22 12:13";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -341,8 +341,8 @@ const PLAYERS = [
     position: "MC", age: 22,
     fromClub: "Venezia FC", toClub: "Sporting CP",
     status: "fechado",
-    fee: "€20M + €6M variáveis", contract: "até 2031",
-    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. O negócio está fechado num total potencial de €26M (€20M fixos + €6M em variáveis). Fará os exames médicos e assinará o contrato esta semana. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Tem uma cláusula de rescisão de €80 milhões.",
+    fee: "€20M + €3M variáveis", contract: "até 2031",
+    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. O negócio está fechado num total potencial de €23M (€20M fixos + €3M em variáveis). Chegada a Lisboa prevista para a próxima semana para as formalidades finais. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Tem uma cláusula de rescisão de €80 milhões.",
     notes: "⚠️ Aguarda luz verde da UEFA para inscrição na Champions.",
     sources: [
       { label: "Record — Negócio fechado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-e-viagem-marcada-issa-doumbia-e-reforco-do-sporting" },
@@ -356,12 +356,12 @@ const PLAYERS = [
     emoji: "🇧🇷",
     position: "MC", age: 23,
     fromClub: "AVS Futebol", toClub: "Sporting CP",
-    status: "fechado",
-    fee: "€4M + €2M bónus", contract: "até 2031",
-    description: "Médio brasileiro formado no Palmeiras, destacou-se no AVS SAD com 6 golos e 2 assistências apesar da descida do clube. Já se encontra em Lisboa para os exames médicos e assinatura do contrato. O Sporting retém percentagem em futura venda.",
+    status: "oficial",
+    fee: "€4M + €2M variáveis", contract: "até 2031",
+    description: "Médio brasileiro formado no Palmeiras, destacou-se no AVS SAD com 6 golos e 2 assistências em 29 jogos esta época. Contrato de 5 épocas assinado a 22 de maio de 2026. Cláusula de rescisão de €80 milhões. Apresentação oficial prevista para a próxima semana, após a final da Taça de Portugal.",
     notes: null,
     sources: [
-      { label: "Record — Em Lisboa para exames", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-pedro-lima-ja-esta-em-lisboa-para-os-exames-medicos-e-assinar-contrato-com-o-sporting" },
+      { label: "Record — Contrato assinado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/pedro-lima-ja-e-oficialmente-leao-medio-assinou-contrato-com-o-sporting-por-cinco-epocas" },
       { label: "Maisfutebol — Negócio fechado", url: "https://maisfutebol.iol.pt/sporting/pedro-lima/pedro-lima-fechado-no-sporting-negocio-pode-chegar-aos-seis-milhoes" },
     ]
   },
@@ -419,7 +419,7 @@ const PLAYERS = [
     emoji: "🇩🇰",
     position: "MD", age: 21,
     fromClub: "BK Häcken", toClub: "Sporting CP",
-    status: "analise",
+    status: "negociacao",
     fee: "~€7M", contract: null,
     description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia. Visto como o 'novo Hjulmand' pelo Sporting, é um dos alvos prioritários para o 'número 6' após a saída esperada do capitão. Contratação prevista para os próximos dias segundo o Record.",
     notes: null,
@@ -497,11 +497,11 @@ const PLAYERS = [
     fromClub: "Sporting CP", toClub: "Real Madrid",
     status: "saida_fechada",
     fee: "€40M", contract: null,
-    description: "Capitão do Sporting CP, o médio dinamarquês deverá abandonar Alvalade no próximo verão. O Sporting aceitou liberá-lo por €40 milhões e José Mourinho, no Real Madrid, identifica-o como reforço prioritário. O próprio clube prometeu a saída ao jogador após mais uma época de excelência.",
+    description: "Capitão do Sporting CP, o médio dinamarquês deverá abandonar Alvalade no próximo verão. Mourinho quer levá-lo para o Real Madrid como exigência para assumir o cargo, mas Arsenal e Manchester United também entram na corrida. Sporting disposto a vender a partir de ~€50M. Joga a final da Taça a 24 de maio antes de qualquer decisão.",
     notes: null,
     sources: [
-      { label: "@DTransferencias / X", url: "https://x.com/DTransferencias/status/2038559813366370627" },
-      { label: "Noticiasaominuto — Mourinho quer Hjulmand", url: "https://www.noticiasaominuto.com/desporto/2992842/mourinho-quer-levar-peca-do-benfica-e-hjulmand-para-o-real-madrid" },
+      { label: "Managing Madrid — Mourinho pede Hjulmand", url: "https://www.managingmadrid.com/107951/hjulmand-real-madrid-news-2026-rumors" },
+      { label: "Abola — Rui Borges comenta", url: "https://www.abola.pt/noticias/rui-borges-aborda-a-hipotese-de-mourinho-levar-hjulmand-para-o-real-madrid-2026052208230435247" },
     ]
   },
   {
@@ -577,6 +577,22 @@ const PLAYERS = [
     notes: null,
     sources: [
       { label: "@Ekremkonur / X", url: "https://x.com/Ekremkonur/status/2048125609092530379" },
+    ]
+  },
+  {
+    id: "maxi-araujo",
+    name: "Maxi Araújo",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/572675-1773786535.jpg?lm=1",
+    emoji: "🇺🇾",
+    position: "Ala / Lateral esq.", age: 26,
+    fromClub: "Sporting CP", toClub: "Por confirmar",
+    status: "risco",
+    fee: "Sporting exige ~€80M", contract: "até 2029",
+    description: "Extremo / lateral esquerdo uruguaio, peça-chave no esquema de Rui Borges com 44 jogos, 7 golos e 4 assistências esta época. Mais de 8 clubes interessados, incluindo Arsenal, Manchester United, Manchester City e Aston Villa. O Sporting tenta retê-lo mais uma época com o argumento da Champions League, mas a pressão é crescente. Cláusula de rescisão de €80 milhões.",
+    notes: "⚠️ O Sporting tenta convencê-lo a ficar mais um ano. O Mundial 2026 pode acelerar a saída.",
+    sources: [
+      { label: "Abola — Estratégia para convencer Maxi", url: "https://www.abola.pt/noticias/mercado-sporting-depois-de-gyokeres-e-hjulmand-a-estrategia-para-convencer-maxi-a-ficar-mais-um-ano-2026052122192809460" },
+      { label: "Bolanarede — 8 clubes interessados", url: "https://bolanarede.pt/especial-bola-na-rede/atualidade/ha-8-clubes-interessados-em-maxi-araujo-e-sporting-ja-definiu-preco-minimo-para-negociar-saida-do-jogador/" },
     ]
   },
   {
