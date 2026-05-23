@@ -304,7 +304,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-23 22:15";
+const LAST_UPDATED = "2026-05-23 23:55";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -420,12 +420,13 @@ const PLAYERS = [
     position: "MD", age: 21,
     fromClub: "BK Häcken", toClub: "Sporting CP",
     status: "negociacao",
-    fee: "€7-10M", contract: null,
-    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia. Visto como o 'novo Hjulmand' pelo Sporting, é o alvo prioritário para o 'número 6'. A 23 de maio o director desportivo do Häcken confirmou: \"É improvável que fique. Parece estar pronto para o próximo passo na carreira.\" Acordo iminente.",
-    notes: null,
+    fee: "€7M + €3M variáveis", contract: null,
+    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. A 23 de maio o Sporting formalizou uma proposta de €7M + €3M em variáveis com contrato até 2031. Os clubes estão a afinar os detalhes finais sobre a estrutura do pagamento. Concorrência de Cologne, Celtic e Rangers. O agente confirmou que \"estão a lidar com valores muito elevados\" e que o jogador está pronto para \"dar um passo para um nível mais alto\".",
+    notes: "⚠️ Proposta apresentada a 23/05. Negociação em fase final.",
     sources: [
+      { label: "Record — Proposta de €7+3M apresentada", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-apresentou-proposta-de-7-3-milhoes-de-euros-por-silas-andersen-avancam-dinamarqueses" },
+      { label: "O Jogo — Detalhes da oferta", url: "https://www.ojogo.pt/futebol/artigo/silas-andersen-a-caminho-do-sporting-revelados-detalhes-sobre-a-oferta/18087485" },
       { label: "O Jogo — Häcken dá Andersen como perdido", url: "https://www.ojogo.pt/futebol/artigo/alvo-do-sporting-hacken-da-silas-andersen-como-perdido/18087402" },
-      { label: "Record — Contratação prevista para os próximos dias", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/contratacao-de-andersen-prevista-para-os-proximos-dias" },
     ]
   },
   {
@@ -624,6 +625,21 @@ const PLAYERS = [
     sources: [
       { label: "Abola — Estratégia para convencer Maxi", url: "https://www.abola.pt/noticias/mercado-sporting-depois-de-gyokeres-e-hjulmand-a-estrategia-para-convencer-maxi-a-ficar-mais-um-ano-2026052122192809460" },
       { label: "Bolanarede — 8 clubes interessados", url: "https://bolanarede.pt/especial-bola-na-rede/atualidade/ha-8-clubes-interessados-em-maxi-araujo-e-sporting-ja-definiu-preco-minimo-para-negociar-saida-do-jogador/" },
+    ]
+  },
+  {
+    id: "joao-afonso",
+    name: "João Afonso",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/1083369-1672318882.jpg",
+    emoji: "🇵🇹",
+    position: "GR", age: 19,
+    fromClub: "CD Santa Clara", toClub: "Sporting CP",
+    status: "analise",
+    fee: "<€1M (proposta rejeitada)", contract: null,
+    description: "Guarda-redes de 19 anos formado no Santa Clara, onde foi titular nos dois últimos jogos da liga. Convocado para a Seleção portuguesa sub-20 para o Torneio de Toulon. O Sporting apresentou uma proposta inferior a €1 milhão, que foi rejeitada pela direcção do Santa Clara, que o considera um jogador com um grande futuro no clube.",
+    notes: "⚠️ Proposta rejeitada pelo Santa Clara (22/05). Interesse do Sporting mantém-se.",
+    sources: [
+      { label: "Record — Santa Clara recusa proposta", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/santa-clara-da-nega-ao-sporting-pelo-guarda-redes-joao-afonso" },
     ]
   },
   {
