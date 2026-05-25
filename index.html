@@ -304,7 +304,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-25 08:15";
+const LAST_UPDATED = "2026-05-25 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -390,8 +390,8 @@ const PLAYERS = [
     fromClub: "Deportivo da Corunha", toClub: "Sporting CP",
     status: "analise",
     fee: "Cláusula €40M", contract: null,
-    description: "Extremo esquerdo espanhol com uma época excecional: 11 golos e 10 assistências em 38 jogos na segunda divisão espanhola. O Sporting já tentou a sua contratação no verão passado com uma oferta de €35 milhões. Surge agora no topo das pesquisas do Transfermarkt e há relatos de que está a procurar casa em Portugal.",
-    notes: null,
+    description: "Extremo esquerdo espanhol com uma época excecional: 11 golos e 10 assistências em 38 jogos na segunda divisão espanhola. O Sporting já tentou a sua contratação no verão passado com uma oferta de €35 milhões. A promoção do Deportivo da Corunha à LaLiga (mai. 2026) complica o negócio: o clube espanhol tem agora menos incentivo para vender e a cláusula de rescisão de €40M torna-se o preço mínimo real.",
+    notes: "⚠️ Deportivo promovido à LaLiga — negócio mais difícil e caro.",
     sources: [
       { label: "Transfermarkt — Sporting volta à carga", url: "https://www.transfermarkt.pt/sporting-volta-a-carga-pelo-extremo-espanhol-yeremay-hernandez-quot-esta-melhor-do-que-nunca-quot-/view/news/462867" },
     ]
@@ -403,10 +403,10 @@ const PLAYERS = [
     emoji: "🇵🇹",
     position: "MD", age: 30,
     fromClub: "Bayern / Tottenham", toClub: "Sporting CP",
-    status: "analise",
+    status: "negociacao",
     fee: "Opção de compra ~€30M", contract: null,
-    description: "Internacional português com 37 caps, excluído da convocatória de Roberto Martínez para o Mundial 2026. Pertence ao Bayern de Munique mas está emprestado ao Tottenham, que pode activar uma opção de compra de €30 milhões. Palhinha prefere regressar a Portugal por razões familiares e o Sporting vê-o como o 'grande sonho' para o meio-campo. Cenário mais provável: empréstimo com opção de compra.",
-    notes: "⚠️ Semana decisiva. O Tottenham ainda pode activar a opção de compra. Palhinha tem poder de negociação dado o desejo de regressar.",
+    description: "Internacional português com 37 caps, excluído da convocatória de Roberto Martínez para o Mundial 2026. Pertence ao Bayern de Munique mas estava emprestado ao Tottenham. A 25 de maio publicou nas redes sociais uma foto a viajar com a família com as emojis 🏠🇵🇹❤️, confirmando o regresso a Portugal. Sporting é o principal interessado para a posição de 'número 6'. O Tottenham queria mantê-lo após o golo que salvou o clube da descida. Estrutura financeira (empréstimo ou definitivo) ainda por definir.",
+    notes: "⚠️ Regresso a Portugal confirmado via redes sociais (25/05). Sporting é principal destino.",
     sources: [
       { label: "Abola — Sporting não quer só Palhinha", url: "https://www.abola.pt/noticias/sporting-nao-quer-so-palhinha-quer-outro-seis-2026051823050822544" },
       { label: "Noticiasaominuto — Semana decisiva", url: "https://www.noticiasaominuto.com/desporto/2992870/adeus-mundial-ola-sporting-joao-palhinha-enfrenta-semana-decisiva" },
@@ -488,6 +488,22 @@ const PLAYERS = [
     notes: null,
     sources: [
       { label: "Record — Opção de compra €2M", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-opcao-do-sporting-por-bruno-ramos-e-de-2-milhoes-de-euros" },
+    ]
+  },
+  {
+    id: "diogo-travassos",
+    name: "Diogo Travassos",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/478317-1743698526.jpg?lm=1",
+    emoji: "🇵🇹",
+    position: "LD", age: 22,
+    fromClub: "Sporting CP", toClub: "SC Braga",
+    status: "saida_oficial",
+    fee: "€5.5M", contract: null,
+    description: "Lateral esquerdo de 22 anos formado nas camadas jovens do Sporting, esteve cedido ao Moreirense. A venda ao SC Braga foi oficializada a 25 de maio de 2026 por €5.5 milhões, com cláusula de rescisão de €40 milhões no novo clube. Declarou: \"Quando cheguei ao Sporting, pensei que seria para a vida toda.\"",
+    notes: null,
+    sources: [
+      { label: "BlogVisãodeMercado — Oficial €5.5M", url: "https://blogvisaodemercado.pt/oficial-sporting-vendeu-travassos-ao-sc-braga-por-55-me/" },
+      { label: "A Bola — Travassos no Braga", url: "https://www.abola.pt/noticias/diogo-travassos-ja-vesti-algumas-vezes-a-camisola-do-sc-braga-2026052511411850295" },
     ]
   },
   {
