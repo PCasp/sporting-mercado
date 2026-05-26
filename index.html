@@ -304,7 +304,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-26 08:45";
+const LAST_UPDATED = "2026-05-26 12:38";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -343,10 +343,11 @@ const PLAYERS = [
     status: "fechado",
     fee: "€20M + €3M variáveis", contract: "até 2031",
     description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. O negócio está fechado num total potencial de €23M (€20M fixos + €3M em variáveis). Chegada a Lisboa prevista para a próxima semana para as formalidades finais. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Tem uma cláusula de rescisão de €80 milhões.",
-    notes: "⚠️ Aguarda luz verde da UEFA para inscrição na Champions.",
+    notes: "⚠️ Aguarda luz verde da UEFA para inscrição na Champions. Anúncio oficial esperado até ao final desta semana.",
     sources: [
       { label: "Record — Negócio fechado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-e-viagem-marcada-issa-doumbia-e-reforco-do-sporting" },
       { label: "O Jogo — Concorrência da PL", url: "https://www.ojogo.pt/futebol/artigo/doumbia-interesse-da-premier-league-preocupa-o-sporting/18085867" },
+      { label: "O Jogo — Três reforços a oficializar (26/05)", url: "https://www.ojogo.pt/futebol/artigo/derrota-na-taca-nao-altera-planos-tres-reforcos-para-oficializar-no-sporting/18088427" },
     ]
   },
   {
@@ -405,13 +406,13 @@ const PLAYERS = [
     fromClub: "Bayern / Tottenham", toClub: "Sporting CP",
     status: "negociacao",
     fee: "Opção de compra ~€30M", contract: null,
-    description: "Internacional português com 37 caps, excluído da convocatória de Roberto Martínez para o Mundial 2026. Pertence ao Bayern de Munique mas estava emprestado ao Tottenham. A 25 de maio publicou nas redes sociais uma foto a viajar com a família com as emojis 🏠🇵🇹❤️, confirmando o regresso a Portugal. Sporting é o principal interessado para a posição de 'número 6'. O Tottenham queria mantê-lo após o golo que salvou o clube da descida. Estrutura financeira (empréstimo ou definitivo) ainda por definir.",
-    notes: "⚠️ Regresso a Portugal confirmado via redes sociais (25/05). Sporting é principal destino.",
+    description: "Internacional português com 37 caps, excluído da convocatória de Roberto Martínez para o Mundial 2026. Pertence ao Bayern de Munique mas estava emprestado ao Tottenham. A 25 de maio publicou nas redes sociais uma foto a viajar com a família com as emojis 🏠🇵🇹❤️, confirmando o regresso a Portugal. A 26 de maio publicou no Instagram uma mensagem formal de despedida ao Tottenham: 'Faltam-me as palavras para vos agradecer pelo apoio após uma época tão difícil.' Sporting é o principal interessado para a posição de 'número 6'. Estrutura financeira (empréstimo ou definitivo) ainda por definir.",
+    notes: "⚠️ Despedida formal do Tottenham confirmada via Instagram (26/05). Sporting é principal destino.",
     sources: [
       { label: "Abola — Sporting não quer só Palhinha", url: "https://www.abola.pt/noticias/sporting-nao-quer-so-palhinha-quer-outro-seis-2026051823050822544" },
       { label: "Noticiasaominuto — Semana decisiva", url: "https://www.noticiasaominuto.com/desporto/2992870/adeus-mundial-ola-sporting-joao-palhinha-enfrenta-semana-decisiva" },
       { label: "Abola — Mensagem de despedida ao Tottenham (25/05)", url: "https://www.abola.pt/noticias/sporting-palhinha-com-mensagem-em-tom-de-despedida-do-tottenham" },
-      { label: "Record — Futuro decidido após o Mundial", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
+      { label: "O Jogo — Palhinha despede-se do Tottenham (26/05)", url: "https://www.ojogo.pt/futebol/artigo/palhinha-despede-se-do-tottenham-e-adeptos-do-sporting-reagem/18088389" },
     ]
   },
   {
@@ -424,7 +425,7 @@ const PLAYERS = [
     status: "fechado",
     fee: "€7M + €3M variáveis", contract: "até 2031",
     description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. O Häcken aceitou oficialmente a proposta do Sporting de €7M + €3M em variáveis — a transferência é esperada para as próximas horas, com contrato até 2031. Concorrência de Cologne, Celtic e Rangers foi ultrapassada.",
-    notes: null,
+    notes: "⚠️ Anúncio oficial esperado até ao final desta semana.",
     sources: [
       { label: "Record — Häcken aceita, transferência por horas", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/hacken-aceita-oferta-do-sporting-por-silas-andersen-e-a-tranferencia-esta-por-horas" },
       { label: "Record — Proposta de €7+3M apresentada", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-apresentou-proposta-de-7-3-milhoes-de-euros-por-silas-andersen-avancam-dinamarqueses" },
@@ -490,6 +491,21 @@ const PLAYERS = [
     notes: null,
     sources: [
       { label: "Record — Opção de compra €2M", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-opcao-do-sporting-por-bruno-ramos-e-de-2-milhoes-de-euros" },
+    ]
+  },
+  {
+    id: "koba-koindredi",
+    name: "Koba Koindredi",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/569375-1606423211.jpg?lm=1",
+    emoji: "🇫🇷",
+    position: "MC", age: 24,
+    fromClub: "Sporting CP", toClub: "FC Basel (opção de compra)",
+    status: "risco",
+    fee: null, contract: "até 2028",
+    description: "Médio francês contratado ao Estoril em 2024 por €4.25M (+ €1.75M em objetivos). Nunca se afirmou em Alvalade. Na época 2025/26 foi cedido ao Basel (campeão suíço), com os helvéticos a deterem uma opção de compra a exercer até meados de junho de 2026. Ao longo do empréstimo realizou 40 jogos (2 golos, 1 assistência). O Basel ainda não comunicou ao Sporting se vai exercer a opção.",
+    notes: "⚠️ Basel tem até meados de junho para decidir. Não exerce opção = regresso a Alvalade.",
+    sources: [
+      { label: "A Bola — Basel ainda não decidiu (26/05)", url: "https://www.abola.pt/noticias/basileia-ainda-nao-decidiu-sobre-medio-do-sporting-2026052611180111684" },
     ]
   },
   {
