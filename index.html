@@ -78,7 +78,63 @@
     .page.active { display: block; }
 
     /* ── LIST VIEW ── */
-    #list-view { padding: 24px 16px 48px; max-width: 720px; margin: 0 auto; }
+    #list-layout {
+      display: flex;
+      gap: 20px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+      align-items: flex-start;
+    }
+    #players-column { flex: 1; min-width: 0; }
+    #balance-side {
+      width: 172px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 76px;
+    }
+
+    /* ── BALANCE CARD (sidebar) ── */
+    .balance-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 14px;
+      cursor: pointer;
+      text-align: center;
+      transition: box-shadow .15s;
+    }
+    .balance-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); }
+    .balance-card-label {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .balance-card-value { font-size: 1.35rem; font-weight: 800; line-height: 1.1; }
+    .balance-card-value.positive { color: var(--green); }
+    .balance-card-value.negative { color: #dc2626; }
+    .balance-card-sub { font-size: .7rem; color: var(--muted); margin-top: 8px; line-height: 1.55; }
+    .balance-card-hint {
+      font-size: .7rem;
+      color: var(--green-dark);
+      font-weight: 600;
+      margin-top: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    @media (max-width: 599px) {
+      #list-layout { flex-direction: column-reverse; gap: 0; padding-bottom: 48px; }
+      #balance-side { width: 100%; position: static; padding-bottom: 12px; }
+      .balance-card { display: flex; align-items: center; gap: 14px; text-align: left; padding: 12px 14px; }
+      .balance-card-label { margin-bottom: 0; white-space: nowrap; flex-shrink: 0; }
+      .balance-card-value { font-size: 1.15rem; }
+      .balance-card-sub { margin-top: 0; }
+      .balance-card-hint { display: none; }
+    }
 
     .section-title {
       display: flex;
@@ -278,6 +334,23 @@
       display: flex;
       gap: 6px;
     }
+
+    /* ── BALANCE VIEW ── */
+    #balance-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
+    .balance-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .balance-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .balance-table tr:last-child td { border-bottom: none; }
+    .balance-table .bt-name { font-weight: 600; }
+    .balance-table .bt-club { color: var(--muted); font-size: .78rem; }
+    .balance-table .bt-fee { text-align: right; font-weight: 700; white-space: nowrap; }
+    .balance-table .bt-fee-max { color: var(--muted); font-weight: 400; font-size: .75rem; }
+    .balance-total-row td { font-weight: 700; background: var(--bg); border-top: 2px solid var(--border); }
+    .balance-net-box { margin: 20px 16px 0; padding: 16px; border-radius: 12px; text-align: center; }
+    .balance-net-box.positive { background: var(--status-oficial-bg); color: var(--status-oficial); }
+    .balance-net-box.negative { background: var(--status-saida-oficial-bg); color: var(--status-saida-oficial); }
+    .balance-net-value { font-size: 1.8rem; font-weight: 800; }
+    .balance-net-label { font-size: .8rem; margin-top: 4px; opacity: .85; }
+    .balance-footnote { margin: 12px 16px 0; font-size: .75rem; color: var(--muted); text-align: center; }
   </style>
 </head>
 <body>
@@ -294,12 +367,30 @@
 </header>
 
 <!-- LIST VIEW -->
-<div id="list-view" class="page active"></div>
+<div id="list-view" class="page active">
+  <div id="list-layout">
+    <div id="players-column"></div>
+    <div id="balance-side">
+      <div class="balance-card" onclick="showBalance()">
+        <div class="balance-card-label">💰 Saldo</div>
+        <div class="balance-card-value" id="balance-chip"></div>
+        <div class="balance-card-sub" id="balance-sub"></div>
+        <div class="balance-card-hint">ver detalhe →</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- DETAIL VIEW -->
 <div id="detail-view" class="page">
   <div class="detail-back" onclick="showList()">← Voltar</div>
   <div id="detail-content"></div>
+</div>
+
+<!-- BALANCE VIEW -->
+<div id="balance-view" class="page">
+  <div class="detail-back" onclick="showList()">← Voltar</div>
+  <div id="balance-content"></div>
 </div>
 
 <script>
@@ -326,7 +417,7 @@ const PLAYERS = [
     position: "MC", age: 26,
     fromClub: "SC Braga", toClub: "Sporting CP",
     status: "oficial",
-    fee: "€30M", contract: "até 2031",
+    fee: "€30M", fee_value: 30, fee_max: 30, contract: "até 2031",
     description: "Médio uruguaio contratado ao SC Braga por €30 milhões. Internacional pelo Uruguai de Marcelo Bielsa, junta-se ao Sporting após uma temporada de destaque em Braga. A apresentação oficial foi adiada para depois da final da Taça de Portugal.",
     notes: null,
     sources: [
@@ -358,7 +449,7 @@ const PLAYERS = [
     position: "MC", age: 23,
     fromClub: "AVS Futebol", toClub: "Sporting CP",
     status: "oficial",
-    fee: "€4M + €2M variáveis", contract: "até 2031",
+    fee: "€4M + €2M variáveis", fee_value: 4, fee_max: 6, contract: "até 2031",
     description: "Médio brasileiro formado no Palmeiras, destacou-se no AVS SAD com 6 golos e 2 assistências em 29 jogos esta época. Contrato de 5 épocas assinado a 22 de maio de 2026. Cláusula de rescisão de €80 milhões. Apresentação oficial prevista para a próxima semana, após a final da Taça de Portugal.",
     notes: null,
     sources: [
@@ -519,7 +610,7 @@ const PLAYERS = [
     position: "LD", age: 22,
     fromClub: "Sporting CP", toClub: "SC Braga",
     status: "saida_oficial",
-    fee: "€5.5M", contract: null,
+    fee: "€5.5M", fee_value: 5.5, fee_max: 5.5, contract: null,
     description: "Lateral esquerdo de 22 anos formado nas camadas jovens do Sporting, esteve cedido ao Moreirense. A venda ao SC Braga foi oficializada a 25 de maio de 2026 por €5.5 milhões, com cláusula de rescisão de €40 milhões no novo clube. Declarou: \"Quando cheguei ao Sporting, pensei que seria para a vida toda.\"",
     notes: null,
     sources: [
@@ -567,7 +658,7 @@ const PLAYERS = [
     position: "MC", age: 29,
     fromClub: "Sporting CP", toClub: "Livre",
     status: "saida_oficial",
-    fee: null, contract: null,
+    fee: null, fee_value: 0, fee_max: 0, contract: null,
     description: "Médio japonês cujo contrato com o Sporting CP expirou. Após vários anos em Alvalade, despediu-se com uma sentida ovação de pé do público. Declarou: 'Este clube é tudo para mim, é uma família.' Sai em fim de contrato.",
     notes: null,
     sources: [
@@ -582,7 +673,7 @@ const PLAYERS = [
     position: "Ala dto.", age: 17,
     fromClub: "Sporting CP", toClub: "Chelsea",
     status: "saida_oficial",
-    fee: null, contract: null,
+    fee: null, fee_value: 0, fee_max: 0, contract: null,
     description: "Jovem extremo direito português, uma das maiores promessas formadas em Alvalade. A transferência para o Chelsea foi confirmada para este verão de 2026. Despediu-se com emoção: 'Espero um dia voltar a vestir a camisola do Sporting.'",
     notes: null,
     sources: [
@@ -597,7 +688,7 @@ const PLAYERS = [
     position: "Avançado", age: 21,
     fromClub: "Sporting CP B", toClub: "FC Augsburg",
     status: "saida_oficial",
-    fee: "€5M (opção de compra exercida)", contract: null,
+    fee: "€5M (opção de compra exercida)", fee_value: 5, fee_max: 5, contract: null,
     description: "Ponta de lança português de 21 anos, natural de Viana do Castelo, representado pela Gestifute. Cedido ao FC Augsburg (Bundesliga) em janeiro de 2026 a partir do Sporting CP B, com os alemães a exercerem a opção de compra de €5 milhões, tornando a transferência definitiva a 27 de maio de 2026. Tinha contrato com o Sporting CP B até 2028.",
     notes: null,
     sources: [
@@ -612,7 +703,7 @@ const PLAYERS = [
     position: "DC", age: 22,
     fromClub: "Sporting CP B", toClub: "Atlético Mineiro",
     status: "saida_oficial",
-    fee: null, contract: null,
+    fee: null, fee_value: 0, fee_max: 0, contract: null,
     description: "Defesa central brasileiro de 22 anos emprestado pelo Atlético Mineiro desde agosto de 2025. Fez apenas 2 jogos oficiais pelo plantel principal (vs Gil Vicente na Liga e vs Vitória de Guimarães na Taça da Liga) e 15 pela equipa B. O Sporting não exerceu a opção de compra de €4 milhões e o jogador regressou ao Brasil em maio de 2026.",
     notes: null,
     sources: [
@@ -759,9 +850,90 @@ function badge(statusKey) {
   return `<span class="badge ${s.cls}">${s.label}</span>`;
 }
 
+// ── BALANCE ──────────────────────────────────────────────────────────────────
+function computeBalance() {
+  const incoming = PLAYERS.filter(p => p.status === "oficial" && p.fee_value != null);
+  const outgoing = PLAYERS.filter(p => p.status === "saida_oficial" && p.fee_value != null);
+  const totalIn  = incoming.reduce((s, p) => s + p.fee_value, 0);
+  const totalOut = outgoing.reduce((s, p) => s + p.fee_value, 0);
+  return { incoming, outgoing, totalIn, totalOut, net: totalOut - totalIn };
+}
+
+function fmtM(v) {
+  return (v % 1 === 0 ? v.toFixed(0) : v.toFixed(1)) + "M";
+}
+
+function renderBalanceChip() {
+  const { totalIn, totalOut, net } = computeBalance();
+  const chip = document.getElementById("balance-chip");
+  const sub  = document.getElementById("balance-sub");
+  const sign = net >= 0 ? "+" : "−";
+  chip.textContent = sign + "€" + fmtM(Math.abs(net));
+  chip.className = "balance-card-value " + (net >= 0 ? "positive" : "negative");
+  sub.innerHTML = "Receitas: €" + fmtM(totalOut) + "<br>Gastos: €" + fmtM(totalIn);
+}
+
+function renderBalance() {
+  const { incoming, outgoing, totalIn, totalOut, net } = computeBalance();
+  const sign = net >= 0 ? "+" : "−";
+  const cls  = net >= 0 ? "positive" : "negative";
+
+  function tableRows(players, isOutgoing) {
+    return players.map(p => {
+      const club = isOutgoing ? p.toClub : p.fromClub;
+      const feeStr = p.fee_value === 0
+        ? (isOutgoing ? "Fim de contrato / Sem valor" : "Sem valor")
+        : "€" + fmtM(p.fee_value);
+      const maxExtra = (p.fee_max != null && p.fee_max > p.fee_value)
+        ? ` <span class="bt-fee-max">(até €${fmtM(p.fee_max)})</span>` : "";
+      return `<tr>
+        <td><div class="bt-name">${p.name}</div><div class="bt-club">${club}</div></td>
+        <td class="bt-fee">${feeStr}${maxExtra}</td>
+      </tr>`;
+    }).join("");
+  }
+
+  function totalRow(label, value) {
+    return `<tr class="balance-total-row">
+      <td>${label}</td>
+      <td class="bt-fee">€${fmtM(value)}</td>
+    </tr>`;
+  }
+
+  document.getElementById("balance-content").innerHTML = `
+    <div class="balance-net-box ${cls}">
+      <div class="balance-net-value">${sign}€${fmtM(Math.abs(net))}</div>
+      <div class="balance-net-label">Saldo líquido de transferências oficiais</div>
+    </div>
+    <div style="padding:20px 16px 0">
+      <div class="detail-label" style="margin-bottom:10px">🚨 Saídas Oficiais</div>
+      <table class="balance-table">
+        ${tableRows(outgoing, true)}
+        ${totalRow("Total receitas", totalOut)}
+      </table>
+    </div>
+    <div style="padding:20px 16px 0">
+      <div class="detail-label" style="margin-bottom:10px">✅ Entradas Oficiais</div>
+      <table class="balance-table">
+        ${tableRows(incoming, false)}
+        ${totalRow("Total gastos", totalIn)}
+      </table>
+    </div>
+    <div class="balance-footnote">Apenas transferências oficialmente anunciadas pelo clube</div>`;
+}
+
+function showBalance() {
+  renderBalance();
+  document.getElementById("list-view").classList.remove("active");
+  document.getElementById("detail-view").classList.remove("active");
+  document.getElementById("balance-view").classList.add("active");
+  window.location.hash = "balance";
+  window.scrollTo(0, 0);
+}
+
 // ── RENDER LIST ─────────────────────────────────────────────────────────────
 function renderList() {
-  const container = document.getElementById("list-view");
+  const container = document.getElementById("players-column");
   let html = "";
 
   for (const section of SECTIONS) {
@@ -800,6 +972,7 @@ function renderList() {
   }
 
   container.innerHTML = html;
+  renderBalanceChip();
 }
 
 // ── RENDER DETAIL ────────────────────────────────────────────────────────────
@@ -861,6 +1034,7 @@ function renderDetail(id) {
 function showList() {
   document.getElementById("list-view").classList.add("active");
   document.getElementById("detail-view").classList.remove("active");
+  document.getElementById("balance-view").classList.remove("active");
   window.location.hash = "";
 }
 
@@ -874,11 +1048,17 @@ function showDetail(id) {
 
 function handleRoute() {
   const hash = window.location.hash.replace("#", "");
-  if (hash.startsWith("player/")) {
+  if (hash === "balance") {
+    renderBalance();
+    document.getElementById("list-view").classList.remove("active");
+    document.getElementById("detail-view").classList.remove("active");
+    document.getElementById("balance-view").classList.add("active");
+  } else if (hash.startsWith("player/")) {
     const id = hash.replace("player/", "");
     renderDetail(id);
     document.getElementById("list-view").classList.remove("active");
     document.getElementById("detail-view").classList.add("active");
+    document.getElementById("balance-view").classList.remove("active");
   } else {
     showList();
   }
