@@ -304,7 +304,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-27 18:03";
+const LAST_UPDATED = "2026-05-28 08:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -341,13 +341,13 @@ const PLAYERS = [
     position: "MC", age: 22,
     fromClub: "Venezia FC", toClub: "Sporting CP",
     status: "fechado",
-    fee: "€20M + €3M variáveis", contract: "até 2031",
-    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. O negócio está fechado num total potencial de €23M (€20M fixos + €3M em variáveis). Chegada a Lisboa prevista para a próxima semana para as formalidades finais. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Tem uma cláusula de rescisão de €80 milhões.",
-    notes: "⚠️ Aguarda luz verde da UEFA para inscrição na Champions. Anúncio oficial esperado até ao final desta semana.",
+    fee: "€20M + €6M variáveis", contract: "até 2031",
+    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. O negócio está fechado num total potencial de €26M (€20M fixos + €6M em variáveis). Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Tem uma cláusula de rescisão de €80 milhões. A 27 de maio chegou ao aeroporto de Lisboa. Realizará exames médicos a 28 de maio, seguidos de assinatura do contrato até 2031.",
+    notes: "⚠️ Chegou a Lisboa (27/05). Exames médicos a 28/05 — assinatura iminente.",
     sources: [
       { label: "Record — Negócio fechado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-e-viagem-marcada-issa-doumbia-e-reforco-do-sporting" },
-      { label: "O Jogo — Concorrência da PL", url: "https://www.ojogo.pt/futebol/artigo/doumbia-interesse-da-premier-league-preocupa-o-sporting/18085867" },
-      { label: "O Jogo — Três reforços a oficializar (26/05)", url: "https://www.ojogo.pt/futebol/artigo/derrota-na-taca-nao-altera-planos-tres-reforcos-para-oficializar-no-sporting/18088427" },
+      { label: "O Jogo — Chegou a Lisboa (28/05)", url: "https://www.ojogo.pt/futebol/artigo/issa-doumbia-ja-chegou-a-lisboa-para-ser-reforco-do-sporting/18089107" },
+      { label: "Record — Mediais e Andersen prepara adeus (28/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/meio-campo-do-sporting-aperalta-se-doumbia-tem-luz-verde-e-andersen-prepara-adeus-no-hacken" },
     ]
   },
   {
@@ -426,8 +426,8 @@ const PLAYERS = [
     fromClub: "BK Häcken", toClub: "Sporting CP",
     status: "fechado",
     fee: "€7M + €3M variáveis", contract: "até 2031",
-    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. O Häcken aceitou oficialmente a proposta do Sporting de €7M + €3M em variáveis — contrato até 2031. Concorrência de Cologne, Celtic e Rangers foi ultrapassada. A 26 de maio declarou: 'O Sporting é um grande clube. Estou 100% interessado. Creio que está perto.' A 27 de maio o Record revela que o jogador já falou directamente com o Sporting e recebeu conselhos sobre o clube. Declarou: 'Estou feliz!' Aguarda apenas autorização do Häcken para viajar para os exames médicos.",
-    notes: "⚠️ Já falou com o Sporting (27/05). Aguarda apenas autorização do Häcken para viajar.",
+    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. O Häcken aceitou oficialmente a proposta do Sporting de €7M + €3M em variáveis — contrato até 2031. Concorrência de Cologne, Celtic e Rangers foi ultrapassada. A 26 de maio declarou: 'O Sporting é um grande clube. Estou 100% interessado. Creio que está perto.' A 27 de maio o Record revela que já falou directamente com o Sporting. Declarou: 'Estou feliz!' Joga o jogo de despedida pelo Häcken frente ao Hammarby a 31 de maio, antes de viajar para Lisboa.",
+    notes: "⚠️ Joga despedida vs Hammarby (31/05). Chega a Lisboa após essa data.",
     sources: [
       { label: "Record — Häcken aceita, transferência por horas", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/hacken-aceita-oferta-do-sporting-por-silas-andersen-e-a-tranferencia-esta-por-horas" },
       { label: "Record — Proposta de €7+3M apresentada", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-apresentou-proposta-de-7-3-milhoes-de-euros-por-silas-andersen-avancam-dinamarqueses" },
@@ -602,6 +602,21 @@ const PLAYERS = [
     notes: null,
     sources: [
       { label: "A Bola — Avançado ruma em definitivo ao Augsburgo (27/05)", url: "https://www.abola.pt/noticias/mercado-sporting-avancado-ruma-em-definitivo-ao-augsburgo-2026052710052930721" },
+    ]
+  },
+  {
+    id: "romulo-junior",
+    name: "Rômulo Júnior",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/743588-1745582685.jpg?lm=1",
+    emoji: "🇧🇷",
+    position: "DC", age: 22,
+    fromClub: "Sporting CP B", toClub: "Atlético Mineiro",
+    status: "saida_oficial",
+    fee: null, contract: null,
+    description: "Defesa central brasileiro de 22 anos emprestado pelo Atlético Mineiro desde agosto de 2025. Fez apenas 2 jogos oficiais pelo plantel principal (vs Gil Vicente na Liga e vs Vitória de Guimarães na Taça da Liga) e 15 pela equipa B. O Sporting não exerceu a opção de compra de €4 milhões e o jogador regressou ao Brasil em maio de 2026.",
+    notes: null,
+    sources: [
+      { label: "A Bola — Central não convenceu e regressou ao Brasil (27/05)", url: "https://www.abola.pt/noticias/mercado-sporting-central-nao-convenceu-e-ja-regressou-ao-brasil-2026052716440075550" },
     ]
   },
   {
