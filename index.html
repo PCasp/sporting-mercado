@@ -395,7 +395,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-29 08:46";
+const LAST_UPDATED = "2026-05-29 12:38";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -431,14 +431,15 @@ const PLAYERS = [
     emoji: "🇮🇹",
     position: "MC", age: 22,
     fromClub: "Venezia FC", toClub: "Sporting CP",
-    status: "fechado",
-    fee: "€20M + €6M variáveis", contract: "até 2031",
-    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. O negócio está fechado num total potencial de €26M (€20M fixos + €6M em variáveis). Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Tem uma cláusula de rescisão de €80 milhões. Chegou ao aeroporto de Lisboa a 27 de maio. A 28 de maio realizou os exames médicos sem problemas físicos detectados e acertou todos os detalhes contratuais. Apresentação oficial prevista para sexta-feira (29/05).",
-    notes: "⚠️ Passou nos exames médicos (28/05). Todos os detalhes contratuais acertados — anúncio oficial iminente.",
+    status: "oficial",
+    fee: "€20M + €6M variáveis", fee_value: 20, fee_max: 26, contract: "até 2031",
+    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. Contratado por €20M + €6M em variáveis (total potencial €26M), com cláusula de rescisão de €80M e contrato até 2031. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Chegou ao aeroporto de Lisboa a 27 de maio, passou nos exames médicos a 28 de maio sem problemas, e foi apresentado oficialmente a 29 de maio num evento junto ao Tejo em Lisboa.",
+    notes: null,
     sources: [
       { label: "Record — Negócio fechado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-e-viagem-marcada-issa-doumbia-e-reforco-do-sporting" },
       { label: "O Jogo — Chegou a Lisboa (28/05)", url: "https://www.ojogo.pt/futebol/artigo/issa-doumbia-ja-chegou-a-lisboa-para-ser-reforco-do-sporting/18089107" },
       { label: "Record — Luz verde, contrato iminente (28/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/meio-campo-do-sporting-aperalta-se-doumbia-tem-luz-verde-e-andersen-prepara-adeus-no-hacken" },
+      { label: "Abola — Apresentação oficial (29/05)", url: "https://www.abola.pt/noticias/sporting-saiba-como-sera-a-apresentacao-de-doumbia-2026052910262560396" },
     ]
   },
   {
@@ -618,6 +619,21 @@ const PLAYERS = [
     notes: null,
     sources: [
       { label: "Record — Opção de compra €2M", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-opcao-do-sporting-por-bruno-ramos-e-de-2-milhoes-de-euros" },
+    ]
+  },
+  {
+    id: "ricardo-mangas",
+    name: "Ricardo Mangas",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/314944-1765307316.jpg?lm=1",
+    emoji: "🇵🇹",
+    position: "LE", age: 28,
+    fromClub: "Sporting CP", toClub: "Por confirmar",
+    status: "risco",
+    fee: null, contract: "até 2029",
+    description: "Lateral esquerdo português de 28 anos, formado no Benfica. Contratado ao Spartak Moscow em agosto de 2025 por €400K. Realizou 23 jogos pelo Sporting esta época (1.355 minutos), mas as prestações ficaram aquém das expectativas. O clube está disponível para o ceder em empréstimo (com opção de compra) ou vender por um valor adequado — mas a 29 de maio ainda não chegaram propostas concretas à SAD. Tem cláusula de rescisão de €60M e contrato até 2029.",
+    notes: "⚠️ Sem propostas formais ainda. Mercado aguarda Mundial para ganhar dinâmica.",
+    sources: [
+      { label: "Abola — Sem solução à vista (29/05)", url: "https://www.abola.pt/noticias/sporting-mangas-ainda-sem-solucao-a-vista-2026052911004276497" },
     ]
   },
   {
