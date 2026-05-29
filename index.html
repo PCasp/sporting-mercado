@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sporting CP · Mercado Verão 2026</title>
+  <script>(function(){const t=localStorage.getItem("theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");})()</script>
   <style>
     :root {
       --green: #07A04A;
@@ -30,6 +31,23 @@
       --status-saida-fechada-bg: #f5f3ff;
       --status-risco: #ea580c;
       --status-risco-bg: #fff7ed;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111318;
+      --card: #1c1f2a;
+      --text: #e2e4ed;
+      --muted: #8b909e;
+      --border: #2e3347;
+      --green-light: #0a2218;
+
+      --status-oficial-bg:      #0a2218;
+      --status-fechado-bg:      #0a1628;
+      --status-negociacao-bg:   #271f08;
+      --status-analise-bg:      #1c1e24;
+      --status-saida-oficial-bg:#270a0a;
+      --status-saida-fechada-bg:#16082a;
+      --status-risco-bg:        #271508;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,6 +91,19 @@
     .header-date { font-size: .78rem; opacity: .85; }
     .header-updated { font-size: .68rem; opacity: .65; }
     /* .header-countdown removed — countdown moved to sidebar card */
+    .theme-toggle {
+      background: rgba(255,255,255,.15);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 6px 9px;
+      line-height: 1;
+      transition: background .15s;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,.28); }
 
     /* ── LAYOUT ── */
     .page { display: none; }
@@ -464,6 +495,7 @@
     <img src="https://tmssl.akamaized.net/images/wappen/head/336.png" alt="Sporting CP" class="header-badge" referrerpolicy="no-referrer" />
     <span>Sporting CP · Mercado 2026</span>
   </div>
+  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Alternar modo escuro">🌙</button>
   <div class="header-right">
     <span class="header-date" id="header-date"></span>
     <span class="header-updated" id="header-updated"></span>
@@ -1436,7 +1468,19 @@ function handleRoute() {
   }
 }
 
+// ── THEME ─────────────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+  const next = isDark ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  document.getElementById("theme-toggle").textContent = next === "dark" ? "☀️" : "🌙";
+  localStorage.setItem("theme", next);
+}
+
 // ── INIT ─────────────────────────────────────────────────────────────────────
+if (document.documentElement.getAttribute("data-theme") === "dark") {
+  document.getElementById("theme-toggle").textContent = "☀️";
+}
 document.getElementById("header-date").textContent =
   new Date().toLocaleDateString("pt-PT", { day: "numeric", month: "long", year: "numeric" });
 document.getElementById("header-updated").textContent = "Actualizado: " + LAST_UPDATED;
