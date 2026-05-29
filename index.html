@@ -84,6 +84,12 @@
     .header-badge { width: 34px; height: 34px; object-fit: contain; }
     .header-right {
       display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-dates {
+      display: flex;
       flex-direction: column;
       align-items: flex-end;
       gap: 1px;
@@ -495,10 +501,12 @@
     <img src="https://tmssl.akamaized.net/images/wappen/head/336.png" alt="Sporting CP" class="header-badge" referrerpolicy="no-referrer" />
     <span>Sporting CP · Mercado 2026</span>
   </div>
-  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Alternar modo escuro">🌙</button>
   <div class="header-right">
-    <span class="header-date" id="header-date"></span>
-    <span class="header-updated" id="header-updated"></span>
+    <div class="header-dates">
+      <span class="header-date" id="header-date"></span>
+      <span class="header-updated" id="header-updated"></span>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Alternar modo escuro">🌙</button>
   </div>
 </header>
 
