@@ -351,6 +351,67 @@
     .balance-net-value { font-size: 1.8rem; font-weight: 800; }
     .balance-net-label { font-size: .8rem; margin-top: 4px; opacity: .85; }
     .balance-footnote { margin: 12px 16px 0; font-size: .75rem; color: var(--muted); text-align: center; }
+
+    /* ── UPDATES CARD (sidebar) ── */
+    .updates-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+      transition: box-shadow .15s;
+      margin-top: 10px;
+    }
+    .updates-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); }
+    .updates-card-label {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .updates-card-count { font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .updates-card-time { font-size: .7rem; color: var(--muted); margin-bottom: 8px; }
+    .updates-player-row { display: flex; align-items: center; gap: 6px; padding: 3px 0; }
+    .updates-player-name { font-size: .78rem; font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .updates-more { font-size: .72rem; color: var(--muted); margin-top: 3px; }
+    .updates-card-hint {
+      font-size: .7rem;
+      color: var(--green-dark);
+      font-weight: 600;
+      margin-top: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+    }
+
+    /* ── UPDATES VIEW ── */
+    #updates-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
+    .updates-view-header {
+      padding: 16px;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+    .updates-view-title { font-size: 1rem; font-weight: 700; }
+    .updates-view-sub { font-size: .78rem; color: var(--muted); margin-top: 3px; }
+
+    @media (max-width: 599px) {
+      .updates-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: left;
+        padding: 12px 14px;
+        margin-top: 0;
+        border-radius: 0;
+        border-top: none;
+      }
+      .updates-card-label { margin-bottom: 0; white-space: nowrap; flex-shrink: 0; }
+      #updates-chip-content { flex: 1; }
+      .updates-card-count { margin-bottom: 0; font-size: .85rem; }
+      .updates-card-time { margin-bottom: 0; }
+      .updates-player-row, .updates-more, .updates-card-hint { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -377,6 +438,11 @@
         <div class="balance-card-sub" id="balance-sub"></div>
         <div class="balance-card-hint">ver detalhe →</div>
       </div>
+      <div class="updates-card" onclick="showUpdates()">
+        <div class="updates-card-label">📰 Hoje</div>
+        <div id="updates-chip-content"></div>
+        <div class="updates-card-hint">ver detalhe →</div>
+      </div>
     </div>
   </div>
 </div>
@@ -391,6 +457,12 @@
 <div id="balance-view" class="page">
   <div class="detail-back" onclick="showList()">← Voltar</div>
   <div id="balance-content"></div>
+</div>
+
+<!-- UPDATES VIEW -->
+<div id="updates-view" class="page">
+  <div class="detail-back" onclick="showList()">← Voltar</div>
+  <div id="updates-content"></div>
 </div>
 
 <script>
@@ -899,6 +971,17 @@ const PLAYERS = [
   },
 ];
 
+// ── UPDATES LOG ─────────────────────────────────────────────────────────────
+// Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
+// Cron job prepends a new entry for the current day whenever players are updated.
+const UPDATES_LOG = [
+  { date: "2026-05-29", ids: ["issa-doumbia", "georgios-vagiannidis", "yeremay-hernandez", "joao-palhinha", "ricardo-mangas"] },
+  { date: "2026-05-28", ids: ["thierry-correia", "gabriel-silva", "francisco-trincao", "silas-andersen", "koba-koindredi"] },
+  { date: "2026-05-27", ids: ["rodrigo-ribeiro", "romulo-junior", "pedro-goncalves", "maxi-araujo"] },
+  { date: "2026-05-26", ids: ["diogo-travassos", "geny-catamo", "david-moreira"] },
+  { date: "2026-05-25", ids: ["rodrigo-zalazar", "pedro-lima", "hidemasa-morita", "geovany-quenda", "alisson-santos", "morten-hjulmand"] },
+];
+
 // ── SECTIONS ────────────────────────────────────────────────────────────────
 const SECTIONS = [
   { key: "oficial",       label: "Entradas Confirmadas" },
@@ -988,11 +1071,101 @@ function renderBalance() {
     <div class="balance-footnote">Apenas transferências oficialmente anunciadas pelo clube</div>`;
 }
 
+// ── UPDATES ──────────────────────────────────────────────────────────────────
+function getTodayUpdates() {
+  const today = LAST_UPDATED.split(" ")[0];
+  const entry = UPDATES_LOG.find(e => e.date === today);
+  if (!entry) return [];
+  return entry.ids.map(id => PLAYERS.find(p => p.id === id)).filter(Boolean);
+}
+
+function renderUpdatesChip() {
+  const players = getTodayUpdates();
+  const chip = document.getElementById("updates-chip-content");
+  const time = LAST_UPDATED.split(" ")[1];
+
+  if (!players.length) {
+    chip.innerHTML = `<div class="updates-card-count" style="color:var(--muted);font-weight:400;font-style:italic">Sem atualizações hoje</div>`;
+    return;
+  }
+
+  const preview = players.slice(0, 3);
+  const extra = players.length - 3;
+  let rows = preview.map(p =>
+    `<div class="updates-player-row">
+      ${badge(p.status)}
+      <span class="updates-player-name">${p.name}</span>
+    </div>`
+  ).join("");
+  if (extra > 0) rows += `<div class="updates-more">+${extra} mais</div>`;
+
+  chip.innerHTML =
+    `<div class="updates-card-count">${players.length} jogador${players.length > 1 ? "es" : ""}</div>` +
+    `<div class="updates-card-time">${time}</div>` +
+    rows;
+}
+
+function renderUpdates() {
+  const players = getTodayUpdates();
+  const [year, month, day] = LAST_UPDATED.split(" ")[0].split("-");
+  const months = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  const dateStr = `${parseInt(day)} ${months[parseInt(month)-1]} ${year}`;
+  const time = LAST_UPDATED.split(" ")[1];
+
+  if (!players.length) {
+    document.getElementById("updates-content").innerHTML =
+      `<div style="padding:32px 16px;text-align:center;color:var(--muted)">Sem atualizações hoje.</div>`;
+    return;
+  }
+
+  let cards = "";
+  for (const p of players) {
+    const isOutgoing = ["saida_oficial","saida_fechada","risco"].includes(p.status);
+    const meta = [p.position, p.age ? `${p.age} anos` : null, isOutgoing ? p.toClub : p.fromClub].filter(Boolean).join(" · ");
+    const feeLabel = p.fee || "";
+    const avatarImg = p.photo
+      ? `<img src="${p.photo}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=this.parentNode.dataset.emoji" />`
+      : p.emoji;
+    cards += `
+      <div class="player-card" onclick="showDetail('${p.id}')">
+        <div class="player-card-left">
+          <div class="player-avatar" data-emoji="${p.emoji}">${avatarImg}</div>
+          <div class="player-info">
+            <div class="player-name">${p.name}</div>
+            <div class="player-meta">${meta}</div>
+          </div>
+        </div>
+        <div class="player-card-right">
+          ${badge(p.status)}
+          ${feeLabel ? `<span style="font-size:.75rem;color:var(--muted)">${feeLabel}</span>` : ""}
+        </div>
+      </div>`;
+  }
+
+  document.getElementById("updates-content").innerHTML =
+    `<div class="updates-view-header">
+      <div class="updates-view-title">📰 Atualizações de hoje</div>
+      <div class="updates-view-sub">${dateStr} · ${time} · ${players.length} jogador${players.length > 1 ? "es" : ""}</div>
+    </div>
+    <div style="padding:16px 16px 0">${cards}</div>`;
+}
+
+function showUpdates() {
+  renderUpdates();
+  document.getElementById("list-view").classList.remove("active");
+  document.getElementById("detail-view").classList.remove("active");
+  document.getElementById("balance-view").classList.remove("active");
+  document.getElementById("updates-view").classList.add("active");
+  window.location.hash = "updates";
+  window.scrollTo(0, 0);
+}
+
 function showBalance() {
   renderBalance();
   document.getElementById("list-view").classList.remove("active");
   document.getElementById("detail-view").classList.remove("active");
   document.getElementById("balance-view").classList.add("active");
+  document.getElementById("updates-view").classList.remove("active");
   window.location.hash = "balance";
   window.scrollTo(0, 0);
 }
@@ -1039,6 +1212,7 @@ function renderList() {
 
   container.innerHTML = html;
   renderBalanceChip();
+  renderUpdatesChip();
 }
 
 // ── RENDER DETAIL ────────────────────────────────────────────────────────────
@@ -1101,6 +1275,7 @@ function showList() {
   document.getElementById("list-view").classList.add("active");
   document.getElementById("detail-view").classList.remove("active");
   document.getElementById("balance-view").classList.remove("active");
+  document.getElementById("updates-view").classList.remove("active");
   window.location.hash = "";
 }
 
@@ -1119,12 +1294,20 @@ function handleRoute() {
     document.getElementById("list-view").classList.remove("active");
     document.getElementById("detail-view").classList.remove("active");
     document.getElementById("balance-view").classList.add("active");
+    document.getElementById("updates-view").classList.remove("active");
+  } else if (hash === "updates") {
+    renderUpdates();
+    document.getElementById("list-view").classList.remove("active");
+    document.getElementById("detail-view").classList.remove("active");
+    document.getElementById("balance-view").classList.remove("active");
+    document.getElementById("updates-view").classList.add("active");
   } else if (hash.startsWith("player/")) {
     const id = hash.replace("player/", "");
     renderDetail(id);
     document.getElementById("list-view").classList.remove("active");
     document.getElementById("detail-view").classList.add("active");
     document.getElementById("balance-view").classList.remove("active");
+    document.getElementById("updates-view").classList.remove("active");
   } else {
     showList();
   }
