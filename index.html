@@ -555,7 +555,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-29 18:34";
+const LAST_UPDATED = "2026-05-29 19:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -591,9 +591,9 @@ const PLAYERS = [
     emoji: "🇮🇹",
     position: "MC", age: 22,
     fromClub: "Venezia FC", toClub: "Sporting CP",
-    status: "oficial",
-    fee: "€20M + €6M variáveis", fee_value: 20, fee_max: 26, contract: "até 2031",
-    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. Contratado por €20M + €6M em variáveis (total potencial €26M), com cláusula de rescisão de €80M e contrato até 2031. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Chegou ao aeroporto de Lisboa a 27 de maio, passou nos exames médicos a 28 de maio sem problemas, e foi apresentado oficialmente a 29 de maio num evento junto ao Tejo em Lisboa.",
+    status: "fechado",
+    fee: "€20M + €6M variáveis", fee_value: null, fee_max: null, contract: "até 2031",
+    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. Negócio confirmado por €20M + €6M em variáveis (total potencial €26M), com cláusula de rescisão de €80M e contrato até 2031. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Chegou ao aeroporto de Lisboa a 27 de maio, passou nos exames médicos a 28 de maio sem problemas. A 29 de maio foi apanhado a preparar a própria apresentação junto ao Tejo, mas o anúncio oficial do clube ainda não foi feito.",
     notes: null,
     sources: [
       { label: "Record — Negócio fechado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-e-viagem-marcada-issa-doumbia-e-reforco-do-sporting" },
@@ -863,11 +863,12 @@ const PLAYERS = [
     emoji: "🇧🇷",
     position: "Ala esq.", age: 23,
     fromClub: "Sporting CP", toClub: "SSC Napoli",
-    status: "saida_fechada",
+    status: "risco",
     fee: "€16.5M (opção de compra)",
     contract: null,
-    description: "Extremo esquerdo brasileiro de 23 anos, propriedade do Sporting CP, cedido ao SSC Napoli desde janeiro de 2026 (taxa de empréstimo: €3.5M já paga). O Nápoles quer mesmo exercer a opção de compra de €16.5M antes de meados de junho de 2026, totalizando €20M para o Sporting. O clube italiano deverá formalizar a compra nas próximas semanas.",
-    notes: null,
+    last_news: "2026-05-25",
+    description: "Extremo esquerdo brasileiro de 23 anos, propriedade do Sporting CP, cedido ao SSC Napoli desde janeiro de 2026 (taxa de empréstimo: €3.5M já paga). O Nápoles manifestou intenção de exercer a opção de compra de €16.5M antes de meados de junho de 2026, o que totalizaria €20M para o Sporting. Contudo, a opção ainda não foi formalmente exercida.",
+    notes: "⚠️ Opção de compra por €16.5M não confirmada. Nápoles tem até meados de junho para decidir.",
     sources: [
       { label: "A Bola — Nápoles quer ficar com Alisson", url: "https://www.abola.pt/noticias/sporting-napoles-quer-mesmo-ficar-com-alisson-2026052517071739065" },
     ]
@@ -879,10 +880,11 @@ const PLAYERS = [
     emoji: "🇩🇰",
     position: "MD", age: 26,
     fromClub: "Sporting CP", toClub: "Real Madrid",
-    status: "saida_fechada",
-    fee: "€40M", contract: null,
-    description: "Capitão do Sporting CP, o médio dinamarquês deverá abandonar Alvalade no próximo verão. Mourinho quer levá-lo para o Real Madrid como exigência para assumir o cargo, mas Arsenal e Manchester United também entram na corrida. Sporting disposto a vender a partir de ~€50M. Após a derrota na final da Taça para o Torreense (1-2 a.e.t.), Hjulmand admitiu: \"Faltou atitude da nossa parte.\" Sem declarações sobre o futuro.",
-    notes: "⚠️ Pós-final (25/05): sem confirmação de saída. Real Madrid continua à espera.",
+    status: "risco",
+    fee: "Sporting exige ~€50M", contract: null,
+    last_news: "2026-05-25",
+    description: "Capitão do Sporting CP, o médio dinamarquês é o principal alvo do Real Madrid de Mourinho, que o exige como condição para assumir o cargo. Arsenal e Manchester United também acompanham a situação. O Sporting está disponível para negociar a partir de ~€50M, mas nenhum acordo entre clubes foi confirmado. Após a derrota na final da Taça para o Torreense (1-2 a.e.t.), Hjulmand admitiu: \"Faltou atitude da nossa parte.\" Não fez declarações sobre o futuro.",
+    notes: "⚠️ Forte interesse do Real Madrid, sem acordo confirmado (25/05). Sporting exige ~€50M.",
     sources: [
       { label: "Managing Madrid — Mourinho pede Hjulmand", url: "https://www.managingmadrid.com/107951/hjulmand-real-madrid-news-2026-rumors" },
       { label: "Abola — Rui Borges comenta", url: "https://www.abola.pt/noticias/rui-borges-aborda-a-hipotese-de-mourinho-levar-hjulmand-para-o-real-madrid-2026052208230435247" },
@@ -1083,7 +1085,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-05-29", ids: ["issa-doumbia", "georgios-vagiannidis", "yeremay-hernandez", "joao-palhinha", "ricardo-mangas"] },
+  { date: "2026-05-29", ids: ["issa-doumbia", "georgios-vagiannidis", "yeremay-hernandez", "joao-palhinha", "ricardo-mangas", "alisson-santos", "morten-hjulmand"] },
   { date: "2026-05-28", ids: ["thierry-correia", "gabriel-silva", "francisco-trincao", "silas-andersen", "koba-koindredi"] },
   { date: "2026-05-27", ids: ["rodrigo-ribeiro", "romulo-junior", "pedro-goncalves", "maxi-araujo"] },
   { date: "2026-05-26", ids: ["diogo-travassos", "geny-catamo", "david-moreira"] },
