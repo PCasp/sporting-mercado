@@ -72,6 +72,7 @@
     }
     .header-date { font-size: .78rem; opacity: .85; }
     .header-updated { font-size: .68rem; opacity: .65; }
+    /* .header-countdown removed — countdown moved to sidebar card */
 
     /* ── LAYOUT ── */
     .page { display: none; }
@@ -103,6 +104,7 @@
       cursor: pointer;
       text-align: center;
       transition: box-shadow .15s;
+      margin-top: 10px;
     }
     .balance-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); }
     .balance-card-label {
@@ -403,9 +405,40 @@
     .stale-tag.stale-muted { background: var(--status-analise-bg); color: var(--muted); }
     .stale-tag.stale-warn  { background: var(--status-negociacao-bg); color: var(--status-negociacao); }
 
-    /* ── COUNTDOWN ── */
-    .header-countdown { font-size: .67rem; font-weight: 700; opacity: .9; letter-spacing: .02em; }
-    .header-countdown.urgent { color: #fca5a5; }
+    /* ── COUNTDOWN CARD (sidebar) ── */
+    .countdown-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .countdown-card-label {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .countdown-card-value { font-size: 1.35rem; font-weight: 800; line-height: 1.1; color: var(--text); }
+    .countdown-card-value.urgent { color: #dc2626; }
+    .countdown-card-sub { font-size: .7rem; color: var(--muted); margin-top: 8px; }
+
+    @media (max-width: 599px) {
+      .countdown-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: left;
+        padding: 12px 14px;
+        margin-top: 0;
+      }
+      .countdown-card-label { margin-bottom: 0; white-space: nowrap; flex-shrink: 0; }
+      .countdown-card-value { font-size: 1.1rem; }
+      .countdown-card-sub { margin-top: 0; }
+    }
 
     @media (max-width: 599px) {
       .updates-card {
@@ -415,8 +448,6 @@
         text-align: left;
         padding: 12px 14px;
         margin-top: 0;
-        border-radius: 0;
-        border-top: none;
       }
       .updates-card-label { margin-bottom: 0; white-space: nowrap; flex-shrink: 0; }
       #updates-chip-content { flex: 1; }
@@ -436,7 +467,6 @@
   <div class="header-right">
     <span class="header-date" id="header-date"></span>
     <span class="header-updated" id="header-updated"></span>
-    <span class="header-countdown" id="header-countdown"></span>
   </div>
 </header>
 
@@ -445,16 +475,21 @@
   <div id="list-layout">
     <div id="players-column"></div>
     <div id="balance-side">
+      <div class="updates-card" onclick="showUpdates()">
+        <div class="updates-card-label">📰 Hoje</div>
+        <div id="updates-chip-content"></div>
+        <div class="updates-card-hint">ver detalhe →</div>
+      </div>
       <div class="balance-card" onclick="showBalance()">
         <div class="balance-card-label">💰 Saldo</div>
         <div class="balance-card-value" id="balance-chip"></div>
         <div class="balance-card-sub" id="balance-sub"></div>
         <div class="balance-card-hint">ver detalhe →</div>
       </div>
-      <div class="updates-card" onclick="showUpdates()">
-        <div class="updates-card-label">📰 Hoje</div>
-        <div id="updates-chip-content"></div>
-        <div class="updates-card-hint">ver detalhe →</div>
+      <div class="countdown-card">
+        <div class="countdown-card-label">⏳ Janela</div>
+        <div class="countdown-card-value" id="countdown-value"></div>
+        <div class="countdown-card-sub" id="countdown-sub"></div>
       </div>
     </div>
   </div>
@@ -1052,11 +1087,23 @@ function renderCountdown() {
   const close = new Date("2026-08-31");
   const today = new Date(); today.setHours(0, 0, 0, 0);
   const days = Math.round((close - today) / 86400000);
-  const el = document.getElementById("header-countdown");
-  if (days < 0) { el.textContent = ""; return; }
-  if (days === 0) { el.textContent = "⏳ fecho hoje"; el.classList.add("urgent"); return; }
-  el.textContent = `⏳ ${days}d p/ fecho`;
-  if (days <= 7) el.classList.add("urgent");
+  const valEl = document.getElementById("countdown-value");
+  const subEl = document.getElementById("countdown-sub");
+  if (!valEl) return;
+  if (days < 0) {
+    valEl.textContent = "—";
+    valEl.className = "countdown-card-value";
+    subEl.textContent = "Janela fechada";
+    return;
+  }
+  if (days === 0) {
+    valEl.textContent = "Hoje";
+    valEl.className = "countdown-card-value urgent";
+  } else {
+    valEl.textContent = days + "d";
+    valEl.className = "countdown-card-value" + (days <= 7 ? " urgent" : "");
+  }
+  subEl.textContent = "fecho: 31 ago 2026";
 }
 
 // ── BALANCE ──────────────────────────────────────────────────────────────────
