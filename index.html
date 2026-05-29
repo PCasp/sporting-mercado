@@ -555,7 +555,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-29 19:15";
+const LAST_UPDATED = "2026-05-30 00:00";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -593,13 +593,14 @@ const PLAYERS = [
     fromClub: "Venezia FC", toClub: "Sporting CP",
     status: "fechado",
     fee: "€20M + €6M variáveis", fee_value: null, fee_max: null, contract: "até 2031",
-    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. Negócio confirmado por €20M + €6M em variáveis (total potencial €26M), com cláusula de rescisão de €80M e contrato até 2031. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Chegou ao aeroporto de Lisboa a 27 de maio, passou nos exames médicos a 28 de maio sem problemas. A 29 de maio foi apanhado a preparar a própria apresentação junto ao Tejo, mas o anúncio oficial do clube ainda não foi feito.",
+    description: "Médio italiano de origem marfinense, revelação do Venezia com 10 golos e 6 assistências em 38 jogos esta época. Negócio confirmado por €20M + €6M em variáveis (total potencial €26M), com cláusula de rescisão de €80M e contrato até 2031. Preferiu o Sporting a propostas de Juventus, Fiorentina, Newcastle e Everton. Chegou ao aeroporto de Lisboa a 27 de maio, passou nos exames médicos a 28 de maio sem problemas. A 29 de maio o O Jogo publicou as primeiras imagens de Doumbia com a camisola do Sporting junto ao Tejo — apresentação pública informal, antes do anúncio oficial. A A Bola confirmou que a apresentação oficial não acontecerá na sexta-feira dia 30 de maio.",
     notes: null,
     sources: [
       { label: "Record — Negócio fechado", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-e-viagem-marcada-issa-doumbia-e-reforco-do-sporting" },
       { label: "O Jogo — Chegou a Lisboa (28/05)", url: "https://www.ojogo.pt/futebol/artigo/issa-doumbia-ja-chegou-a-lisboa-para-ser-reforco-do-sporting/18089107" },
       { label: "Record — Luz verde, contrato iminente (28/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/meio-campo-do-sporting-aperalta-se-doumbia-tem-luz-verde-e-andersen-prepara-adeus-no-hacken" },
-      { label: "Abola — Apresentação oficial (29/05)", url: "https://www.abola.pt/noticias/sporting-saiba-como-sera-a-apresentacao-de-doumbia-2026052910262560396" },
+      { label: "Abola — Apresentação não é 6ª feira (29/05)", url: "https://www.abola.pt/noticias/sporting-saiba-como-sera-a-apresentacao-de-doumbia-2026052910262560396" },
+      { label: "O Jogo — Primeiras imagens com a camisola (29/05)", url: "https://www.ojogo.pt/futebol/artigo/as-primeiras-imagens-de-doumbia-com-a-camisola-do-sporting-veja-aqui/18089696" },
     ]
   },
   {
@@ -653,6 +654,7 @@ const PLAYERS = [
       { label: "Abola — Cláusula sobe para €150M (28/05)", url: "https://www.abola.pt/noticias/atencao-sporting-clausula-de-yeremay-sobe-para-os-euro150-milhoes-2026052821133611113" },
       { label: "Record — 'É muito difícil tomar decisões' (29/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/yeremay-volta-a-abordar-o-futuro-e-muito-dificil-tomar-decisoes" },
       { label: "Record — Deportivo conta com Yeremay a 6/07 (29/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/treinador-do-deportivo-espera-manter-yeremay-na-proxima-epoca-conto-com-ele-a-6-de-julho" },
+      { label: "O Jogo — Cláusula acima de €100M (29/05)", url: "https://www.ojogo.pt/futebol/artigo/cada-vez-mais-dificil-tira-lo-da-corunha-yeremay-com-clausula-acima-dos-100-milhoes/18089559" },
     ]
   },
   {
@@ -1085,6 +1087,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-05-30", ids: ["issa-doumbia", "yeremay-hernandez"] },
   { date: "2026-05-29", ids: ["issa-doumbia", "georgios-vagiannidis", "yeremay-hernandez", "joao-palhinha", "ricardo-mangas", "alisson-santos", "morten-hjulmand"] },
   { date: "2026-05-28", ids: ["thierry-correia", "gabriel-silva", "francisco-trincao", "silas-andersen", "koba-koindredi"] },
   { date: "2026-05-27", ids: ["rodrigo-ribeiro", "romulo-junior", "pedro-goncalves", "maxi-araujo"] },
