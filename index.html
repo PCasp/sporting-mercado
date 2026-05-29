@@ -398,6 +398,15 @@
     .dir-tag.entrada { color: var(--green); }
     .dir-tag.saida   { color: #dc2626; }
 
+    /* ── STALENESS ── */
+    .stale-tag { display: inline-block; font-size: .63rem; font-weight: 600; padding: 2px 6px; border-radius: 999px; margin-top: 3px; white-space: nowrap; }
+    .stale-tag.stale-muted { background: var(--status-analise-bg); color: var(--muted); }
+    .stale-tag.stale-warn  { background: var(--status-negociacao-bg); color: var(--status-negociacao); }
+
+    /* ── COUNTDOWN ── */
+    .header-countdown { font-size: .67rem; font-weight: 700; opacity: .9; letter-spacing: .02em; }
+    .header-countdown.urgent { color: #fca5a5; }
+
     @media (max-width: 599px) {
       .updates-card {
         display: flex;
@@ -427,6 +436,7 @@
   <div class="header-right">
     <span class="header-date" id="header-date"></span>
     <span class="header-updated" id="header-updated"></span>
+    <span class="header-countdown" id="header-countdown"></span>
   </div>
 </header>
 
@@ -1022,6 +1032,33 @@ function badge(statusKey) {
   return `<span class="badge ${s.cls}">${s.label}</span>`;
 }
 
+const RUMOR_STATUSES = new Set(["analise", "negociacao", "risco"]);
+
+function daysAgo(dateStr) {
+  if (!dateStr) return null;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  return Math.floor((today - new Date(dateStr)) / 86400000);
+}
+
+function staleTag(p) {
+  if (!RUMOR_STATUSES.has(p.status) || !p.last_news) return "";
+  const d = daysAgo(p.last_news);
+  if (d < 8)  return "";
+  if (d < 15) return `<span class="stale-tag stale-muted">há ${d}d</span>`;
+  return `<span class="stale-tag stale-warn">há ${d}d</span>`;
+}
+
+function renderCountdown() {
+  const close = new Date("2026-08-31");
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const days = Math.round((close - today) / 86400000);
+  const el = document.getElementById("header-countdown");
+  if (days < 0) { el.textContent = ""; return; }
+  if (days === 0) { el.textContent = "⏳ fecho hoje"; el.classList.add("urgent"); return; }
+  el.textContent = `⏳ ${days}d p/ fecho`;
+  if (days <= 7) el.classList.add("urgent");
+}
+
 // ── BALANCE ──────────────────────────────────────────────────────────────────
 function computeBalance() {
   const incoming = PLAYERS.filter(p => p.status === "oficial" && p.fee_value != null);
@@ -1232,6 +1269,7 @@ function renderList() {
           <div class="player-card-right">
             ${badge(p.status)}
             ${feeLabel ? `<span style="font-size:.75rem;color:var(--muted)">${feeLabel}</span>` : ""}
+            ${staleTag(p)}
           </div>
         </div>`;
     }
@@ -1252,11 +1290,22 @@ function renderDetail(id) {
     ? `${p.fromClub} <span style="opacity:.7">→</span> Sporting CP`
     : `Sporting CP <span style="opacity:.7">→</span> ${p.toClub}`;
 
+  const lastNewsStat = (() => {
+    if (!RUMOR_STATUSES.has(p.status) || !p.last_news) return null;
+    const d = daysAgo(p.last_news);
+    const months = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+    const [y, m, day] = p.last_news.split("-");
+    const label = `${parseInt(day)} ${months[parseInt(m)-1]}`;
+    const style = d >= 15 ? `color:var(--status-negociacao)` : d >= 8 ? `color:var(--muted)` : "";
+    return { value: `<span${style ? ` style="${style}"` : ""}>${label} <span style="font-size:.8em;opacity:.75">(há ${d}d)</span></span>`, label: "Última notícia" };
+  })();
+
   const stats = [
     p.position  ? { value: p.position,  label: "Posição" } : null,
     p.age       ? { value: `${p.age} anos`, label: "Idade" } : null,
     p.fee       ? { value: p.fee,        label: "Valor estimado" } : null,
     p.contract  ? { value: p.contract,   label: "Contrato" } : null,
+    lastNewsStat,
   ].filter(Boolean);
 
   const statsHtml = stats.length
@@ -1344,6 +1393,7 @@ function handleRoute() {
 document.getElementById("header-date").textContent =
   new Date().toLocaleDateString("pt-PT", { day: "numeric", month: "long", year: "numeric" });
 document.getElementById("header-updated").textContent = "Actualizado: " + LAST_UPDATED;
+renderCountdown();
 renderList();
 handleRoute();
 window.addEventListener("hashchange", handleRoute);
