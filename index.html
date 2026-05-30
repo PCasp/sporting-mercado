@@ -460,9 +460,11 @@
       color: var(--muted);
       margin-bottom: 10px;
     }
-    .countdown-card-value { font-size: 1.35rem; font-weight: 800; line-height: 1.1; color: var(--text); }
+    .countdown-card-value { font-size: 1.35rem; font-weight: 800; line-height: 1.2; color: var(--text); }
     .countdown-card-value.urgent { color: #dc2626; }
     .countdown-card-sub { font-size: .7rem; color: var(--muted); margin-top: 8px; }
+    .cd-days { display: block; }
+    .cd-time { display: block; font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: .05em; }
 
     @media (max-width: 599px) {
       .countdown-card {
@@ -474,7 +476,8 @@
         margin-top: 0;
       }
       .countdown-card-label { margin-bottom: 0; white-space: nowrap; flex-shrink: 0; }
-      .countdown-card-value { font-size: 1.1rem; }
+      .countdown-card-value { font-size: 1.05rem; }
+      .cd-time { font-size: .9rem; }
       .countdown-card-sub { margin-top: 0; }
     }
 
@@ -1180,26 +1183,34 @@ function staleTag(p) {
 }
 
 function renderCountdown() {
-  const close = new Date("2026-08-31");
-  const today = new Date(); today.setHours(0, 0, 0, 0);
-  const days = Math.round((close - today) / 86400000);
+  const CLOSE = new Date("2026-09-01T00:00:00");
   const valEl = document.getElementById("countdown-value");
   const subEl = document.getElementById("countdown-sub");
   if (!valEl) return;
-  if (days < 0) {
-    valEl.textContent = "—";
-    valEl.className = "countdown-card-value";
-    subEl.textContent = "Janela fechada";
-    return;
+
+  function tick() {
+    const diff = CLOSE - new Date();
+    if (diff <= 0) {
+      valEl.innerHTML = "—";
+      valEl.className = "countdown-card-value";
+      if (subEl) subEl.textContent = "Janela fechada";
+      clearInterval(window._cdTimer);
+      return;
+    }
+    const total = Math.floor(diff / 1000);
+    const d = Math.floor(total / 86400);
+    const h = Math.floor((total % 86400) / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const s = total % 60;
+    const p = n => String(n).padStart(2, "0");
+    valEl.innerHTML = `<span class="cd-days">${d}d</span><span class="cd-time">${p(h)}:${p(m)}:${p(s)}</span>`;
+    valEl.className = "countdown-card-value" + (d <= 7 ? " urgent" : "");
+    if (subEl) subEl.textContent = "fecho: 31 ago 2026";
   }
-  if (days === 0) {
-    valEl.textContent = "Hoje";
-    valEl.className = "countdown-card-value urgent";
-  } else {
-    valEl.textContent = days + "d";
-    valEl.className = "countdown-card-value" + (days <= 7 ? " urgent" : "");
-  }
-  subEl.textContent = "fecho: 31 ago 2026";
+
+  clearInterval(window._cdTimer);
+  tick();
+  window._cdTimer = setInterval(tick, 1000);
 }
 
 // ── BALANCE ──────────────────────────────────────────────────────────────────
