@@ -556,7 +556,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-30 08:35";
+const LAST_UPDATED = "2026-05-30 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1115,13 +1115,30 @@ const PLAYERS = [
       { label: "TransferFeed — Crystal Palace interesse", url: "https://www.transferfeed.com/transfers/ousmane-diomande-sporting-cp-crystal-palace/12358289" },
     ]
   },
+  {
+    id: "giorgi-kochorashvili",
+    name: "Giorgi Kochorashvili",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/405564-1759133137.jpg",
+    emoji: "🇬🇪",
+    position: "MC", age: 26,
+    fromClub: "Sporting CP", toClub: "Levante (interesse)",
+    status: "risco",
+    fee: null, contract: "até 2030",
+    last_news: "2026-05-30",
+    market_value: "€4M",
+    description: "Médio georgiano contratado ao Levante em março de 2025 por €5.5M + €2M variáveis (total potencial €7.5M), com cláusula de rescisão de €80M e contrato até 2030. Realizou 26 jogos pelo Sporting mas nunca se afirmou como titular indiscutível sob Rui Borges. O Levante, clube onde jogou cinco épocas, detém 12.5% de mais-valias e acompanha a sua situação. A 30 de maio o O Jogo revela que o Levante está atento a uma possível saída.",
+    notes: "⚠️ Levante tem 12.5% de mais-valia e acompanha situação (30/05). Saída possível se aparecer proposta.",
+    sources: [
+      { label: "O Jogo — Levante atento à situação de Kochorashvili (30/05)", url: "https://www.ojogo.pt/futebol/artigo/sporting-levante-atento-a-situacao-de-kochorashvili/18090082" },
+    ]
+  },
 ];
 
 // ── UPDATES LOG ─────────────────────────────────────────────────────────────
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-05-30", ids: ["issa-doumbia", "yeremay-hernandez", "luis-suarez"] },
+  { date: "2026-05-30", ids: ["issa-doumbia", "yeremay-hernandez", "luis-suarez", "giorgi-kochorashvili"] },
   { date: "2026-05-29", ids: ["issa-doumbia", "georgios-vagiannidis", "yeremay-hernandez", "joao-palhinha", "ricardo-mangas", "alisson-santos", "morten-hjulmand"] },
   { date: "2026-05-28", ids: ["thierry-correia", "gabriel-silva", "francisco-trincao", "silas-andersen", "koba-koindredi"] },
   { date: "2026-05-27", ids: ["rodrigo-ribeiro", "romulo-junior", "pedro-goncalves", "maxi-araujo"] },
