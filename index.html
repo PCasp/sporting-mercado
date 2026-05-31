@@ -1368,7 +1368,7 @@ function computeRating() {
   const vmOut = PLAYERS.filter(p => CONF_OUT.includes(p.status))
                        .reduce((s, p) => s + (parseVM(p.market_value) || 0), 0);
   const vmNet = vmIn - vmOut;
-  const score4 = Math.max(0, Math.min(10, 5 + vmNet / 8));
+  const score4 = Math.max(0, Math.min(10, 5 + vmNet / 15));
 
   // Index 5: Perda de activos-chave (saida_oficial with VM >= 10M)
   const keyLost = PLAYERS.filter(p => p.status === "saida_oficial" && (parseVM(p.market_value) || 0) >= 10).length;
