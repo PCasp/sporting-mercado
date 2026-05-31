@@ -644,7 +644,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-05-31 08:15";
+const LAST_UPDATED = "2026-05-31 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -762,8 +762,8 @@ const PLAYERS = [
     fee: "Opção de compra ~€30M", contract: null,
     last_news: "2026-05-29",
     market_value: "€18M",
-    description: "Internacional português com 37 caps, excluído da convocatória de Roberto Martínez para o Mundial 2026. Pertence ao Bayern de Munique mas estava emprestado ao Tottenham. A 25 de maio publicou nas redes sociais uma foto a viajar com a família (🏠🇵🇹❤️), confirmando o regresso a Portugal. A 26 de maio publicou no Instagram uma despedida formal ao Tottenham e foi fotografado em Lisboa na companhia de Francisco Trincão, Rúben Amorim e Franco Israel. Aceita um corte salarial drástico (~€9M brutos anuais → mínimo) para regressar a Alvalade. A 29 de maio o acordo pessoal com o Sporting está praticamente fechado — o único obstáculo é convencer o Bayern Munich a aceitar uma estrutura de empréstimo com opção de compra. A 31 de maio o Record revela que o presidente Frederico Varandas assumiu pessoalmente as negociações e que a braçadeira de capitão está reservada para Palhinha, que tomaria o lugar de Hjulmand.",
-    notes: "⚠️ Varandas negoceia pessoalmente; braçadeira prometida (31/05). Único obstáculo: Bayern Munich aceitar empréstimo c/ opção de compra.",
+    description: "Internacional português com 37 caps, excluído da convocatória de Roberto Martínez para o Mundial 2026. Pertence ao Bayern de Munique mas estava emprestado ao Tottenham. A 25 de maio publicou nas redes sociais uma foto a viajar com a família (🏠🇵🇹❤️), confirmando o regresso a Portugal. A 26 de maio publicou no Instagram uma despedida formal ao Tottenham e foi fotografado em Lisboa na companhia de Francisco Trincão, Rúben Amorim e Franco Israel. Aceita um corte salarial drástico (~€9M brutos anuais → mínimo) para regressar a Alvalade. A 29 de maio o acordo pessoal com o Sporting está praticamente fechado. A 31 de maio o Record revela que Varandas assumiu pessoalmente as negociações e que a braçadeira de capitão está reservada para Palhinha. Também a 31 de maio: a família pressiona o regresso (Record às 11h12) e a A Bola confirma que o Tottenham está a sair da corrida — a opção dos spurs expira a 1 de junho, abrindo caminho para negociações directas Sporting–Bayern sobre empréstimo com opção de compra obrigatória.",
+    notes: "🟢 Tottenham sai da corrida (opção expira 1/06). Sporting negoceia directamente com Bayern: empréstimo + opção obrigatória (31/05).",
     last_news: "2026-05-31",
     sources: [
       { label: "Abola — Sporting não quer só Palhinha", url: "https://www.abola.pt/noticias/sporting-nao-quer-so-palhinha-quer-outro-seis-2026051823050822544" },
@@ -774,6 +774,8 @@ const PLAYERS = [
       { label: "Abola — O esforço que Palhinha aceita fazer (28/05)", url: "https://www.abola.pt/noticias/o-esforco-que-palhinha-aceita-fazer-para-jogar-no-sporting-2026052723193820419" },
       { label: "Abola — Cada vez mais perto (29/05)", url: "https://www.abola.pt/noticias/cada-vez-mais-perto-o-que-falta-para-palhinha-ser-reforco-do-sporting-2026052822121618108" },
       { label: "Record — Varandas negoceia; braçadeira prometida (31/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/dose-de-adn-palhinha-tem-bracadeira-a-espera-para-render-hjulmand" },
+      { label: "Record — Família pressiona regresso (31/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/familia-pressiona-para-o-regresso-de-palhinha-ao-sporting" },
+      { label: "Abola — Tottenham sai da corrida; Sporting chega-se à frente (31/05)", url: "https://www.abola.pt/noticias/sporting-tottenham-a-sair-da-corrida-por-palhinha-e-leao-chega-se-a-frente-2026053020225091408" },
     ]
   },
   {
@@ -975,15 +977,16 @@ const PLAYERS = [
     emoji: "🇧🇷",
     position: "Ala esq.", age: 23,
     fromClub: "Sporting CP", toClub: "SSC Napoli",
-    status: "risco",
-    fee: "€16.5M (opção de compra)",
+    status: "saida_fechada",
+    fee: "€20M total (€3.5M empréstimo + €16.5M opção)",
     contract: null,
-    last_news: "2026-05-25",
+    last_news: "2026-05-31",
     market_value: "€28M",
-    description: "Extremo esquerdo brasileiro de 23 anos, propriedade do Sporting CP, cedido ao SSC Napoli desde janeiro de 2026 (taxa de empréstimo: €3.5M já paga). O Nápoles manifestou intenção de exercer a opção de compra de €16.5M antes de meados de junho de 2026, o que totalizaria €20M para o Sporting. Contudo, a opção ainda não foi formalmente exercida.",
-    notes: "⚠️ Opção de compra por €16.5M não confirmada. Nápoles tem até meados de junho para decidir.",
+    description: "Extremo esquerdo brasileiro de 23 anos, propriedade do Sporting CP, cedido ao SSC Napoli desde janeiro de 2026 (taxa de empréstimo: €3.5M já paga). A 31 de maio o O Jogo confirma que o Nápoles vai mesmo exercer a opção de compra de €16.5M antes de 15 de junho de 2026, totalizando €20M para o Sporting. O clube italiano esperou apenas para resolver primeiro a situação do treinador (Allegri substituiu Conte) antes de formalizar o negócio. Alisson marcou 4 golos em 15 jogos pelo Nápoles.",
+    notes: null,
     sources: [
       { label: "A Bola — Nápoles quer ficar com Alisson", url: "https://www.abola.pt/noticias/sporting-napoles-quer-mesmo-ficar-com-alisson-2026052517071739065" },
+      { label: "O Jogo — Nápoles avança mesmo pela opção de compra (31/05)", url: "https://www.ojogo.pt/futebol/artigo/sporting-napoles-avanca-mesmo-por-alisson/18090322" },
     ]
   },
   {
@@ -1230,7 +1233,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-05-31", ids: ["joao-palhinha", "silas-andersen"] },
+  { date: "2026-05-31", ids: ["joao-palhinha", "silas-andersen", "alisson-santos"] },
   { date: "2026-05-30", ids: ["issa-doumbia", "yeremay-hernandez", "luis-suarez", "giorgi-kochorashvili"] },
   { date: "2026-05-29", ids: ["issa-doumbia", "georgios-vagiannidis", "yeremay-hernandez", "joao-palhinha", "ricardo-mangas", "alisson-santos", "morten-hjulmand"] },
   { date: "2026-05-28", ids: ["thierry-correia", "gabriel-silva", "francisco-trincao", "silas-andersen", "koba-koindredi"] },
