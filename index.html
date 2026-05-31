@@ -1360,9 +1360,9 @@ function computeRating() {
     score3 = Math.max(0, Math.min(10, avgSell * 5));
   }
 
-  // Index 4: Reforço do plantel (sum VM confirmed incoming vs outgoing)
-  const CONF_IN  = ["oficial", "fechado"];
-  const CONF_OUT = ["saida_oficial", "saida_fechada"];
+  // Index 4: Reforço do plantel (VM of official transfers only)
+  const CONF_IN  = ["oficial"];
+  const CONF_OUT = ["saida_oficial"];
   const vmIn  = PLAYERS.filter(p => CONF_IN.includes(p.status))
                        .reduce((s, p) => s + (parseVM(p.market_value) || 0), 0);
   const vmOut = PLAYERS.filter(p => CONF_OUT.includes(p.status))
