@@ -651,7 +651,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-02 12:07";
+const LAST_UPDATED = "2026-06-02 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1008,16 +1008,18 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/461496-1725633200.jpg?lm=1",
     emoji: "🇩🇰",
     position: "MD", age: 26,
-    fromClub: "Sporting CP", toClub: "Real Madrid",
+    fromClub: "Sporting CP", toClub: "Atlético de Madrid",
     status: "risco",
-    fee: "Sporting exige ~€50M", contract: null,
-    last_news: "2026-06-01",
+    fee: "Sporting exige ~€40-50M", contract: null,
+    last_news: "2026-06-02",
     market_value: "€45M",
-    description: "Capitão do Sporting CP, o médio dinamarquês é o principal alvo do Real Madrid de Mourinho, que o exige como condição para assumir o cargo. Arsenal e Manchester United também acompanham a situação. O Sporting está disponível para negociar a partir de ~€50M, mas nenhum acordo entre clubes foi confirmado. Após a derrota na final da Taça para o Torreense (1-2 a.e.t.), Hjulmand admitiu: \"Faltou atitude da nossa parte.\" Sobre o Real Madrid: \"É uma grande honra para mim ver o meu nome associado a um clube como o Real Madrid.\" A 1 de junho o Record confirma a estratégia do Sporting de encaixar pelo menos €100M combinados da venda de Hjulmand e Trincão neste verão.",
-    notes: "⚠️ Forte interesse do Real Madrid, sem acordo confirmado. Sporting planeia €100M combinado Hjulmand + Trincão (01/06).",
+    description: "Capitão do Sporting CP, o médio dinamarquês tem interesse de vários grandes clubes. O Real Madrid de Mourinho chegou a ser associado, e Arsenal e Manchester United também acompanham. O Atlético de Madrid é contudo o clube mais activo: em fevereiro de 2026 apresentou uma proposta de €25M (recusada pelo Sporting), e existe um acordo tácito com Hjulmand que lhe permite sair por €40-50M, abaixo da cláusula de €80M. Após a derrota na final da Taça para o Torreense (1-2 a.e.t.), Hjulmand admitiu: \"Faltou atitude da nossa parte.\" Sobre o Real Madrid: \"É uma grande honra para mim ver o meu nome associado a um clube como o Real Madrid.\" A 1 de junho o Record confirma a estratégia do Sporting de encaixar pelo menos €100M combinados da venda de Hjulmand e Trincão neste verão. A 2 de junho o Atlético de Madrid volta à carga: o clube espanhol reporta ter chegado a um acordo pessoal com Hjulmand e prepara nova proposta ao Sporting, oferecendo triplicar o salário (€2M → €6M/ano). Nesse mesmo dia Hjulmand abandonou o estágio da seleção dinamarquesa por lesão.",
+    notes: "🔴 Atlético de Madrid com acordo pessoal reportado. Nova proposta ao Sporting a caminho (~€40-50M, cláusula €80M). Lesão afasta-o da Dinamarca (02/06).",
     sources: [
       { label: "Managing Madrid — Mourinho pede Hjulmand", url: "https://www.managingmadrid.com/107951/hjulmand-real-madrid-news-2026-rumors" },
       { label: "Abola — Rui Borges comenta", url: "https://www.abola.pt/noticias/rui-borges-aborda-a-hipotese-de-mourinho-levar-hjulmand-para-o-real-madrid-2026052208230435247" },
+      { label: "Noticiasaominuto — Atlético volta à carga (02/06)", url: "https://www.noticiasaominuto.com/desporto/2999681/atletico-de-madrid-volta-a-carga-para-levar-hjulmand-do-sporting" },
+      { label: "Abola — Hjulmand deixou estágio da Dinamarca por lesão (02/06)", url: "https://www.abola.pt/noticias/atencao-sporting-hjulmand-deixou-estagio-da-dinamarca-2026060213212967739" },
     ]
   },
   {
@@ -1284,7 +1286,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-02", ids: ["ivan-fresneda", "daniel-braganca", "joao-palhinha", "koba-koindredi"] },
+  { date: "2026-06-02", ids: ["ivan-fresneda", "daniel-braganca", "joao-palhinha", "koba-koindredi", "morten-hjulmand"] },
   { date: "2026-06-01", ids: ["issa-doumbia", "geovany-quenda", "yeremay-hernandez", "joao-palhinha", "francisco-trincao", "morten-hjulmand", "pedro-goncalves", "georgios-vagiannidis", "maxi-araujo"] },
   { date: "2026-05-31", ids: ["joao-palhinha", "silas-andersen", "alisson-santos", "maxi-araujo", "rodrigo-zalazar"] },
   { date: "2026-05-30", ids: ["issa-doumbia", "yeremay-hernandez", "luis-suarez", "giorgi-kochorashvili"] },
