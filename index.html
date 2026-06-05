@@ -651,7 +651,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-05 12:07";
+const LAST_UPDATED = "2026-06-05 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -992,16 +992,17 @@ const PLAYERS = [
     emoji: "🇧🇷",
     position: "Ala esq.", age: 23,
     fromClub: "Sporting CP", toClub: "SSC Napoli",
-    status: "saida_fechada",
-    fee: "€20M total",
+    status: "saida_oficial",
+    fee: "€16.5M (opção) + €3.5M (empréstimo) = €20M total", fee_value: 20, fee_max: 20,
     contract: null,
-    last_news: "2026-05-31",
     market_value: "€28M",
-    description: "Extremo esquerdo brasileiro de 23 anos, propriedade do Sporting CP, cedido ao SSC Napoli desde janeiro de 2026 (taxa de empréstimo: €3.5M já paga). A 31 de maio o O Jogo confirma que o Nápoles vai mesmo exercer a opção de compra de €16.5M antes de 15 de junho de 2026, totalizando €20M para o Sporting. O clube italiano esperou apenas para resolver primeiro a situação do treinador (Allegri substituiu Conte) antes de formalizar o negócio. Alisson marcou 4 golos em 15 jogos pelo Nápoles.",
+    description: "Extremo esquerdo brasileiro de 23 anos, cedido ao SSC Napoli em janeiro de 2026 (taxa de empréstimo: €3.5M). Marcou 4 golos em 15 jogos pelo Nápoles. A 31 de maio o O Jogo confirmou que o Nápoles avançaria pela opção de compra. A 5 de junho de 2026 o Nápoles acionou oficialmente a opção de compra de €16.5M, totalizando €20M recebidos pelo Sporting. Alisson despediu-se: 'Leões, vocês nem imaginam... Consegui ter o verdadeiro sentimento de equipa grande.'",
     notes: null,
     sources: [
       { label: "A Bola — Nápoles quer ficar com Alisson", url: "https://www.abola.pt/noticias/sporting-napoles-quer-mesmo-ficar-com-alisson-2026052517071739065" },
       { label: "O Jogo — Nápoles avança mesmo pela opção de compra (31/05)", url: "https://www.ojogo.pt/futebol/artigo/sporting-napoles-avanca-mesmo-por-alisson/18090322" },
+      { label: "O Jogo — OFICIAL: Nápoles aciona opção de compra (05/06)", url: "https://www.ojogo.pt/futebol/artigo/oficial-napoles-aciona-opcao-de-compra-por-alisson-junto-do-sporting/18092096" },
+      { label: "A Bola — Alisson despede-se do Sporting (05/06)", url: "https://www.abola.pt/noticias/alisson-santos-despede-se-do-sporting-consegui-ter-o-verdadeiro-sentimento-de-equipa-grande" },
     ]
   },
   {
@@ -1151,17 +1152,16 @@ const PLAYERS = [
     status: "risco",
     fee: null, contract: "até 2030",
     market_value: "€30M",
-    description: "Avançado português contratado ao Almério em julho de 2025 por €22.1M. Assinou até 2030. Sagrou-se melhor marcador da Liga (28 golos) e recebeu o Record de Ouro a 30 de maio. A 30 de maio admitiu: 'Tenho contrato mas o futuro é incerto.' Ekrem Konur reportou interesse concreto do Barcelona, Newcastle United e Liverpool; o Record aponta também clubes sauditas. A 3 de junho Fabrizio Romano garantiu que Luís Suárez chegou a acordo nos termos pessoais com o projeto do Fenerbahçe apoiado pelo candidato presidencial Hakan Safi — mas o negócio está condicionado ao resultado das eleições do clube turco (previstas para 6-7 de junho) e à negociação de valores com o Sporting. O Sporting não recebeu proposta formal e não quer vender. A 4 de junho Hakan Safi declarou publicamente que acompanha Suárez há meses: 'Encontrei-me com ele duas vezes' e 'prometeu-me que será o melhor marcador da liga turca.' Suárez encontra-se neste momento concentrado com a Colômbia na preparação para o Mundial 2026. O Sporting não quer vender e a cláusula de rescisão é de €80M.",
-    notes: "🔴 Hakan Safi confirma: 'Encontrei-me com ele duas vezes' (04/06). Eleições Fenerbahçe a 6-7/06 ditam o próximo passo. Sporting sem proposta e não quer vender.",
-    last_news: "2026-06-04",
+    description: "Avançado português contratado ao Almério em julho de 2025 por €22.1M. Assinou até 2030. Sagrou-se melhor marcador da Liga (28 golos). A 30 de maio admitiu: 'Tenho contrato mas o futuro é incerto.' Ekrem Konur reportou interesse concreto do Barcelona, Newcastle United e Liverpool; o Record aponta também clubes sauditas. A 3 de junho Fabrizio Romano garantiu que Luís Suárez chegou a acordo pessoal com o projeto Fenerbahçe/Hakan Safi. A 4 de junho Safi declarou: 'Encontrei-me com ele duas vezes — prometeu-me que será o melhor marcador da liga turca.' A 5 de junho Safi foi mais longe: 'Também falámos com o Sporting.' Frederico Varandas reagiu publicamente, acusando o candidato de aplicar 'estratégias de campanha sujas', comparando ao falso rumor do Atlético/Hjulmand, e fixou o preço de Suárez em €80M — o valor da cláusula de rescisão. Suárez reagiu nas redes sociais com uma passagem bíblica, sem comentário direto. O negócio está condicionado às eleições do Fenerbahçe (6-7 jun).",
+    notes: "🔴 Varandas nega negociação e fixa preço em €80M (05/06). Safi diz ter falado com o Sporting. Eleições Fenerbahçe 6-7/06 ditam o próximo passo.",
+    last_news: "2026-06-05",
     sources: [
       { label: "@Ekremkonur / X", url: "https://x.com/Ekremkonur/status/2048125609092530379" },
       { label: "Record — 'O futuro é incerto' (30/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/luis-suarez-aborda-possivel-transferencia-tenho-contrato-mas-o-futuro-e-incerto" },
-      { label: "Record — Record de Ouro (30/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/luis-suarez-recebe-record-de-ouro-matador-promete-leao-a-rugir-em-2026-27" },
       { label: "BlogVisãodeMercado — Romano: acordo com Fenerbahçe (03/06)", url: "https://blogvisaodemercado.pt/romano-garante-luis-suarez-tem-acordo-com-o-fenerbahce/" },
-      { label: "Abola — Fenerbahçe mexe com Suárez (03/06)", url: "https://www.abola.pt/noticias/sporting-fenerbahce-mexe-com-luis-suarez-2026060317235162752" },
-      { label: "O Jogo — Suárez com acordo com candidato à presidência do Fenerbahçe (03/06)", url: "https://www.ojogo.pt/futebol/artigo/luis-suarez-tera-acordo-com-candidato-a-presidencia-do-fenerbahce/18091558" },
       { label: "Record — Hakan Safi: 'Encontrei-me com Suárez duas vezes' (04/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/hakan-safi-garante-que-acompanha-luis-suarez-ha-meses-encontrei-me-com-ele-duas-vezes" },
+      { label: "A Bola — Hakan Safi: 'Também falámos com o Sporting' (05/06)", url: "https://www.abola.pt/noticias/hakan-safi-volta-a-falar-de-luis-suarez-tambem-falamos-com-o-sporting" },
+      { label: "BlogVisãodeMercado — Varandas reage: 'estratégias sujas', preço €80M (05/06)", url: "https://blogvisaodemercado.pt/suarez-conheco-muito-bem-o-diretor-de-campanha-do-candidato-que-vive-na-cidade-do-porto-e-sabemos-bem-o-manual-que-ele-aplica-ele-e-os-seus-amigos/" },
     ]
   },
   {
@@ -1312,7 +1312,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen"] },
+  { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen", "alisson-santos", "luis-suarez"] },
   { date: "2026-06-04", ids: ["souleymane-faye", "silas-andersen", "luis-suarez", "ivan-fresneda"] },
   { date: "2026-06-03", ids: ["bruno-ramos", "silas-andersen", "luis-suarez"] },
   { date: "2026-06-02", ids: ["ivan-fresneda", "daniel-braganca", "joao-palhinha", "koba-koindredi", "morten-hjulmand"] },
