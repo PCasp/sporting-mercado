@@ -651,7 +651,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-04 18:03";
+const LAST_UPDATED = "2026-06-05 08:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -798,8 +798,8 @@ const PLAYERS = [
     fee: "€7.25M + €2.75M variáveis", contract: "até 2031",
     market_value: "€2M",
     description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. O Häcken aceitou oficialmente a proposta do Sporting de €7.25M + €2.75M em variáveis (total: €10M) — contrato até 2031 com cláusula de rescisão de €80M. Concorrência de Cologne, Celtic e Rangers foi ultrapassada. A 26 de maio declarou: 'O Sporting é um grande clube. Estou 100% interessado. Creio que está perto.' A 27 de maio o Record revela que já falou directamente com o Sporting. A 30 de maio confirmado que viajaria para Lisboa após a despedida. A 31 de maio marcou um golo no jogo de despedida pelo Häcken frente ao Hammarby. A 3 de junho o O Jogo reporta que o Häcken já dá Silas como perdido. A 4 de junho a A Bola e o Record confirmam que o negócio está definitivamente fechado: Silas viaja a Lisboa ainda hoje (4 de junho), realiza os exames médicos no sábado e assina o contrato de 5 épocas no mesmo dia.",
-    notes: "🟢 Negócio fechado. Viaja a Lisboa a 4/06, exames médicos + assinatura no sábado 5/06. Aguarda anúncio oficial.",
-    last_news: "2026-06-04",
+    notes: "🟢 Negócio fechado. Exames médicos e assinatura do contrato realizados a 5/06 em Lisboa. Aguarda anúncio oficial do Sporting.",
+    last_news: "2026-06-05",
     sources: [
       { label: "Record — Häcken aceita, transferência por horas", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/hacken-aceita-oferta-do-sporting-por-silas-andersen-e-a-tranferencia-esta-por-horas" },
       { label: "Record — Proposta de €7+3M apresentada", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-apresentou-proposta-de-7-3-milhoes-de-euros-por-silas-andersen-avancam-dinamarqueses" },
@@ -1112,15 +1112,16 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/549006-1716296254.jpg?lm=1",
     emoji: "🇵🇹",
     position: "DC", age: 24,
-    fromClub: "Sporting CP", toClub: "Manchester United (rumor)",
+    fromClub: "Sporting CP", toClub: "AC Milan / Manchester United (interesse)",
     status: "risco",
     fee: null, contract: null,
-    last_news: "2026-05-22",
+    last_news: "2026-06-05",
     market_value: "€40M",
-    description: "Defesa central português formado em Alvalade, um dos mais completos da sua geração. Rúben Amorim, no Manchester United, é apontado como interessado, mas não há acordo nem negociação confirmada. O Sporting não quer vender a menos do valor de mercado.",
-    notes: null,
+    description: "Defesa central português formado em Alvalade desde 2012, 259 jogos pelo plantel principal, capitão e pilar defensivo. Rúben Amorim no Manchester United havia sido apontado como interessado, sem negociação confirmada. A 5 de junho o Record reporta que o AC Milan encetou os primeiros contactos para perceber as condições de uma eventual transferência — os italianos querem levar o central à Serie A antes de o mercado oficial abrir. Sem proposta formal, o Sporting não declarou intenção de vender.",
+    notes: "⚠️ AC Milan encetou primeiros contactos (05/06). Man United também no radar. Sporting sem intenção de vender.",
     sources: [
       { label: "TransferFeed — Rumor Man United", url: "https://www.transferfeed.com/transfers/goncalo-inacio-sporting-cp-manchester-united/288988" },
+      { label: "Record — Milan trabalha Gonçalo Inácio (05/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/milan-esta-a-trabalhar-goncalo-inacio-italianos-querem-levar-central-e-capitao-do-sporting" },
     ]
   },
   {
@@ -1311,13 +1312,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen"] },
   { date: "2026-06-04", ids: ["souleymane-faye", "silas-andersen", "luis-suarez", "ivan-fresneda"] },
   { date: "2026-06-03", ids: ["bruno-ramos", "silas-andersen", "luis-suarez"] },
   { date: "2026-06-02", ids: ["ivan-fresneda", "daniel-braganca", "joao-palhinha", "koba-koindredi", "morten-hjulmand"] },
   { date: "2026-06-01", ids: ["issa-doumbia", "geovany-quenda", "yeremay-hernandez", "joao-palhinha", "francisco-trincao", "morten-hjulmand", "pedro-goncalves", "georgios-vagiannidis", "maxi-araujo"] },
   { date: "2026-05-31", ids: ["joao-palhinha", "silas-andersen", "alisson-santos", "maxi-araujo", "rodrigo-zalazar"] },
   { date: "2026-05-30", ids: ["issa-doumbia", "yeremay-hernandez", "luis-suarez", "giorgi-kochorashvili"] },
-  { date: "2026-05-29", ids: ["issa-doumbia", "georgios-vagiannidis", "yeremay-hernandez", "joao-palhinha", "ricardo-mangas", "alisson-santos", "morten-hjulmand"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
