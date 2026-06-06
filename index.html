@@ -651,7 +651,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-06 08:15";
+const LAST_UPDATED = "2026-06-06 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -900,6 +900,23 @@ const PLAYERS = [
     ]
   },
   {
+    id: "zan-vipotnik",
+    name: "Zan Vipotnik",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/506942-1716317342.jpg",
+    emoji: "🇸🇮",
+    position: "Avançado", age: 24,
+    fromClub: "Swansea City", toClub: "Sporting CP",
+    status: "analise",
+    fee: null, contract: "até 2030",
+    last_news: "2026-06-05",
+    market_value: "€22M",
+    description: "Avançado esloveno de 24 anos em grande época pelo Swansea City na Championship inglesa: 25 golos e 3 assistências em 49 jogos. O Sporting identificou-o como potencial plano B para o ataque caso Luís Suárez saia pelo valor da cláusula de €80M. O Record revela que, 'nesta fase, não houve qualquer abordagem'. Interesse estritamente condicionado à saída de Suárez.",
+    notes: "⚠️ Plano B contingente — só avança se Suárez sair. Nenhuma abordagem efectuada (05/06).",
+    sources: [
+      { label: "Record — Vipotnik como plano B caso Suárez saia (05/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-pensa-em-alternativa-caso-luis-suarez-saia-zan-vipotnik-e-um-possivel-plano-b" },
+    ]
+  },
+  {
     id: "bruno-ramos",
     name: "Bruno Ramos",
     photo: "https://img.a.transfermarkt.technology/portrait/big/1092432-1766504864.jpg?lm=1",
@@ -914,6 +931,7 @@ const PLAYERS = [
     sources: [
       { label: "Record — Opção de compra €2M", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-opcao-do-sporting-por-bruno-ramos-e-de-2-milhoes-de-euros" },
       { label: "Record — Assinou em definitivo por 5 temporadas (03/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-garante-reforco-para-a-defesa-bruno-ramos-assinou-em-definitivo-por-cinco-temporadas" },
+      { label: "O Jogo — Confirma acordo por 5 épocas (06/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-bruno-ramos-confirma-acordo-por-cinco-epocas/18092357" },
     ]
   },
   {
@@ -1312,7 +1330,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-06", ids: ["silas-andersen"] },
+  { date: "2026-06-06", ids: ["silas-andersen", "zan-vipotnik", "bruno-ramos"] },
   { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen", "alisson-santos", "luis-suarez"] },
   { date: "2026-06-04", ids: ["souleymane-faye", "silas-andersen", "luis-suarez", "ivan-fresneda"] },
   { date: "2026-06-03", ids: ["bruno-ramos", "silas-andersen", "luis-suarez"] },
