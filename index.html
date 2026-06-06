@@ -651,7 +651,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-06 12:07";
+const LAST_UPDATED = "2026-06-06 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1115,15 +1115,16 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/701979-1764374966.jpg?lm=1",
     emoji: "🇲🇿",
     position: "Ala dto.", age: 25,
-    fromClub: "Sporting CP", toClub: "Por confirmar",
+    fromClub: "Sporting CP", toClub: "Como FC (interesse)",
     status: "risco",
     fee: null, contract: "até 2028",
-    last_news: "2026-05-26",
+    last_news: "2026-06-06",
     market_value: "€25M",
-    description: "Extremo direito moçambicano de 25 anos, um dos jogadores mais rápidos do plantel com 30+ jogos esta época. O treinador Cesc Fàbregas mantém interesse persistente na sua contratação — o clube de Fàbregas 'não larga' o jogador. Com contrato até 2028 e valor de mercado de €20M, o Sporting não tem obrigação de vender.",
-    notes: "⚠️ Fàbregas não larga Catamo (26/05). Interesse persistente.",
+    description: "Extremo direito moçambicano de 25 anos, um dos jogadores mais rápidos do plantel com 30+ jogos esta época. Cesc Fàbregas, treinador do Como FC na sua primeira época na Champions League, 'não larga' o jogador. A 6 de junho a A Bola revela que o Como apresentou uma proposta de €25M — recorde do clube, acima dos €22.5M gastos em Jesús Rodríguez — mas o Sporting recusou, considerando a oferta insuficiente. O clube passou a valorizar Catamo em €30M+ após a forte época 24/25 e só negoceia próximo da cláusula de rescisão de €60M. O Sporting trata-o como intransferível, a par de Fresneda, Diomande e Maxi Araújo.",
+    notes: "⚠️ Como propôs €25M (06/06) — Sporting recusou, pede perto da cláusula de €60M. Intransferível para a direcção.",
     sources: [
       { label: "A Bola — Fàbregas não larga Catamo (26/05)", url: "https://www.abola.pt/noticias/sporting-fabregas-nao-larga-geny-catamo-2026052616580229518" },
+      { label: "A Bola — Como propõe €25M, Sporting recusa (06/06)", url: "https://www.abola.pt/noticias/mercado-como-quer-bater-recorde-por-geny-mas-nao-convence-o-sporting-2026060617004130706" },
     ]
   },
   {
@@ -1313,15 +1314,16 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/666971-1773786729.jpg?lm=1",
     emoji: "🇸🇳",
     position: "Ala dto.", age: 23,
-    fromClub: "Sporting CP", toClub: "Por confirmar",
+    fromClub: "Sporting CP", toClub: "Por confirmar (empréstimo España provável)",
     status: "risco",
     fee: null, contract: "até 2030",
-    last_news: "2026-06-04",
+    last_news: "2026-06-06",
     market_value: "€3M",
-    description: "Extremo direito senegalês de 23 anos, contratado ao Granada CF em janeiro de 2026 por ~€6.5M. Em 6 meses no Sporting disputou apenas 9 jogos (maioritariamente da bancada, 1 assistência) e não convenceu a liderança do clube. A 4 de junho o Noticiasaominuto reporta que Faye tem 'guia de marcha' para o verão — pode sair em empréstimo ou definitivamente. Tem contrato até 2030 e cláusula de rescisão de €80M.",
-    notes: "🔴 Fora dos planos de Rui Borges. Saída prevista em empréstimo ou definitiva (04/06).",
+    description: "Extremo direito senegalês de 23 anos, contratado ao Granada CF em janeiro de 2026 por ~€6.5M. Em 6 meses no Sporting disputou apenas 9 jogos (161 minutos, 1 assistência) e não justificou o investimento. A 4 de junho o Noticiasaominuto reporta que Faye tem 'guia de marcha' — saída em empréstimo ou definitiva. A 6 de junho a A Bola confirma que não faz parte dos planos para 2026/27: o clube procura activamente uma saída, com empréstimo para a Segunda División espanhola como opção mais provável para que recupere ritmo competitivo. Contrato até 2030, cláusula de rescisão de €80M.",
+    notes: "🔴 Não faz parte dos planos 26/27. Sporting procura saída activamente — empréstimo à España provável (06/06).",
     sources: [
       { label: "Noticiasaominuto — Faye com 'guia de marcha' (04/06)", url: "https://www.noticiasaominuto.com/desporto/3000498/chegar-ver-e-sair-faye-com-guia-de-marcha-do-sporting-no-verao" },
+      { label: "A Bola — Não convenceu, deve voltar para donde veio (06/06)", url: "https://www.abola.pt/noticias/nao-convenceu-no-sporting-e-deve-voltar-para-donde-veio-2026060613125104057" },
     ]
   },
 ];
@@ -1330,7 +1332,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-06", ids: ["silas-andersen", "zan-vipotnik", "bruno-ramos"] },
+  { date: "2026-06-06", ids: ["silas-andersen", "zan-vipotnik", "bruno-ramos", "geny-catamo", "souleymane-faye"] },
   { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen", "alisson-santos", "luis-suarez"] },
   { date: "2026-06-04", ids: ["souleymane-faye", "silas-andersen", "luis-suarez", "ivan-fresneda"] },
   { date: "2026-06-03", ids: ["bruno-ramos", "silas-andersen", "luis-suarez"] },
