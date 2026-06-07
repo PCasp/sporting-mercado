@@ -747,7 +747,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-06 18:03";
+const LAST_UPDATED = "2026-06-07 10:30";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -890,9 +890,9 @@ const PLAYERS = [
     emoji: "🇩🇰",
     position: "MD", age: 21,
     fromClub: "BK Häcken", toClub: "Sporting CP",
-    status: "oficial",
+    status: "fechado",
     fee: "€7.25M + €2.75M variáveis", contract: "até 2031",
-    fee_value: 7.25, fee_max: 10,
+    fee_value: null, fee_max: null,
     market_value: "€2M",
     description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. O Häcken aceitou oficialmente a proposta do Sporting de €7.25M + €2.75M em variáveis (total: €10M) — contrato até 2031 com cláusula de rescisão de €80M. Concorrência de Cologne, Celtic e Rangers foi ultrapassada. A 26 de maio declarou: 'O Sporting é um grande clube. Estou 100% interessado. Creio que está perto.' A 30 de maio confirmado que viajaria para Lisboa após a despedida. A 31 de maio marcou um golo no jogo de despedida pelo Häcken frente ao Hammarby. A 4 de junho a A Bola e o Record confirmam negócio definitivamente fechado. A 5 de junho realizou exames médicos e assinou contrato de 5 épocas em Lisboa. A 6 de junho aterrou em Portugal e declarou: «Estou feliz por estar aqui.»",
     notes: null,
@@ -1428,13 +1428,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-06-07", ids: ["silas-andersen"] },
   { date: "2026-06-06", ids: ["silas-andersen", "zan-vipotnik", "bruno-ramos", "geny-catamo", "souleymane-faye"] },
   { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen", "alisson-santos", "luis-suarez"] },
   { date: "2026-06-04", ids: ["souleymane-faye", "silas-andersen", "luis-suarez", "ivan-fresneda"] },
   { date: "2026-06-03", ids: ["bruno-ramos", "silas-andersen", "luis-suarez"] },
   { date: "2026-06-02", ids: ["ivan-fresneda", "daniel-braganca", "joao-palhinha", "koba-koindredi", "morten-hjulmand"] },
   { date: "2026-06-01", ids: ["issa-doumbia", "geovany-quenda", "yeremay-hernandez", "joao-palhinha", "francisco-trincao", "morten-hjulmand", "pedro-goncalves", "georgios-vagiannidis", "maxi-araujo"] },
-  { date: "2026-05-31", ids: ["joao-palhinha", "silas-andersen", "alisson-santos", "maxi-araujo", "rodrigo-zalazar"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
