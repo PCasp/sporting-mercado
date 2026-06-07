@@ -643,6 +643,29 @@
     }
     .view-all-link:hover { background: var(--green-light); }
 
+    /* ── POSITION MAP ── */
+    .pos-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 20px; }
+    .pos-cell { background: var(--card); border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 4px 8px; text-align: center; }
+    .pos-cell-label { font-size: .82rem; font-weight: 800; color: var(--text); margin-bottom: 6px; letter-spacing: .02em; }
+    .pos-indicators { display: flex; justify-content: center; gap: 3px; flex-wrap: wrap; min-height: 20px; align-items: center; }
+    .pos-ind { font-size: .6rem; font-weight: 700; border-radius: 999px; padding: 2px 5px; line-height: 1.3; white-space: nowrap; }
+    .pos-ind-in-conf  { background: var(--status-oficial-bg);      color: var(--status-oficial); }
+    .pos-ind-in-talk  { background: var(--status-negociacao-bg);    color: var(--status-negociacao); }
+    .pos-ind-out-conf { background: var(--status-saida-oficial-bg); color: var(--status-saida-oficial); }
+    .pos-ind-out-risk { background: var(--status-risco-bg);         color: var(--status-risco); }
+
+    /* ── HEADLINES ── */
+    .headline-card {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 12px; margin-bottom: 8px; cursor: pointer; transition: box-shadow .12s;
+    }
+    .headline-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+    .headline-icon { font-size: 1rem; flex-shrink: 0; line-height: 1.5; }
+    .headline-body { flex: 1; min-width: 0; }
+    .headline-text { font-size: .82rem; line-height: 1.45; color: var(--text); }
+    .headline-player { font-size: .7rem; color: var(--muted); margin-top: 4px; font-weight: 600; }
+
     .cat-btn {
       display: block; width: 100%; background: var(--card); border: 1px solid var(--border);
       border-radius: 12px; padding: 16px; margin-bottom: 10px; cursor: pointer;
@@ -2002,6 +2025,20 @@ function toggleSection(el) {
   el.nextElementSibling.classList.toggle("collapsed");
 }
 
+function posGroup(pos) {
+  if (!pos) return null;
+  const p = pos.toLowerCase();
+  if (p === "gr" || p.includes("guarda")) return "GR";
+  if (p === "dc") return "DC";
+  if (p === "ld" || p === "lateral dto") return "LD";
+  if (p === "le" || (p.includes("lateral") && p.includes("esq"))) return "LE";
+  if (p === "md") return "MD";
+  if (p === "mc" || p.includes("ofensivo")) return "MC";
+  if (p.includes("ala")) return "EXT";
+  if (p.includes("avan")) return "AV";
+  return null;
+}
+
 function renderDashboard() {
   const todayPlayers = getTodayUpdates();
   const { net, totalIn, totalOut } = computeBalance();
@@ -2051,6 +2088,67 @@ function renderDashboard() {
     recentHtml += `<div style="height:8px"></div>`;
   }
 
+  // ── Position map ──
+  const POS_GROUPS = ["GR","DC","LD","LE","MD","MC","EXT","AV"];
+  const POS_NAMES  = { GR:"GR", DC:"DC", LD:"LD", LE:"LE", MD:"MD", MC:"MC", EXT:"EXT", AV:"AV" };
+  const posData = {};
+  POS_GROUPS.forEach(g => posData[g] = { inConf:0, inTalk:0, outConf:0, outRisk:0 });
+  for (const p of PLAYERS) {
+    const g = posGroup(p.position);
+    if (!g) continue;
+    if (["oficial","fechado"].includes(p.status))           posData[g].inConf++;
+    else if (["negociacao","analise"].includes(p.status))   posData[g].inTalk++;
+    else if (["saida_oficial","saida_fechada"].includes(p.status)) posData[g].outConf++;
+    else if (p.status === "risco")                          posData[g].outRisk++;
+  }
+  const posMapHtml = `<div class="dash-section-label">🗺️ Mapa de posições</div>
+    <div class="pos-map">` +
+    POS_GROUPS.map(g => {
+      const d = posData[g];
+      const inds = [
+        d.inConf  ? `<span class="pos-ind pos-ind-in-conf">↓${d.inConf}</span>`  : "",
+        d.inTalk  ? `<span class="pos-ind pos-ind-in-talk">↓${d.inTalk}</span>`  : "",
+        d.outConf ? `<span class="pos-ind pos-ind-out-conf">↑${d.outConf}</span>` : "",
+        d.outRisk ? `<span class="pos-ind pos-ind-out-risk">↑${d.outRisk}</span>` : "",
+      ].join("");
+      return `<div class="pos-cell">
+        <div class="pos-cell-label">${g}</div>
+        <div class="pos-indicators">${inds || '<span style="font-size:.6rem;color:var(--muted)">—</span>'}</div>
+      </div>`;
+    }).join("") + `</div>`;
+
+  // ── Headlines ──
+  const HEADLINE_STATUS_PRIO = { risco:0, negociacao:1, analise:2, fechado:3, saida_fechada:4, saida_oficial:5, oficial:6 };
+  const headlinePlayers = PLAYERS
+    .filter(p => p.notes)
+    .sort((a, b) => {
+      const pa = HEADLINE_STATUS_PRIO[a.status] ?? 99;
+      const pb = HEADLINE_STATUS_PRIO[b.status] ?? 99;
+      if (pa !== pb) return pa - pb;
+      return (b.last_news || "0").localeCompare(a.last_news || "0");
+    });
+  let headlinesHtml = "";
+  if (headlinePlayers.length) {
+    headlinesHtml = `<div class="dash-section-label">📰 Manchetes</div>`;
+    headlinesHtml += headlinePlayers.slice(0, 4).map(p => {
+      const note = p.notes.trim();
+      const spaceIdx = note.indexOf(" ");
+      const icon = spaceIdx > 0 ? note.slice(0, spaceIdx) : "📌";
+      const text = spaceIdx > 0 ? note.slice(spaceIdx + 1) : note;
+      const dir  = ["saida_oficial","saida_fechada","risco"].includes(p.status) ? "↑" : "↓";
+      return `<div class="headline-card" onclick="showDetail('${p.id}')">
+        <div class="headline-icon">${icon}</div>
+        <div class="headline-body">
+          <div class="headline-text">${text}</div>
+          <div class="headline-player">${dir} ${p.name} · ${p.position}</div>
+        </div>
+      </div>`;
+    }).join("");
+    if (headlinePlayers.length > 4)
+      headlinesHtml += `<div class="view-all-link" onclick="showSaidas()">${headlinePlayers.length - 4} rumores ativos adicionais →</div>`;
+    headlinesHtml += `<div style="height:8px"></div>`;
+  }
+
   document.getElementById("dashboard-content").innerHTML = `
     <div class="stats-row">
       <div class="stat-card" onclick="showBalance()">
@@ -2070,6 +2168,8 @@ function renderDashboard() {
       </div>
     </div>
     ${recentHtml}
+    ${headlinesHtml}
+    ${posMapHtml}
     <div class="dash-section-label">Navegar por categoria</div>
     <button class="cat-btn entradas" onclick="showEntradas()">
       <div class="cat-btn-row">
