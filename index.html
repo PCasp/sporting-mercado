@@ -720,10 +720,7 @@
     <span>Sporting CP · Mercado Verão 2026</span>
   </div>
   <div class="header-right">
-    <div class="header-dates">
-      <span class="header-date" id="header-date"></span>
-      <span class="header-updated" id="header-updated"></span>
-    </div>
+    <span class="header-updated" id="header-updated"></span>
     <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Alternar modo escuro">🌙</button>
   </div>
 </header>
@@ -2298,8 +2295,6 @@ function toggleTheme() {
 if (document.documentElement.getAttribute("data-theme") === "dark") {
   document.getElementById("theme-toggle").textContent = "☀️";
 }
-document.getElementById("header-date").textContent =
-  new Date().toLocaleDateString("pt-PT", { day: "numeric", month: "long", year: "numeric" });
 document.getElementById("header-updated").textContent = "Actualizado: " + LAST_UPDATED;
 handleRoute();
 window.addEventListener("hashchange", handleRoute);
