@@ -653,6 +653,7 @@
     .pos-ind-in-talk  { background: var(--status-negociacao-bg);    color: var(--status-negociacao); }
     .pos-ind-out-conf { background: var(--status-saida-oficial-bg); color: var(--status-saida-oficial); }
     .pos-ind-out-risk { background: var(--status-risco-bg);         color: var(--status-risco); }
+    .pos-legend { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; font-size: .65rem; color: var(--muted); margin-top: -12px; margin-bottom: 20px; }
 
     /* ── HEADLINES ── */
     .headline-card {
@@ -2115,7 +2116,13 @@ function renderDashboard() {
         <div class="pos-cell-label">${g}</div>
         <div class="pos-indicators">${inds || '<span style="font-size:.6rem;color:var(--muted)">—</span>'}</div>
       </div>`;
-    }).join("") + `</div>`;
+    }).join("") + `</div>
+    <div class="pos-legend">
+      <span class="pos-ind pos-ind-in-conf">↓</span> Confirmado
+      <span class="pos-ind pos-ind-in-talk" style="margin-left:6px">↓</span> Em negociação
+      <span class="pos-ind pos-ind-out-conf" style="margin-left:6px">↑</span> Saída conf.
+      <span class="pos-ind pos-ind-out-risk" style="margin-left:6px">↑</span> Em risco
+    </div>`;
 
   // ── Headlines ──
   const HEADLINE_STATUS_PRIO = { risco:0, negociacao:1, analise:2, fechado:3, saida_fechada:4, saida_oficial:5, oficial:6 };
@@ -2144,8 +2151,6 @@ function renderDashboard() {
         </div>
       </div>`;
     }).join("");
-    if (headlinePlayers.length > 4)
-      headlinesHtml += `<div class="view-all-link" onclick="showSaidas()">${headlinePlayers.length - 4} rumores ativos adicionais →</div>`;
     headlinesHtml += `<div style="height:8px"></div>`;
   }
 
