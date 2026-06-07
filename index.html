@@ -576,6 +576,97 @@
       .rating-grade { font-size: 1.4rem; }
       .rating-score-sub, .rating-card-hint { display: none; }
     }
+
+    /* ── DASHBOARD ── */
+    #dashboard-view { max-width: 680px; margin: 0 auto; padding: 16px 16px 48px; }
+
+    .today-strip {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--status-negociacao-bg); border: 1px solid #fcd34d;
+      border-radius: 10px; padding: 11px 14px; margin-bottom: 12px;
+      cursor: pointer; font-size: .88rem; font-weight: 600;
+      color: var(--status-negociacao); transition: opacity .12s;
+    }
+    .today-strip:hover { opacity: .8; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 20px; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 14px 10px; text-align: center; cursor: pointer;
+      transition: box-shadow .15s;
+    }
+    .stat-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); }
+    .stat-card-label { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 8px; }
+    .stat-card-value { font-size: 1.2rem; font-weight: 800; line-height: 1.1; }
+    .stat-card-value.positive { color: var(--green); }
+    .stat-card-value.negative { color: #dc2626; }
+    .stat-card-sub { font-size: .65rem; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+
+    .dash-section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 10px; }
+
+    .dash-recent-card {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 12px; margin-bottom: 8px;
+      cursor: pointer; transition: box-shadow .12s;
+    }
+    .dash-recent-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+    .dash-recent-info { flex: 1; min-width: 0; }
+    .dash-recent-name { font-size: .88rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .dash-recent-meta { font-size: .72rem; color: var(--muted); margin-top: 2px; }
+    .dash-recent-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+
+    .view-all-link {
+      display: block; text-align: center; font-size: .78rem; font-weight: 600;
+      color: var(--green-dark); padding: 10px; cursor: pointer;
+      border: 1px solid var(--border); border-radius: 8px; background: var(--card);
+      margin-top: 4px; transition: background .12s;
+    }
+    .view-all-link:hover { background: var(--green-light); }
+
+    .cat-btn {
+      display: block; width: 100%; background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px; margin-bottom: 10px; cursor: pointer;
+      text-align: left; transition: box-shadow .15s, transform .1s; color: var(--text);
+      font-family: inherit;
+    }
+    .cat-btn:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); transform: translateY(-1px); }
+    .cat-btn.entradas { border-left: 4px solid var(--green); }
+    .cat-btn.saidas   { border-left: 4px solid var(--status-saida-oficial); }
+    .cat-btn-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+    .cat-btn-title { font-size: .95rem; font-weight: 700; }
+    .cat-btn-count { font-size: 1.05rem; font-weight: 800; }
+    .cat-btn-count.c-entrada { color: var(--green); }
+    .cat-btn-count.c-saida   { color: var(--status-saida-oficial); }
+    .cat-btn-sub { font-size: .72rem; color: var(--muted); }
+
+    /* ── CATEGORY VIEWS ── */
+    #entradas-view, #saidas-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
+    .cat-view-header { padding: 14px 16px; background: var(--card); border-bottom: 1px solid var(--border); }
+    .cat-view-title { font-size: 1rem; font-weight: 700; }
+    .cat-view-sub   { font-size: .78rem; color: var(--muted); margin-top: 3px; }
+
+    .col-sec-title {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; user-select: none;
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); margin: 24px 0 10px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .col-sec-title:first-child { margin-top: 0; }
+    .col-sec-chevron { transition: transform .2s; display: inline-block; }
+    .col-sec-title.collapsed .col-sec-chevron { transform: rotate(-90deg); }
+    .col-sec-body.collapsed { display: none; }
+
+    .today-badge {
+      font-size: .58rem; font-weight: 700;
+      background: var(--status-negociacao-bg); color: var(--status-negociacao);
+      border-radius: 999px; padding: 2px 6px; white-space: nowrap;
+    }
+
+    /* view fade-in */
+    .page.active { animation: pgFadeIn .15s ease; }
+    @keyframes pgFadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -594,40 +685,26 @@
   </div>
 </header>
 
-<!-- LIST VIEW -->
-<div id="list-view" class="page active">
-  <div id="list-layout">
-    <div id="players-column"></div>
-    <div id="balance-side">
-      <div class="updates-card" onclick="showUpdates()">
-        <div class="updates-card-label">📰 Hoje</div>
-        <div id="updates-chip-content"></div>
-        <div class="updates-card-hint">ver detalhe →</div>
-      </div>
-      <div class="balance-card" onclick="showBalance()">
-        <div class="balance-card-label">💰 Saldo</div>
-        <div class="balance-card-value" id="balance-chip"></div>
-        <div class="balance-card-sub" id="balance-sub"></div>
-        <div class="balance-card-hint">ver detalhe →</div>
-      </div>
-      <div class="countdown-card">
-        <div class="countdown-card-label">⏳ Janela</div>
-        <div class="countdown-card-value" id="countdown-value"></div>
-        <div class="countdown-card-sub" id="countdown-sub"></div>
-      </div>
-      <div class="rating-card" onclick="showRating()">
-        <div class="rating-card-label">🏆 Avaliação</div>
-        <div class="rating-grade" id="rating-grade-chip"></div>
-        <div class="rating-score-sub" id="rating-score-sub"></div>
-        <div class="rating-card-hint">ver detalhe →</div>
-      </div>
-    </div>
-  </div>
+<!-- DASHBOARD VIEW -->
+<div id="dashboard-view" class="page active">
+  <div id="dashboard-content"></div>
+</div>
+
+<!-- ENTRADAS VIEW -->
+<div id="entradas-view" class="page">
+  <div class="detail-back" onclick="showDashboard()">← Voltar</div>
+  <div id="entradas-content"></div>
+</div>
+
+<!-- SAIDAS VIEW -->
+<div id="saidas-view" class="page">
+  <div class="detail-back" onclick="showDashboard()">← Voltar</div>
+  <div id="saidas-content"></div>
 </div>
 
 <!-- DETAIL VIEW -->
 <div id="detail-view" class="page">
-  <div class="detail-back" onclick="showList()">← Voltar</div>
+  <div class="detail-back" onclick="goBack()">← Voltar</div>
   <div id="detail-content"></div>
 </div>
 
@@ -1676,35 +1753,20 @@ function renderUpdates() {
 
 function showUpdates() {
   renderUpdates();
-  document.getElementById("list-view").classList.remove("active");
-  document.getElementById("detail-view").classList.remove("active");
-  document.getElementById("balance-view").classList.remove("active");
-  document.getElementById("updates-view").classList.add("active");
-  document.getElementById("rating-view").classList.remove("active");
+  showOnly("updates-view");
   window.location.hash = "updates";
-  window.scrollTo(0, 0);
 }
 
 function showBalance() {
   renderBalance();
-  document.getElementById("list-view").classList.remove("active");
-  document.getElementById("detail-view").classList.remove("active");
-  document.getElementById("balance-view").classList.add("active");
-  document.getElementById("updates-view").classList.remove("active");
-  document.getElementById("rating-view").classList.remove("active");
+  showOnly("balance-view");
   window.location.hash = "balance";
-  window.scrollTo(0, 0);
 }
 
 function showRating() {
   renderRating();
-  document.getElementById("list-view").classList.remove("active");
-  document.getElementById("detail-view").classList.remove("active");
-  document.getElementById("balance-view").classList.remove("active");
-  document.getElementById("updates-view").classList.remove("active");
-  document.getElementById("rating-view").classList.add("active");
+  showOnly("rating-view");
   window.location.hash = "avaliacao";
-  window.scrollTo(0, 0);
 }
 
 // ── RENDER LIST ─────────────────────────────────────────────────────────────
@@ -1822,58 +1884,237 @@ function renderDetail(id) {
     </div>`;
 }
 
-// ── ROUTING ──────────────────────────────────────────────────────────────────
-function showList() {
-  document.getElementById("list-view").classList.add("active");
-  document.getElementById("detail-view").classList.remove("active");
-  document.getElementById("balance-view").classList.remove("active");
-  document.getElementById("updates-view").classList.remove("active");
-  document.getElementById("rating-view").classList.remove("active");
+// ── DASHBOARD & NAVIGATION ───────────────────────────────────────────────────
+let _currentView  = "dashboard-view";
+let _previousView = "dashboard-view";
+
+function showOnly(id) {
+  ["dashboard-view","entradas-view","saidas-view","detail-view","balance-view","updates-view","rating-view"]
+    .forEach(v => { const el = document.getElementById(v); if (el) el.classList.toggle("active", v === id); });
+  _currentView = id;
+  window.scrollTo(0, 0);
+}
+
+function isUpdatedToday(id) {
+  return getTodayUpdates().some(p => p.id === id);
+}
+
+function playerCardHtml(p) {
+  const isOut = ["saida_oficial","saida_fechada","risco"].includes(p.status);
+  const meta = [p.position, p.age ? `${p.age} anos` : null, isOut ? p.toClub : p.fromClub].filter(Boolean).join(" · ");
+  const avatarImg = p.photo
+    ? `<img src="${p.photo}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=this.parentNode.dataset.emoji" />`
+    : p.emoji;
+  const feeLabel = p.fee || "";
+  const todayBadge = isUpdatedToday(p.id) ? `<span class="today-badge">🆕 hoje</span>` : "";
+  return `
+    <div class="player-card" onclick="showDetail('${p.id}')">
+      <div class="player-card-left">
+        <div class="player-avatar" data-emoji="${p.emoji}">${avatarImg}</div>
+        <div class="player-info">
+          <div class="player-name">${p.name}</div>
+          <div class="player-meta">${meta}</div>
+        </div>
+      </div>
+      <div class="player-card-right">
+        ${badge(p.status)}
+        ${feeLabel ? `<span class="fee-chip" style="font-size:.75rem;color:var(--muted)">${feeLabel}</span>` : ""}
+        ${todayBadge}
+        ${staleTag(p)}
+        ${p.market_value ? `<span class="vm-tag">VM: ${p.market_value}</span>` : ""}
+      </div>
+    </div>`;
+}
+
+function toggleSection(el) {
+  el.classList.toggle("collapsed");
+  el.nextElementSibling.classList.toggle("collapsed");
+}
+
+function renderDashboard() {
+  const todayPlayers = getTodayUpdates();
+  const { net, totalIn, totalOut } = computeBalance();
+  const { grade, overall } = computeRating();
+  const daysLeft = Math.max(0, Math.ceil((new Date("2026-09-01T00:00:00") - new Date()) / 86400000));
+
+  const entradas = PLAYERS.filter(p => ["oficial","fechado","negociacao","analise"].includes(p.status));
+  const saidas   = PLAYERS.filter(p => ["saida_oficial","saida_fechada","risco"].includes(p.status));
+
+  const inBreakdown = [
+    [entradas.filter(p => p.status==="oficial").length,    "oficiais"],
+    [entradas.filter(p => p.status==="fechado").length,    "fechados"],
+    [entradas.filter(p => p.status==="negociacao").length, "em negociação"],
+    [entradas.filter(p => p.status==="analise").length,    "em análise"],
+  ].filter(([n]) => n > 0).map(([n, l]) => `${n} ${l}`).join(" · ");
+
+  const outBreakdown = [
+    [saidas.filter(p => p.status==="saida_oficial").length, "oficiais"],
+    [saidas.filter(p => p.status==="saida_fechada").length, "fechadas"],
+    [saidas.filter(p => p.status==="risco").length,         "em risco"],
+  ].filter(([n]) => n > 0).map(([n, l]) => `${n} ${l}`).join(" · ");
+
+  const netSign = net >= 0 ? "+" : "−";
+  const netCls  = net >= 0 ? "positive" : "negative";
+
+  const todayStrip = todayPlayers.length ? `
+    <div class="today-strip" onclick="showUpdates()">
+      <span>📰 Hoje: ${todayPlayers.length} atualização${todayPlayers.length > 1 ? "ões" : ""}</span>
+      <span>ver →</span>
+    </div>` : "";
+
+  let recentHtml = "";
+  if (todayPlayers.length) {
+    recentHtml = `<div class="dash-section-label">📋 Últimas Atualizações</div>`;
+    for (const p of todayPlayers.slice(0, 3)) {
+      const meta = [p.position, p.age ? `${p.age} anos` : null].filter(Boolean).join(" · ");
+      const avatarImg = p.photo
+        ? `<img src="${p.photo}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=this.parentNode.dataset.emoji" />`
+        : p.emoji;
+      recentHtml += `
+        <div class="dash-recent-card" onclick="showDetail('${p.id}')">
+          <div class="player-avatar" data-emoji="${p.emoji}" style="width:36px;height:36px;font-size:.9rem;flex-shrink:0">${avatarImg}</div>
+          <div class="dash-recent-info">
+            <div class="dash-recent-name">${p.name}</div>
+            <div class="dash-recent-meta">${meta}</div>
+          </div>
+          <div class="dash-recent-right">
+            ${badge(p.status)}
+            <span class="today-badge">🆕 hoje</span>
+          </div>
+        </div>`;
+    }
+    if (todayPlayers.length > 3)
+      recentHtml += `<div class="view-all-link" onclick="showUpdates()">ver todas as ${todayPlayers.length} atualizações →</div>`;
+    recentHtml += `<div style="height:8px"></div>`;
+  }
+
+  document.getElementById("dashboard-content").innerHTML = `
+    ${todayStrip}
+    <div class="stats-row">
+      <div class="stat-card" onclick="showBalance()">
+        <div class="stat-card-label">💰 Saldo</div>
+        <div class="stat-card-value ${netCls}">${netSign}€${fmtM(Math.abs(net))}</div>
+        <div class="stat-card-sub">Receitas €${fmtM(totalOut)}<br>Gastos €${fmtM(totalIn)}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">⏳ Janela</div>
+        <div class="stat-card-value">${daysLeft}d</div>
+        <div class="stat-card-sub">fecho: 31 ago 2026</div>
+      </div>
+      <div class="stat-card" onclick="showRating()">
+        <div class="stat-card-label">🏆 Aval.</div>
+        <div class="stat-card-value ${gradeClass(grade)}">${grade}</div>
+        <div class="stat-card-sub">${overall.toFixed(1)} / 10</div>
+      </div>
+    </div>
+    ${recentHtml}
+    <div class="dash-section-label">Navegar por categoria</div>
+    <button class="cat-btn entradas" onclick="showEntradas()">
+      <div class="cat-btn-row">
+        <span class="cat-btn-title">↓ Entradas</span>
+        <span class="cat-btn-count c-entrada">${entradas.length} jogadores</span>
+      </div>
+      <div class="cat-btn-sub">${inBreakdown || "Sem entradas registadas"}</div>
+    </button>
+    <button class="cat-btn saidas" onclick="showSaidas()">
+      <div class="cat-btn-row">
+        <span class="cat-btn-title">↑ Saídas</span>
+        <span class="cat-btn-count c-saida">${saidas.length} jogadores</span>
+      </div>
+      <div class="cat-btn-sub">${outBreakdown || "Sem saídas registadas"}</div>
+    </button>`;
+}
+
+function showDashboard() {
+  renderDashboard();
+  showOnly("dashboard-view");
   window.location.hash = "";
 }
 
+function renderEntradas() {
+  const groups = [
+    { key: "oficial",    label: STATUS.oficial.label,    players: PLAYERS.filter(p => p.status === "oficial") },
+    { key: "fechado",    label: STATUS.fechado.label,    players: PLAYERS.filter(p => p.status === "fechado") },
+    { key: "negociacao", label: STATUS.negociacao.label, players: PLAYERS.filter(p => p.status === "negociacao") },
+    { key: "analise",    label: STATUS.analise.label,    players: PLAYERS.filter(p => p.status === "analise") },
+  ].filter(g => g.players.length > 0);
+  const total = groups.reduce((s, g) => s + g.players.length, 0);
+  let html = "";
+  for (const g of groups) {
+    html += `
+      <div class="col-sec-title" onclick="toggleSection(this)">
+        <span>${g.label} <span style="opacity:.65">(${g.players.length})</span></span>
+        <span class="col-sec-chevron">▼</span>
+      </div>
+      <div class="col-sec-body">${g.players.map(playerCardHtml).join("")}</div>`;
+  }
+  document.getElementById("entradas-content").innerHTML = `
+    <div class="cat-view-header">
+      <div class="cat-view-title">↓ Entradas · ${total} jogador${total !== 1 ? "es" : ""}</div>
+    </div>
+    <div style="padding:0 16px">${html}</div>`;
+}
+
+function showEntradas() {
+  renderEntradas();
+  showOnly("entradas-view");
+  window.location.hash = "entradas";
+}
+
+function renderSaidas() {
+  const groups = [
+    { key: "saida_oficial", label: STATUS.saida_oficial.label, players: PLAYERS.filter(p => p.status === "saida_oficial") },
+    { key: "saida_fechada", label: STATUS.saida_fechada.label, players: PLAYERS.filter(p => p.status === "saida_fechada") },
+    { key: "risco",         label: STATUS.risco.label,         players: PLAYERS.filter(p => p.status === "risco") },
+  ].filter(g => g.players.length > 0);
+  const total = groups.reduce((s, g) => s + g.players.length, 0);
+  let html = "";
+  for (const g of groups) {
+    html += `
+      <div class="col-sec-title" onclick="toggleSection(this)">
+        <span>${g.label} <span style="opacity:.65">(${g.players.length})</span></span>
+        <span class="col-sec-chevron">▼</span>
+      </div>
+      <div class="col-sec-body">${g.players.map(playerCardHtml).join("")}</div>`;
+  }
+  document.getElementById("saidas-content").innerHTML = `
+    <div class="cat-view-header">
+      <div class="cat-view-title">↑ Saídas · ${total} jogador${total !== 1 ? "es" : ""}</div>
+    </div>
+    <div style="padding:0 16px">${html}</div>`;
+}
+
+function showSaidas() {
+  renderSaidas();
+  showOnly("saidas-view");
+  window.location.hash = "saidas";
+}
+
+function goBack() {
+  if (_previousView === "entradas-view") showEntradas();
+  else if (_previousView === "saidas-view") showSaidas();
+  else showDashboard();
+}
+
+// ── ROUTING ──────────────────────────────────────────────────────────────────
+function showList() { showDashboard(); }
+
 function showDetail(id) {
+  _previousView = _currentView;
   renderDetail(id);
-  document.getElementById("list-view").classList.remove("active");
-  document.getElementById("detail-view").classList.add("active");
+  showOnly("detail-view");
   window.location.hash = `player/${id}`;
-  window.scrollTo(0, 0);
 }
 
 function handleRoute() {
   const hash = window.location.hash.replace("#", "");
-  if (hash === "balance") {
-    renderBalance();
-    document.getElementById("list-view").classList.remove("active");
-    document.getElementById("detail-view").classList.remove("active");
-    document.getElementById("balance-view").classList.add("active");
-    document.getElementById("updates-view").classList.remove("active");
-    document.getElementById("rating-view").classList.remove("active");
-  } else if (hash === "updates") {
-    renderUpdates();
-    document.getElementById("list-view").classList.remove("active");
-    document.getElementById("detail-view").classList.remove("active");
-    document.getElementById("balance-view").classList.remove("active");
-    document.getElementById("updates-view").classList.add("active");
-    document.getElementById("rating-view").classList.remove("active");
-  } else if (hash === "avaliacao") {
-    renderRating();
-    document.getElementById("list-view").classList.remove("active");
-    document.getElementById("detail-view").classList.remove("active");
-    document.getElementById("balance-view").classList.remove("active");
-    document.getElementById("updates-view").classList.remove("active");
-    document.getElementById("rating-view").classList.add("active");
-  } else if (hash.startsWith("player/")) {
-    const id = hash.replace("player/", "");
-    renderDetail(id);
-    document.getElementById("list-view").classList.remove("active");
-    document.getElementById("detail-view").classList.add("active");
-    document.getElementById("balance-view").classList.remove("active");
-    document.getElementById("updates-view").classList.remove("active");
-    document.getElementById("rating-view").classList.remove("active");
-  } else {
-    showList();
-  }
+  if (hash === "entradas")             { renderEntradas(); showOnly("entradas-view"); }
+  else if (hash === "saidas")          { renderSaidas();   showOnly("saidas-view"); }
+  else if (hash === "balance")         { renderBalance();  showOnly("balance-view"); }
+  else if (hash === "updates")         { renderUpdates();  showOnly("updates-view"); }
+  else if (hash === "avaliacao")       { renderRating();   showOnly("rating-view"); }
+  else if (hash.startsWith("player/")) { renderDetail(hash.replace("player/","")); showOnly("detail-view"); }
+  else                                 { renderDashboard(); showOnly("dashboard-view"); }
 }
 
 // ── THEME ─────────────────────────────────────────────────────────────────────
@@ -1892,8 +2133,6 @@ if (document.documentElement.getAttribute("data-theme") === "dark") {
 document.getElementById("header-date").textContent =
   new Date().toLocaleDateString("pt-PT", { day: "numeric", month: "long", year: "numeric" });
 document.getElementById("header-updated").textContent = "Actualizado: " + LAST_UPDATED;
-renderCountdown();
-renderList();
 handleRoute();
 window.addEventListener("hashchange", handleRoute);
 </script>
