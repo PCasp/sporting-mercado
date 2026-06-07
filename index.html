@@ -2003,8 +2003,6 @@ function renderDashboard() {
   const todayPlayers = getTodayUpdates();
   const { net, totalIn, totalOut } = computeBalance();
   const { grade, overall } = computeRating();
-  const daysLeft = Math.max(0, Math.ceil((new Date("2026-09-01T00:00:00") - new Date()) / 86400000));
-
   const entradas = PLAYERS.filter(p => ["oficial","fechado","negociacao","analise"].includes(p.status));
   const saidas   = PLAYERS.filter(p => ["saida_oficial","saida_fechada","risco"].includes(p.status));
 
@@ -2059,8 +2057,8 @@ function renderDashboard() {
       </div>
       <div class="stat-card">
         <div class="stat-card-label">⏳ Janela</div>
-        <div class="stat-card-value">${daysLeft}d</div>
-        <div class="stat-card-sub">fecho: 31 ago 2026</div>
+        <div id="countdown-value" class="stat-card-value"></div>
+        <div id="countdown-sub" class="stat-card-sub"></div>
       </div>
       <div class="stat-card" onclick="showRating()">
         <div class="stat-card-label">🏆 Aval.</div>
@@ -2088,6 +2086,7 @@ function renderDashboard() {
 
 function showDashboard() {
   renderDashboard();
+  renderCountdown();
   showOnly("dashboard-view");
   window.location.hash = "";
 }
@@ -2175,7 +2174,7 @@ function handleRoute() {
   else if (hash === "updates")         { renderUpdates();  showOnly("updates-view"); }
   else if (hash === "avaliacao")       { renderRating();   showOnly("rating-view"); }
   else if (hash.startsWith("player/")) { renderDetail(hash.replace("player/","")); showOnly("detail-view"); }
-  else                                 { renderDashboard(); showOnly("dashboard-view"); }
+  else                                 { renderDashboard(); renderCountdown(); showOnly("dashboard-view"); }
 }
 
 // ── THEME ─────────────────────────────────────────────────────────────────────
