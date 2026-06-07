@@ -563,6 +563,25 @@
     .grade-D { color: #dc2626; }
     .grade-F { color: #7f1d1d; }
 
+    .rating-narrative {
+      margin: 0 16px 16px;
+      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .rating-narrative-title {
+      font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); margin-bottom: 10px;
+    }
+    .rating-narrative-intro {
+      font-size: .85rem; line-height: 1.55; margin-bottom: 10px; color: var(--text);
+    }
+    .rating-narrative-item {
+      font-size: .82rem; line-height: 1.5; padding: 6px 0;
+      border-top: 1px solid var(--border); color: var(--text);
+    }
+
     @media (max-width: 599px) {
       .rating-card {
         display: flex;
@@ -1644,9 +1663,57 @@ function renderRating() {
   const { indices, overall, grade } = computeRating();
   const gc = gradeClass(grade);
 
-  function barClass(s) {
-    return s >= 6.5 ? "bar-good" : s >= 4 ? "bar-mid" : "bar-bad";
-  }
+  function barClass(s) { return s >= 6.5 ? "bar-good" : s >= 4 ? "bar-mid" : "bar-bad"; }
+  function ico(s)      { return s >= 6.5 ? "✅" : s >= 4 ? "⚠️" : "🔴"; }
+  function item(s, text) { return `<div class="rating-narrative-item">${ico(s)} ${text}</div>`; }
+
+  const [fin, buy, sell, squad, keyLoss] = indices;
+
+  const gradeDesc = overall >= 8.5 ? "excelente" : overall >= 7.5 ? "muito bom" :
+                    overall >= 6.5 ? "bom"        : overall >= 5.5 ? "razoável"  :
+                    overall >= 4.5 ? "mediano"     : overall >= 3.5 ? "fraco"     : "muito fraco";
+
+  const finVal  = fin.detail.replace("Net: ", "").replace("−", "−");
+  const finText = fin.score >= 6.5
+    ? `Saldo financeiro ${finVal} — receitas igualam ou superam o investimento.`
+    : fin.score >= 4
+    ? `Saldo financeiro ${finVal} — investimento moderadamente acima das receitas.`
+    : `Saldo financeiro ${finVal} — investimento claramente superior às receitas.`;
+
+  const buyText = buy.detail === "Sem dados"
+    ? `<div class="rating-narrative-item">⚪ Eficiência de compras — sem contratações com fee confirmado para avaliar.</div>`
+    : item(buy.score, buy.score >= 6.5
+        ? `Compras eficientes (${buy.detail}) — valores pagos abaixo do mercado.`
+        : buy.score >= 4
+        ? `Compras razoáveis (${buy.detail}) — próximas do valor de mercado.`
+        : `Compras caras (${buy.detail}) — prémios acima do valor de mercado.`);
+
+  const sellText = sell.detail === "Sem dados"
+    ? `<div class="rating-narrative-item">⚪ Eficiência de vendas — sem vendas com fee confirmado para avaliar.</div>`
+    : item(sell.score, sell.score >= 6.5
+        ? `Vendas acima do valor de mercado (${sell.detail}) — forte capacidade negocial.`
+        : sell.score >= 4
+        ? `Vendas equilibradas (${sell.detail}) — próximas do valor de mercado.`
+        : `Vendas abaixo do valor de mercado (${sell.detail}) — margem negocial limitada.`);
+
+  const squadText = squad.score >= 6.5
+    ? `Plantel reforçado em valor de mercado (${squad.detail}) — entradas de maior qualidade que as saídas.`
+    : squad.score >= 4
+    ? `Valor de mercado do plantel estável (${squad.detail}) — substituições equivalentes.`
+    : `Plantel enfraquecido (${squad.detail}) — saídas mais valiosas do que as entradas.`;
+
+  const keyText = keyLoss.score >= 8
+    ? `Nenhum activo-chave perdido — continuidade e estabilidade no plantel.`
+    : keyLoss.score >= 5
+    ? `${keyLoss.detail} — perda importante, mas gerível.`
+    : `${keyLoss.detail} — impacto significativo na qualidade do plantel.`;
+
+  const narrative = `
+    <div class="rating-narrative">
+      <div class="rating-narrative-title">Interpretação</div>
+      <div class="rating-narrative-intro">Com <strong>${overall.toFixed(1)} pontos</strong> (nota <strong>${grade}</strong>), este é um mercado <strong>${gradeDesc}</strong>. Aqui está o que mais influencia a nota:</div>
+      ${item(fin.score, finText)}${buyText}${sellText}${item(squad.score, squadText)}${item(keyLoss.score, keyText)}
+    </div>`;
 
   const indexCards = indices.map(idx => `
     <div class="rating-index">
@@ -1664,6 +1731,7 @@ function renderRating() {
       <div class="rating-hero-score">${overall.toFixed(1)} / 10</div>
       <div class="rating-hero-label">Avaliação global do mercado de verão 2026</div>
     </div>
+    ${narrative}
     <div class="rating-indices">${indexCards}</div>
     <div class="balance-footnote">Baseado em transferências confirmadas e valores de mercado (Transfermarkt)</div>`;
 }
@@ -1956,12 +2024,6 @@ function renderDashboard() {
   const netSign = net >= 0 ? "+" : "−";
   const netCls  = net >= 0 ? "positive" : "negative";
 
-  const todayStrip = todayPlayers.length ? `
-    <div class="today-strip" onclick="showUpdates()">
-      <span>📰 Hoje: ${todayPlayers.length} atualização${todayPlayers.length > 1 ? "ões" : ""}</span>
-      <span>ver →</span>
-    </div>` : "";
-
   let recentHtml = "";
   if (todayPlayers.length) {
     recentHtml = `<div class="dash-section-label">📋 Últimas Atualizações</div>`;
@@ -1989,7 +2051,6 @@ function renderDashboard() {
   }
 
   document.getElementById("dashboard-content").innerHTML = `
-    ${todayStrip}
     <div class="stats-row">
       <div class="stat-card" onclick="showBalance()">
         <div class="stat-card-label">💰 Saldo</div>
