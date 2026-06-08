@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-08 15:10";
+const LAST_UPDATED = "2026-06-08 15:30";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1340,13 +1340,15 @@ const PLAYERS = [
     fee: "€40-50M", contract: "até 2027",
     last_news: "2026-06-06",
     market_value: "€25M",
-    description: "Médio ofensivo português, 'Pote', uma das figuras de Alvalade desde 2020. Prepara-se para sair do Sporting neste verão. O Famalicão retém 10% dos direitos económicos desde a sua venda em 2020, o que lhes renderá ~€4-5M nesta operação. A 27 de maio publicou uma mensagem de despedida polémica — 'Tive medo de me lesionar' na final da Taça — gerando reações negativas de adeptos. A 1 de junho o Record reporta que as críticas levaram Pote a entrar em reflexão e a equacionar a saída. A 6 de junho o Al Nassr e o Al Ahli (cujo diretor desportivo é Rui Pedro Braz) juntam-se na corrida pelo jogador, com o clube de Braz a vê-lo como substituto de Enzo Millot.",
-    notes: "⚠️ Al Ahli (Rui Pedro Braz) e Al Nassr competem pela contratação (06/06). Pote em reflexão sobre o futuro.",
+    description: "Médio ofensivo português, 'Pote', uma das figuras de Alvalade desde 2020. Prepara-se para sair do Sporting neste verão. O Famalicão retém 10% dos direitos económicos desde a sua venda em 2020, o que lhes renderá ~€4-5M nesta operação. A 27 de maio publicou uma mensagem de despedida polémica — 'Tive medo de me lesionar' na final da Taça — gerando reações negativas de adeptos. A 1 de junho o Record reporta que as críticas levaram Pote a entrar em reflexão e a equacionar a saída. A 6 de junho o Al Nassr e o Al Ahli (cujo diretor desportivo é Rui Pedro Braz) juntam-se na corrida pelo jogador, com o clube de Braz a vê-lo como substituto de Enzo Millot. A 8 de junho a A Bola revela que o Sporting aguarda propostas formais das arábias — o Al Ahli é o mais insistente. Sem ofertas concretas ainda, o clube pede cerca de €30M para abrir negociações. Há também interesse de clubes ingleses e espanhóis.",
+    notes: "⚠️ Sporting aguarda proposta formal das arábias (08/06). Al Ahli (Rui Pedro Braz) mais insistente. Clube pede ~€30M.",
+    last_news: "2026-06-08",
     sources: [
       { label: "A Bola — Famalicão prepara-se para esfregar as mãos", url: "https://www.abola.pt/noticias/famalicao-prepara-se-para-esfregar-as-maos-com-figura-do-sporting-2026052319300052456" },
       { label: "Record — Pote em reflexão (01/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/pote-em-reflexao-criticas-em-momento-dificil-levam-jogador-a-equacionar-saida-do-sporting" },
       { label: "O Jogo — Al Ahli e Al Nassr querem Pote (06/06)", url: "https://www.ojogo.pt/futebol/artigo/rui-pedro-braz-com-pedro-goncalves-na-mira-al-ahli-junta-se-ao-al-nassr/18092598" },
       { label: "A Bola — Mercado: Al Ahli de Rui Pedro Braz quer levar Pedro Gonçalves (06/06)", url: "https://www.abola.pt/noticias/mercado-sporting-al-ahli-de-rui-pedro-braz-quer-levar-pedro-goncalves-2026060621403388641" },
+      { label: "A Bola — Sporting à espera de proposta das arábias (08/06)", url: "https://www.abola.pt/noticias/sporting-a-espera-de-proposta-das-arabias-por-pedro-goncalves-2026060811134097183" },
     ]
   },
   {
@@ -1480,7 +1482,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-08", ids: ["luis-suarez", "daniel-braganca", "joao-palhinha", "silas-andersen", "javi-rodriguez"] },
+  { date: "2026-06-08", ids: ["luis-suarez", "daniel-braganca", "joao-palhinha", "silas-andersen", "javi-rodriguez", "pedro-goncalves"] },
   { date: "2026-06-07", ids: ["silas-andersen", "luis-suarez", "pedro-goncalves", "morten-hjulmand"] },
   { date: "2026-06-06", ids: ["silas-andersen", "zan-vipotnik", "bruno-ramos", "geny-catamo", "souleymane-faye"] },
   { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen", "alisson-santos", "luis-suarez"] },
