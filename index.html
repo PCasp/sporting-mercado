@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-09 08:45";
+const LAST_UPDATED = "2026-06-09 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -956,16 +956,35 @@ const PLAYERS = [
     name: "Chiquinho",
     photo: "https://img.a.transfermarkt.technology/portrait/big/695454-1641552728.png?lm=1",
     emoji: "🇵🇹",
-    position: "Ala esq.", age: null,
+    position: "Ala esq.", age: 26,
     fromClub: "FC Alverca", toClub: "Sporting CP",
     status: "analise",
-    fee: null, contract: null,
-    last_news: "2026-05-20",
+    fee: "€6–10M (Alverca)", contract: null,
+    last_news: "2026-06-09",
     market_value: "€5M",
-    description: "Extremo esquerdo português a jogar no FC Alverca. O Sporting está a acompanhar a sua situação e pondera avançar com a contratação. O treinador do Alverca elogiou as suas capacidades para jogar num grande.",
-    notes: null,
+    description: "Extremo esquerdo português de 26 anos a jogar no FC Alverca. Passou uma década na academia do Sporting (2009–2018), tendo saído sem chegar à equipa sénior. Passou por Estoril, Wolverhampton (empréstimos a Stoke, Famalicão e Maiorca) antes de chegar ao Alverca, onde realizou 20 jogos, 2 golos e 4 assistências em 2025/26. O Sporting estuda formalmente o seu regresso ao Alvalade — o sonho da infância do jogador. O Alverca definiu um preço entre €6–10M; o Wolverhampton retém 40% dos direitos do passe, o que explica as exigências do clube. A contratação está condicionada à saída de Souleymane Faye.",
+    notes: "⚠️ Sporting avança a sério (09/06). Alverca pede €6–10M; Wolverhampton detém 40% dos direitos. Dependente da saída de Faye.",
     sources: [
       { label: "Record — Treinador do Alverca elogia", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/bruno-pinheiro-ve-chiquinho-a-jogar-num-grande-com-bola-vai-para-cima-deles-e-e-muito-dificil-de-segurar" },
+      { label: "Abola — Sporting estuda regresso, Alverca define preço (08/06)", url: "https://www.abola.pt/noticias/sporting-estuda-regresso-de-chiquinho-e-alverca-ja-definiu-preco-2026060822031922313" },
+    ]
+  },
+  {
+    id: "sergi-altimira",
+    name: "Sergi Altimira",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/466801-1744375696.jpg?lm=1",
+    referrerpolicy: "no-referrer",
+    emoji: "🇪🇸",
+    position: "MC", age: 24,
+    fromClub: "Real Betis", toClub: "Sporting CP",
+    status: "analise",
+    fee: "Betis pede €20–25M", contract: null,
+    last_news: "2026-06-09",
+    market_value: "€12M",
+    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting já apresentou uma proposta de €14M + €3M em variáveis, mas o Betis exige entre €20–25M. As negociações estão paradas enquanto o Sporting aguarda a situação de João Palhinha. Ponto-chave: o Betis precisa de vender antes de 30 de junho por razões contabilísticas — esta urgência poderá pressionar a descida do preço pedido.",
+    notes: "⚠️ Sporting ofereceu €14M+€3M variáveis; Betis pede €20–25M. Deadline de 30/06 pode forçar acordo (09/06).",
+    sources: [
+      { label: "Abola — Betis quer vender Altimira antes de 30/06 (09/06)", url: "https://www.abola.pt/noticias/atencao-sporting-betis-quer-vender-altimira-antes-do-dia-30-2026060911123701269" },
     ]
   },
   {
@@ -1395,15 +1414,16 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/405564-1759133137.jpg",
     emoji: "🇬🇪",
     position: "MC", age: 26,
-    fromClub: "Sporting CP", toClub: "Levante (interesse)",
+    fromClub: "Sporting CP", toClub: "Espanha (preferência)",
     status: "risco",
     fee: null, contract: "até 2030",
-    last_news: "2026-05-30",
+    last_news: "2026-06-09",
     market_value: "€4M",
-    description: "Médio georgiano contratado ao Levante em março de 2025 por €5.5M + €2M variáveis (total potencial €7.5M), com cláusula de rescisão de €80M e contrato até 2030. Realizou 26 jogos pelo Sporting mas nunca se afirmou como titular indiscutível sob Rui Borges. O Levante, clube onde jogou cinco épocas, detém 12.5% de mais-valias e acompanha a sua situação. A 30 de maio o O Jogo revela que o Levante está atento a uma possível saída.",
-    notes: "⚠️ Levante tem 12.5% de mais-valia e acompanha situação (30/05). Saída possível se aparecer proposta.",
+    description: "Médio georgiano contratado ao Levante em março de 2025 por €5.5M + €2M variáveis (total potencial €7.5M), com cláusula de rescisão de €80M e contrato até 2030. Realizou 26 jogos pelo Sporting mas nunca se afirmou como titular indiscutível sob Rui Borges — ficou atrás de Hjulmand, Morita, João Simões e Daniel Bragança. A 9 de junho a Abola confirma que Kochorashvili já tomou a decisão de sair: não entra nos planos de Rui Borges para 2026/27. Quer regressar a Espanha, onde jogou no Girona, Levante e Castellón. O Sporting espera recuperar parte dos €5.5M investidos.",
+    notes: "🔴 Decidiu sair — fora dos planos de Rui Borges para 2026/27 (09/06). Quer regressar a Espanha. Sporting a aguardar ofertas.",
     sources: [
       { label: "O Jogo — Levante atento à situação de Kochorashvili (30/05)", url: "https://www.ojogo.pt/futebol/artigo/sporting-levante-atento-a-situacao-de-kochorashvili/18090082" },
+      { label: "Abola — Kochorashvili tomou decisão sobre o futuro (09/06)", url: "https://www.abola.pt/noticias/mercado-sporting-kochorashvili-ja-tomou-decisao-quanto-ao-futuro-2026060909572577073" },
     ]
   },
   {
@@ -1466,7 +1486,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-09", ids: ["goncalo-inacio", "ousmane-diomande"] },
+  { date: "2026-06-09", ids: ["goncalo-inacio", "ousmane-diomande", "chiquinho", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-08", ids: ["luis-suarez", "daniel-braganca", "joao-palhinha", "silas-andersen", "javi-rodriguez", "pedro-goncalves"] },
   { date: "2026-06-07", ids: ["silas-andersen", "luis-suarez", "pedro-goncalves", "morten-hjulmand"] },
   { date: "2026-06-06", ids: ["silas-andersen", "zan-vipotnik", "bruno-ramos", "geny-catamo", "souleymane-faye"] },
