@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-09 18:03";
+const LAST_UPDATED = "2026-06-10 08:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -912,12 +912,12 @@ const PLAYERS = [
     emoji: "🇩🇰",
     position: "MD", age: 21,
     fromClub: "BK Häcken", toClub: "Sporting CP",
-    status: "fechado",
+    status: "oficial",
     fee: "€7.25M + €2.75M variáveis", contract: "até 2031",
-    fee_value: null, fee_max: null,
+    fee_value: 7.25, fee_max: 10,
     market_value: "€2M",
-    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. O Häcken aceitou oficialmente a proposta do Sporting de €7.25M + €2.75M em variáveis (total: €10M) — contrato até 2031 com cláusula de rescisão de €80M. Concorrência de Cologne, Celtic e Rangers foi ultrapassada. A 26 de maio declarou: 'O Sporting é um grande clube. Estou 100% interessado. Creio que está perto.' A 30 de maio confirmado que viajaria para Lisboa após a despedida. A 31 de maio marcou um golo no jogo de despedida pelo Häcken frente ao Hammarby. A 4 de junho a A Bola e o Record confirmam negócio definitivamente fechado. A 6 de junho aterrou em Portugal e declarou: «Estou feliz por estar aqui.» A 8 de junho passou nos exames médicos nas instalações do Sporting — será apresentado oficialmente na segunda-feira, 9 de junho.",
-    notes: "✅ Exames médicos concluídos (08/06). Apresentação oficial agendada para segunda-feira, 9 de junho.",
+    description: "Médio defensivo dinamarquês de 21 anos a jogar no BK Häcken na Suécia (40 jogos, 4 golos, 4 assistências). Visto como o 'novo Hjulmand' e alvo prioritário para o 'número 6'. O Häcken aceitou a proposta do Sporting de €7.25M + €2.75M em variáveis (total: €10M) — negócio recorde para o Häcken. Concorrência de Cologne, Celtic e Rangers ultrapassada. A 6 de junho aterrou em Portugal. A 8 de junho concluiu os exames médicos. A 9 de junho foi oficialmente apresentado pelo Sporting com um vídeo criativo inspirado em 'The Matrix' — declarou: «Vou deixar a minha vida em campo.» Contrato até 2031, cláusula de rescisão de €80M.",
+    notes: "✅ OFICIAL — Apresentado em 9 de junho. Contrato até 2031, cláusula €80M. «Vou deixar a minha vida em campo.»",
     sources: [
       { label: "Record — Häcken aceita, transferência por horas", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/hacken-aceita-oferta-do-sporting-por-silas-andersen-e-a-tranferencia-esta-por-horas" },
       { label: "Record — Proposta de €7+3M apresentada", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-apresentou-proposta-de-7-3-milhoes-de-euros-por-silas-andersen-avancam-dinamarqueses" },
@@ -930,6 +930,9 @@ const PLAYERS = [
       { label: "Record — Tem data para viajar e assinar (04/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/negocio-fechado-por-silas-andersen-medio-ja-tem-data-para-viajar-ate-lisboa-e-assinar-pelo-sporting" },
       { label: "Record — Aterrou em Portugal (06/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/silas-andersen-ja-aterrou-em-portugal-para-reforcar-o-sporting-estou-feliz-por-estar-aqui" },
       { label: "Record — Exames médicos concluídos, oficial na 2ª feira (08/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/silas-andersen-passou-os-examos-medicos-no-sporting-e-sera-oficial-na-segunda-feira" },
+      { label: "BlogVisãodeMercado — OFICIAL: Sporting contrata Silas por €7.25M (09/06)", url: "https://blogvisaodemercado.pt/oficial-sporting-contrata-silas-andersen-por-725-me/" },
+      { label: "Record — OFICIAL: reforço até 2031, cláusula €80M (09/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/oficial-silas-andersen-e-reforco-do-sporting-ate-2031-e-fica-com-clausula-de-80-milhoes-de-euros" },
+      { label: "O Jogo — «Vou deixar a minha vida em campo» (09/06)", url: "https://www.ojogo.pt/futebol/artigo/silas-andersen-oficializado-no-sporting-vou-deixar-a-minha-vida-em-campo/18093528" },
     ]
   },
   {
@@ -1486,13 +1489,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-06-10", ids: ["silas-andersen"] },
   { date: "2026-06-09", ids: ["goncalo-inacio", "ousmane-diomande", "chiquinho", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-08", ids: ["luis-suarez", "daniel-braganca", "joao-palhinha", "silas-andersen", "javi-rodriguez", "pedro-goncalves"] },
   { date: "2026-06-07", ids: ["silas-andersen", "luis-suarez", "pedro-goncalves", "morten-hjulmand"] },
   { date: "2026-06-06", ids: ["silas-andersen", "zan-vipotnik", "bruno-ramos", "geny-catamo", "souleymane-faye"] },
   { date: "2026-06-05", ids: ["goncalo-inacio", "silas-andersen", "alisson-santos", "luis-suarez"] },
   { date: "2026-06-04", ids: ["souleymane-faye", "silas-andersen", "luis-suarez", "ivan-fresneda"] },
-  { date: "2026-06-03", ids: ["bruno-ramos", "silas-andersen", "luis-suarez"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
