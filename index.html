@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-10 08:15";
+const LAST_UPDATED = "2026-06-10 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1402,13 +1402,14 @@ const PLAYERS = [
     fromClub: "Sporting CP", toClub: "Leeds United / Chelsea / Arsenal (interesse)",
     status: "risco",
     fee: null, contract: "até 2030",
-    last_news: "2026-06-09",
+    last_news: "2026-06-10",
     market_value: "€42M",
-    description: "Defesa central marfinense de 22 anos, tornou-se o líder da defesa do Sporting após a saída de Gonçalo Inácio. Renovou contrato em Janeiro de 2026 até 2030, com cláusula de rescisão de €80M. O Crystal Palace foi o primeiro clube inglês a mostrar interesse activo na Premier League. A 9 de junho o O Jogo revela que o Leeds United o considera uma prioridade para 2026/27, com Chelsea, Arsenal e Bournemouth também interessados. O Mundial 2026 com a Costa do Marfim pode aumentar a sua cotação. O Sporting não tem intenção de vender abaixo da cláusula de €80M.",
-    notes: "⚠️ Leeds United (prioridade), Chelsea, Arsenal e Bournemouth interessados (09/06). Cláusula de €80M — Sporting não negocia abaixo.",
+    description: "Defesa central marfinense de 22 anos, tornou-se o líder da defesa do Sporting após a saída de Gonçalo Inácio. Renovou contrato em Janeiro de 2026 até 2030, com cláusula de rescisão de €80M. O Crystal Palace foi o primeiro clube inglês a mostrar interesse. A 9 de junho o O Jogo revela interesse de Leeds, Chelsea, Arsenal e Bournemouth. A 10 de junho a Abola revela que o Leeds está disposto a fazer a maior contratação da sua história: proposta de €40M + €10M variáveis (total até €50M), o que superaria o recorde do clube (€40.5M por Rutter em 2022). Chelsea, Arsenal, Man United, Newcastle e Crystal Palace também na corrida. Nenhuma proposta formal chegou ao Sporting, que não cede abaixo dos €80M da cláusula. O Mundial 2026 com a Costa do Marfim poderá aumentar a sua cotação.",
+    notes: "⚠️ Leeds disposto a pagar até €50M (€40M+€10M) — maior contratação da história do clube (10/06). Chelsea, Arsenal, Man United, Newcastle, Crystal Palace também interessados. Sporting: cláusula €80M, não negocia abaixo.",
     sources: [
       { label: "TransferFeed — Crystal Palace interesse", url: "https://www.transferfeed.com/transfers/ousmane-diomande-sporting-cp-crystal-palace/12358289" },
       { label: "O Jogo — Leeds, Chelsea, Arsenal e Bournemouth na corrida (09/06)", url: "https://www.ojogo.pt/futebol/artigo/goncalo-inacio-e-diomande-cobicados-e-mundial-pode-aumentar-cotacao/18093265" },
+      { label: "Abola — Leeds disposto a fazer história com €50M por Diomande (10/06)", url: "https://www.abola.pt/noticias/mercado-sporting-leeds-disposto-a-perder-a-cabeca-e-fazer-historia-por-diomande-2026060916461279558" },
     ]
   },
   {
@@ -1489,7 +1490,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-10", ids: ["silas-andersen"] },
+  { date: "2026-06-10", ids: ["silas-andersen", "ousmane-diomande"] },
   { date: "2026-06-09", ids: ["goncalo-inacio", "ousmane-diomande", "chiquinho", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-08", ids: ["luis-suarez", "daniel-braganca", "joao-palhinha", "silas-andersen", "javi-rodriguez", "pedro-goncalves"] },
   { date: "2026-06-07", ids: ["silas-andersen", "luis-suarez", "pedro-goncalves", "morten-hjulmand"] },
