@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-11 12:07";
+const LAST_UPDATED = "2026-06-11 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1044,6 +1044,25 @@ const PLAYERS = [
     ]
   },
   {
+    id: "kristian-arnstad",
+    name: "Kristian Arnstad",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/581106-1704873743.jpg",
+    referrerpolicy: "no-referrer",
+    emoji: "🇳🇴",
+    position: "MC / Ala esq.", age: 22,
+    fromClub: "AGF Aarhus", toClub: "Sporting CP",
+    status: "analise",
+    fee: null, contract: null,
+    last_news: "2026-06-11",
+    market_value: "€6M",
+    description: "Médio/extremo norueguês de 22 anos, formado no Anderlecht e actualmente no AGF Aarhus, onde foi peça-chave no histórico título dinamarquês de 2025/26: 9 golos e 4 assistências em 37 jogos. Transferido do Anderlecht para o AGF em agosto de 2024 por €1.4M, com contrato até 2029. A 10 de junho o Transfermarkt lista-o como alvo de entrada para o Sporting — o interesse é descrito como inicial e partilhado com outros candidatos.",
+    notes: "🔍 Interesse inicial listado no Transfermarkt (10/06). Rumor preliminar — aguarda confirmação por fontes portuguesas.",
+    sources: [
+      { label: "Transfermarkt — Rumor entrada Sporting (10/06)", url: "https://www.transfermarkt.pt/sporting-cp/geruechte/verein/336" },
+      { label: "Bold.dk — Sporting olha para Arnstad (11/06)", url: "https://bold.dk/fodbold/stillinger/premier-league/nyheder/rygtetid-sporting-lurer-pa-arnstad" },
+    ]
+  },
+  {
     id: "bruno-ramos",
     name: "Bruno Ramos",
     photo: "https://img.a.transfermarkt.technology/portrait/big/1092432-1766504864.jpg?lm=1",
@@ -1087,13 +1106,14 @@ const PLAYERS = [
     fromClub: "Sporting CP", toClub: "Por confirmar",
     status: "risco",
     fee: null, contract: "até 2030",
-    last_news: "2026-06-01",
+    last_news: "2026-06-11",
     market_value: "€8M",
-    description: "Lateral direito grego de 24 anos, contratado ao Panathinaikos em agosto de 2025 por ~€13 milhões. Realizou 32 jogos pelo Sporting esta época, mas as suas prestações 'nunca convenceram' por completo a liderança do clube. A 28 de maio revelou-se que Villarreal e Everton fizeram sondagens — ambos os clubes o seguiam antes da sua chegada a Portugal. Rejeitou regressar à Grécia, preferindo estabelecer-se no Sporting ou rumar a um campeonato mais competitivo. A 1 de junho o O Jogo revela que o SSC Napoli — que tem um trunfo na relação já estabelecida com o Sporting via Alisson Santos — avalia Vagiannidis como opção para o lado direito da defesa. Os partenopei procuram um substituto/concorrente para Di Lorenzo sob Allegri.",
-    notes: "⚠️ Villarreal e Everton com interesse (28/05). Napoli avalia como opção para a defesa direita (01/06).",
+    description: "Lateral direito grego de 24 anos, contratado ao Panathinaikos em agosto de 2025 por ~€13 milhões. Realizou 32 jogos pelo Sporting esta época, mas as suas prestações 'nunca convenceram' por completo a liderança do clube. A 28 de maio revelou-se que Villarreal e Everton fizeram sondagens — ambos os clubes o seguiam antes da sua chegada a Portugal. Rejeitou regressar à Grécia, preferindo estabelecer-se no Sporting ou rumar a um campeonato mais competitivo. A 1 de junho o O Jogo revela que o SSC Napoli avalia Vagiannidis como opção para a defesa direita. A 11 de junho o Record noticia que o Panathinaikos está interessado num empréstimo de Vagiannidis — o Sporting prefere uma transferência definitiva ou acordo financeiramente vantajoso e recusa ceder por empréstimo ao clube de onde o contratou.",
+    notes: "⚠️ Panathinaikos quer empréstimo (11/06) — Sporting recusa, prefere venda definitiva. Napoli, Villarreal e Everton também atentos.",
     sources: [
       { label: "Abola — Sondagens de Villarreal e Everton (28/05)", url: "https://www.abola.pt/noticias/mercado-sporting-vagiannidis-recebeu-sondagens-de-dois-clubes-2026052821515807589" },
       { label: "O Jogo — Napoli pode contratar no Sporting (01/06)", url: "https://www.ojogo.pt/futebol/artigo/napoles-pode-voltar-a-contratar-no-sporting-e-tem-um-trunfo/18090878" },
+      { label: "Record — Panathinaikos quer empréstimo (11/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
     ]
   },
   {
@@ -1479,7 +1499,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-11", ids: ["pedro-goncalves", "maxi-araujo", "morten-hjulmand", "giorgi-kochorashvili"] },
+  { date: "2026-06-11", ids: ["pedro-goncalves", "maxi-araujo", "morten-hjulmand", "giorgi-kochorashvili", "georgios-vagiannidis", "kristian-arnstad"] },
   { date: "2026-06-10", ids: ["silas-andersen", "ousmane-diomande", "yeremay-hernandez", "sergi-altimira", "daniel-braganca"] },
   { date: "2026-06-09", ids: ["goncalo-inacio", "ousmane-diomande", "chiquinho", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-08", ids: ["luis-suarez", "daniel-braganca", "joao-palhinha", "silas-andersen", "javi-rodriguez", "pedro-goncalves"] },
