@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-13 12:07";
+const LAST_UPDATED = "2026-06-13 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -948,17 +948,18 @@ const PLAYERS = [
     emoji: "🇪🇸",
     position: "MC", age: 24,
     fromClub: "Real Betis", toClub: "Sporting CP",
-    status: "fechado",
-    fee: "€18M + €4M variáveis", contract: "até 2031",
+    status: "negociacao",
+    fee: "€18M + €4M variáveis (proposta Sporting)", contract: null,
+    last_news: "2026-06-13",
     market_value: "€12M",
-    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis. O Betis precisava de gerar €30M em vendas antes de 30 de junho para não registar prejuízo — deadline que acelerou a negociação. O Sporting ultrapassou o RB Leipzig na corrida, e Altimira favorecia o projeto da Champions League. A 12 de junho a A Bola revelou que o Sporting preparava novo ataque abaixo dos €20M. A 13 de junho a A Bola e o O Jogo confirmam que Sporting e Real Betis chegaram a acordo: €18M fixos + €4M em variáveis (€2M de fácil acesso + €2M mais complexos), total potencial €22M. Contrato de 5 épocas até 2031 e cláusula de rescisão de €80M. O entendimento pessoal com o jogador — que incluiu aumento salarial face ao Betis — está igualmente fechado. Aguarda apresentação oficial do Sporting CP. Altimira tem direito a 15% de uma futura transferência.",
-    notes: "🤝 Acordo entre clubes e jogador fechado (13/06) — €18M + €4M variáveis, 5 anos, cláusula €80M. Aguarda anúncio oficial do Sporting.",
+    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis (pedia €20–25M). O Betis precisa de gerar €30M em vendas antes de 30 de junho para não registar prejuízo — deadline que acelera a negociação. A 12 de junho a A Bola revelou que o Sporting preparava novo ataque abaixo dos €20M, tendo ultrapassado o Leipzig na corrida. A 13 de junho de manhã a A Bola avançou com valores de acordo de €18M + €4M variáveis e entendimento pessoal de 5 anos com cláusula de €80M. Contudo, o Record publicou às 17h32 um desmentido parcial: a SAD de Varandas ainda não garantiu qualquer acordo com o jogador nem com o Betis, e o RB Leipzig voltou ao ativo — sendo descrito como destino preferido de Altimira enquanto aguarda proposta dos alemães. Altimira tem direito a 15% de uma futura transferência.",
+    notes: "⚠️ Fontes contraditórias (13/06): Abola aponta acordo perto, Record diz sem acordo — Leipzig voltou a entrar. Situação em aberto.",
     sources: [
       { label: "Abola — Betis quer vender Altimira antes de 30/06 (09/06)", url: "https://www.abola.pt/noticias/atencao-sporting-betis-quer-vender-altimira-antes-do-dia-30-2026060911123701269" },
       { label: "O Jogo — Betis abre a porta, ainda na lista do Sporting (10/06)", url: "https://www.ojogo.pt/futebol/artigo/betis-abre-a-porta-a-altimira-ainda-na-lista-do-sporting/18093789" },
       { label: "Abola — Novo ataque abaixo de €20M (12/06)", url: "https://www.abola.pt/noticias/mercado-sporting-altimira-por-menos-de-euro20-m-vem-ai-novo-ataque-ao-espanhol-2026061119371713415" },
-      { label: "Abola — Sporting e Betis fecham acordo: os valores (13/06)", url: "https://www.abola.pt/noticias/sporting-e-betis-fecham-altimira-os-valores-do-acordo-2026061309521454008" },
-      { label: "O Jogo — Muito perto de ser reforço, confira os valores (13/06)", url: "https://www.ojogo.pt/futebol/artigo/sergi-altimira-muito-perto-de-ser-reforco-do-sporting-confira-os-valores/18094816" },
+      { label: "Abola — Sporting e Betis próximos de acordo: €18M+€4M (13/06 manhã)", url: "https://www.abola.pt/noticias/sporting-e-betis-fecham-altimira-os-valores-do-acordo-2026061309521454008" },
+      { label: "Record — Futuro em aberto, sem acordo, Leipzig na corrida (13/06 17h32)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/altimira-com-futuro-em-aberto-ainda-sem-acordo-com-o-sporting-e-a-espera-do-rb-leipzig" },
     ]
   },
   {
@@ -1438,14 +1439,15 @@ const PLAYERS = [
     fee: null, contract: "até 2030",
     last_news: "2026-06-13",
     market_value: "€3M",
-    description: "Extremo direito senegalês de 23 anos, contratado ao Granada CF em janeiro de 2026 por ~€6.5M. Em 6 meses no Sporting disputou apenas 9 jogos (161 minutos, 1 assistência) e não justificou o investimento. A 4 de junho o Noticiasaominuto reporta que Faye tem 'guia de marcha' — saída em empréstimo ou definitiva. A 6 de junho a A Bola confirma que não faz parte dos planos para 2026/27. A 13 de junho o Record, o O Jogo e a A Bola revelam que o Lorient (Ligue 1 francesa) está em negociações para um empréstimo — o treinador Alexandre Dujeux aprovou a operação. L'Équipe reportou o interesse do clube bretão. Contrato até 2030, cláusula de rescisão de €80M.",
-    notes: "🔴 Lorient (Ligue 1) em negociações para empréstimo — treinador Dujeux aprovou (13/06). Sporting quer saída activa.",
+    description: "Extremo direito senegalês de 23 anos, contratado ao Granada CF em janeiro de 2026 por ~€6.5M. Em 6 meses no Sporting disputou apenas 9 jogos (161 minutos, 1 assistência) e não justificou o investimento. A 4 de junho o Noticiasaominuto reporta que Faye tem 'guia de marcha' — saída em empréstimo ou definitiva. A 6 de junho a A Bola confirma que não faz parte dos planos para 2026/27. A 13 de junho surgem três interessados: o Lorient (Ligue 1, treinador Alexandre Dujeux aprovou) — reportado pelo Record, O Jogo e A Bola; o Elche (La Liga, treinador Martin Anselmi recém-chegado, ex-FC Porto) — abordou o Sporting pela cedência; e o Rayo Vallecano (La Liga). Sporting disponível para empréstimo com opção de compra. Contrato até 2030, cláusula de rescisão de €80M.",
+    notes: "🔴 Três interessados (13/06): Lorient (França), Elche e Rayo Vallecano (Espanha). Sporting quer ceder por empréstimo com opção.",
     sources: [
       { label: "Noticiasaominuto — Faye com 'guia de marcha' (04/06)", url: "https://www.noticiasaominuto.com/desporto/3000498/chegar-ver-e-sair-faye-com-guia-de-marcha-do-sporting-no-verao" },
       { label: "A Bola — Não convenceu, deve voltar para donde veio (06/06)", url: "https://www.abola.pt/noticias/nao-convenceu-no-sporting-e-deve-voltar-para-donde-veio-2026060613125104057" },
       { label: "Record — Surge na órbita do Lorient (13/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/faye-nao-entra-nas-contas-do-sporting-e-surge-na-orbita-do-lorient" },
       { label: "O Jogo — Pretendido pelo Lorient (13/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-souleymane-faye-pretendido-pelo-lorient/18094750" },
-      { label: "Abola — Clube francês negoceia empréstimo (13/06)", url: "https://www.abola.pt/noticias/mercado-sporting-clube-frances-negoceia-emprestimo-de-faye-2026061221411720245" },
+      { label: "Abola — Lorient negoceia empréstimo (13/06 manhã)", url: "https://www.abola.pt/noticias/mercado-sporting-clube-frances-negoceia-emprestimo-de-faye-2026061221411720245" },
+      { label: "Abola — Anselmi no Elche e pode levar Faye; também Rayo Vallecano (13/06 tarde)", url: "https://www.abola.pt/noticias/mercado-sporting-martin-anselmi-entrou-no-elche-e-pode-levar-faye-2026061316461111074" },
     ]
   },
   {
