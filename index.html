@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-14 18:03";
+const LAST_UPDATED = "2026-06-15 08:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -953,9 +953,9 @@ const PLAYERS = [
     fee: "€18M + €4M variáveis (proposta Sporting)", contract: null,
     last_news: "2026-06-13",
     market_value: "€12M",
-    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis (pedia €20–25M). O Betis precisa de gerar €30M em vendas antes de 30 de junho para não registar prejuízo — deadline que acelera a negociação. A 12 de junho a A Bola revelou que o Sporting preparava novo ataque abaixo dos €20M, tendo ultrapassado o Leipzig na corrida. A 13 de junho de manhã a A Bola avançou com valores de acordo de €18M + €4M variáveis e entendimento pessoal de 5 anos com cláusula de €80M. Contudo, o Record publicou às 17h32 um desmentido parcial: a SAD de Varandas ainda não garantiu qualquer acordo com o jogador nem com o Betis, e o RB Leipzig voltou ao ativo. A 14 de junho o O Jogo revela que o RB Leipzig está agora focado nas mudanças de treinador e menos activo no mercado — o que reduz a concorrência e pode tornar Altimira mais acessível ao Sporting. O Betis mantém a exigência de €18M fixos + €4M em bónus, e a pressão da deadline de 30 de junho aumenta. Altimira tem direito a 15% de uma futura transferência.",
-    notes: "🔄 Leipzig recua — focado em mudanças de treinador (14/06). Janela de oportunidade para o Sporting. Betis mantém €18M+€4M. Deadline 30/06.",
-    last_news: "2026-06-14",
+    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis (pedia €20–25M). O Betis precisa de gerar €30M em vendas antes de 30 de junho para não registar prejuízo — deadline que acelera a negociação. A 12 de junho a A Bola revelou que o Sporting preparava novo ataque abaixo dos €20M, tendo ultrapassado o Leipzig na corrida. A 13 de junho de manhã a A Bola avançou com valores de acordo de €18M + €4M variáveis e entendimento pessoal de 5 anos com cláusula de €80M. Contudo, o Record publicou às 17h32 um desmentido parcial: a SAD de Varandas ainda não garantiu qualquer acordo com o jogador nem com o Betis, e o RB Leipzig voltou ao ativo. A 14 de junho o O Jogo reportou que o Leipzig estaria focado em mudanças de treinador; contudo, a A Bola às 18h12 contradisse essa leitura: o Leipzig mantém-se firme na corrida e 'promete chegar aos números que serão apresentados pelos leões', acompanhando a evolução das propostas do Sporting. O Betis aproveita a concorrência para valorizar o jogador. O Sporting recusa entrar num leilão. Situação entra numa fase crítica com a deadline de 30 de junho a aproximar-se. Altimira tem direito a 15% de uma futura transferência.",
+    notes: "⚠️ Leipzig promete igualar qualquer proposta do Sporting (A Bola, 14/06 18h). Sporting recusa leilão. Betis pede €18M+€4M. Deadline 30/06.",
+    last_news: "2026-06-15",
     sources: [
       { label: "Abola — Betis quer vender Altimira antes de 30/06 (09/06)", url: "https://www.abola.pt/noticias/atencao-sporting-betis-quer-vender-altimira-antes-do-dia-30-2026060911123701269" },
       { label: "O Jogo — Betis abre a porta, ainda na lista do Sporting (10/06)", url: "https://www.ojogo.pt/futebol/artigo/betis-abre-a-porta-a-altimira-ainda-na-lista-do-sporting/18093789" },
@@ -963,7 +963,8 @@ const PLAYERS = [
       { label: "Abola — Sporting e Betis próximos de acordo: €18M+€4M (13/06 manhã)", url: "https://www.abola.pt/noticias/sporting-e-betis-fecham-altimira-os-valores-do-acordo-2026061309521454008" },
       { label: "Record — Futuro em aberto, sem acordo, Leipzig na corrida (13/06 17h32)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/altimira-com-futuro-em-aberto-ainda-sem-acordo-com-o-sporting-e-a-espera-do-rb-leipzig" },
       { label: "O Jogo — Betis exige €18M+€4M, Altimira vê Sporting com bons olhos (13/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-betis-apresenta-exigencias-por-sergi-altimira/18094816" },
-      { label: "O Jogo — Leipzig recua; Altimira pode sair mais barato ao Sporting (14/06)", url: "https://www.ojogo.pt/futebol/artigo/sergi-altimira-pode-sair-mais-barato-ao-sporting/18095053" },
+      { label: "O Jogo — Leipzig recua; Altimira pode sair mais barato ao Sporting (14/06 manhã)", url: "https://www.ojogo.pt/futebol/artigo/sergi-altimira-pode-sair-mais-barato-ao-sporting/18095053" },
+      { label: "Abola — Leipzig promete igualar proposta do Sporting (14/06 18h12)", url: "https://www.abola.pt/noticias/mercado-sporting-rb-leipzig-promete-elevar-fasquia-por-altimira-2026061418120700535" },
     ]
   },
   {
@@ -1480,13 +1481,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-06-15", ids: ["sergi-altimira"] },
   { date: "2026-06-14", ids: ["giorgi-kochorashvili", "souleymane-faye", "maxi-araujo", "sergi-altimira", "yeremay-hernandez"] },
   { date: "2026-06-13", ids: ["joao-palhinha", "souleymane-faye", "sergi-altimira"] },
   { date: "2026-06-12", ids: ["sergi-altimira", "joao-palhinha", "alexandre-brito"] },
   { date: "2026-06-11", ids: ["pedro-goncalves", "maxi-araujo", "morten-hjulmand", "giorgi-kochorashvili", "georgios-vagiannidis", "kristian-arnstad"] },
   { date: "2026-06-10", ids: ["silas-andersen", "ousmane-diomande", "yeremay-hernandez", "sergi-altimira", "daniel-braganca"] },
   { date: "2026-06-09", ids: ["goncalo-inacio", "ousmane-diomande", "chiquinho", "sergi-altimira", "giorgi-kochorashvili"] },
-  { date: "2026-06-08", ids: ["luis-suarez", "daniel-braganca", "joao-palhinha", "silas-andersen", "javi-rodriguez", "pedro-goncalves"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
