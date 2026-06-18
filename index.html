@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-18 12:07";
+const LAST_UPDATED = "2026-06-18 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1078,6 +1078,24 @@ const PLAYERS = [
     ]
   },
   {
+    id: "will-lankshear",
+    name: "Will Lankshear",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/879768-1708346356.jpg",
+    referrerpolicy: "no-referrer",
+    emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    position: "PL", age: 21,
+    fromClub: "Tottenham Hotspur", toClub: "Sporting CP",
+    status: "analise",
+    fee: null, contract: null,
+    last_news: "2026-06-18",
+    market_value: "€7M",
+    description: "Avançado centro inglês de 21 anos formado e contratado pelo Tottenham Hotspur. Em 2025/26 esteve cedido ao Oxford United (Championship) onde marcou 12 golos e registou 4 assistências. Regressou ao Tottenham no final de maio de 2026. A 18 de junho o O Jogo revela que o Sporting está entre os clubes interessados na contratação de Lankshear — o clube português vê no jovem atacante potencial para seguir o caminho de Viktor Gyökeres da segunda divisão inglesa para Alvalade. O Tottenham, contudo, recusa libertá-lo actualmente. Clubes do Championship também manifestaram interesse num eventual empréstimo. Contrato com o Tottenham até 2029.",
+    notes: "🔍 Sporting entre os interessados (18/06, O Jogo). Tottenham recusa libertá-lo de momento. Interesse em fase inicial — Spurs exigem ~£20M.",
+    sources: [
+      { label: "O Jogo — Sporting olha para avançado do Tottenham (18/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-olha-para-avancado-do-tottenham/18096696" },
+    ]
+  },
+  {
     id: "bruno-ramos",
     name: "Bruno Ramos",
     photo: "https://img.a.transfermarkt.technology/portrait/big/1092432-1766504864.jpg?lm=1",
@@ -1122,14 +1140,15 @@ const PLAYERS = [
     fromClub: "Sporting CP", toClub: "Por confirmar",
     status: "risco",
     fee: null, contract: "até 2030",
-    last_news: "2026-06-11",
+    last_news: "2026-06-18",
     market_value: "€8M",
-    description: "Lateral direito grego de 24 anos, contratado ao Panathinaikos em agosto de 2025 por ~€13 milhões. Realizou 32 jogos pelo Sporting esta época, mas as suas prestações 'nunca convenceram' por completo a liderança do clube. A 28 de maio revelou-se que Villarreal e Everton fizeram sondagens — ambos os clubes o seguiam antes da sua chegada a Portugal. Rejeitou regressar à Grécia, preferindo estabelecer-se no Sporting ou rumar a um campeonato mais competitivo. A 1 de junho o O Jogo revela que o SSC Napoli avalia Vagiannidis como opção para a defesa direita. A 11 de junho o Record noticia que o Panathinaikos está interessado num empréstimo de Vagiannidis — o Sporting prefere uma transferência definitiva ou acordo financeiramente vantajoso e recusa ceder por empréstimo ao clube de onde o contratou.",
-    notes: "⚠️ Panathinaikos quer empréstimo (11/06) — Sporting recusa, prefere venda definitiva. Napoli, Villarreal e Everton também atentos.",
+    description: "Lateral direito grego de 24 anos, contratado ao Panathinaikos em agosto de 2025 por ~€13 milhões. Realizou 32 jogos pelo Sporting esta época, mas as suas prestações 'nunca convenceram' por completo a liderança do clube. A 28 de maio revelou-se que Villarreal e Everton fizeram sondagens — ambos os clubes o seguiam antes da sua chegada a Portugal. Rejeitou regressar à Grécia, preferindo estabelecer-se no Sporting ou rumar a um campeonato mais competitivo. A 1 de junho o O Jogo revela que o SSC Napoli avalia Vagiannidis como opção para a defesa direita. A 11 de junho o Record noticia que o Panathinaikos está interessado num empréstimo de Vagiannidis — o Sporting prefere uma transferência definitiva ou acordo financeiramente vantajoso e recusa ceder por empréstimo ao clube de onde o contratou. A 18 de junho a A Bola confirma que Vagiannidis reportará à pré-época do Sporting a 12 de julho de 2026, com atraso justificado pelos compromissos internacionais com a selecção grega (Junho). A eventual saída continua em aberto, mas o lateral integra os planos do Sporting para a pré-época.",
+    notes: "⚠️ Vagiannidis reporta à pré-época a 12/07 (A Bola 18/06). Panathinaikos recusado (empréstimo). Napoli, Villarreal e Everton atentos. Saída em aberto mas integra pré-época.",
     sources: [
       { label: "Abola — Sondagens de Villarreal e Everton (28/05)", url: "https://www.abola.pt/noticias/mercado-sporting-vagiannidis-recebeu-sondagens-de-dois-clubes-2026052821515807589" },
       { label: "O Jogo — Napoli pode contratar no Sporting (01/06)", url: "https://www.ojogo.pt/futebol/artigo/napoles-pode-voltar-a-contratar-no-sporting-e-tem-um-trunfo/18090878" },
       { label: "Record — Panathinaikos quer empréstimo (11/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
+      { label: "Abola — Data de apresentação na pré-época: 12 de julho (18/06)", url: "https://www.abola.pt/noticias/sporting-ja-ha-data-para-a-apresentacao-de-vagiannidis-2026061816460863279" },
     ]
   },
   {
@@ -1493,21 +1512,19 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/666971-1773786729.jpg?lm=1",
     emoji: "🇸🇳",
     position: "Ala dto.", age: 23,
-    fromClub: "Sporting CP", toClub: "Por confirmar (empréstimo España provável)",
-    status: "risco",
-    fee: null, contract: "até 2030",
-    last_news: "2026-06-13",
+    fromClub: "Sporting CP", toClub: "Lorient (empréstimo)",
+    status: "saida_fechada",
+    fee: "Empréstimo 1 época s/ opção de compra", fee_value: null, fee_max: null, contract: "até 2030",
     market_value: "€3M",
-    description: "Extremo direito senegalês de 23 anos, contratado ao Granada CF em janeiro de 2026 por ~€6.5M. Em 6 meses no Sporting disputou apenas 9 jogos (161 minutos, 1 assistência) e não justificou o investimento. A 4 de junho o Noticiasaominuto reporta que Faye tem 'guia de marcha' — saída em empréstimo ou definitiva. A 6 de junho a A Bola confirma que não faz parte dos planos para 2026/27. A 13 de junho surgem quatro interessados: o Lorient (Ligue 1, treinador Alexandre Dujeux aprovou) — reportado pelo Record, O Jogo e A Bola; o Elche (La Liga, treinador Martin Anselmi recém-chegado, ex-FC Porto) — abordou o Sporting pela cedência; o Rayo Vallecano (La Liga); e o Maiorca (atualmente na segunda divisão espanhola). Sporting disponível para empréstimo com opção de compra. Contrato até 2030, cláusula de rescisão de €80M.",
-    notes: "🔴 Quatro interessados (13/06): Lorient (França), Elche, Rayo Vallecano e Maiorca (Espanha). Sporting quer ceder por empréstimo com opção.",
+    description: "Extremo direito senegalês de 23 anos, contratado ao Granada CF em janeiro de 2026 por ~€6.5M. Em 6 meses no Sporting disputou apenas 9 jogos (161 minutos, 1 assistência) e não justificou o investimento. A 4 de junho o Noticiasaominuto reporta que Faye tem 'guia de marcha' — saída em empréstimo ou definitiva. A 6 de junho a A Bola confirma que não faz parte dos planos para 2026/27. A 13 de junho surgem quatro interessados: o Lorient (Ligue 1, treinador Alexandre Dujeux aprovou), o Elche (La Liga, Anselmi), o Rayo Vallecano e o Maiorca. A 18 de junho o O Jogo confirma que Faye já tem destino: o Lorient vence a corrida e Faye é cedido por empréstimo de uma época, sem opção de compra contemplada. A Bola também confirmara a França como solução nessa tarde.",
+    notes: "✅ Lorient confirmado (O Jogo 18/06) — empréstimo 1 época, sem opção de compra. Sporting mantém o contrato até 2030.",
     sources: [
       { label: "Noticiasaominuto — Faye com 'guia de marcha' (04/06)", url: "https://www.noticiasaominuto.com/desporto/3000498/chegar-ver-e-sair-faye-com-guia-de-marcha-do-sporting-no-verao" },
       { label: "A Bola — Não convenceu, deve voltar para donde veio (06/06)", url: "https://www.abola.pt/noticias/nao-convenceu-no-sporting-e-deve-voltar-para-donde-veio-2026060613125104057" },
       { label: "Record — Surge na órbita do Lorient (13/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/faye-nao-entra-nas-contas-do-sporting-e-surge-na-orbita-do-lorient" },
       { label: "O Jogo — Pretendido pelo Lorient (13/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-souleymane-faye-pretendido-pelo-lorient/18094750" },
-      { label: "Abola — Lorient negoceia empréstimo (13/06 manhã)", url: "https://www.abola.pt/noticias/mercado-sporting-clube-frances-negoceia-emprestimo-de-faye-2026061221411720245" },
-      { label: "Abola — Anselmi no Elche e pode levar Faye; também Rayo Vallecano (13/06 tarde)", url: "https://www.abola.pt/noticias/mercado-sporting-martin-anselmi-entrou-no-elche-e-pode-levar-faye-2026061316461111074" },
-      { label: "O Jogo — Também na mira de Elche, Rayo Vallecano e Maiorca (13/06 noite)", url: "https://www.ojogo.pt/futebol/artigo/faye-extremo-do-sporting-tambem-na-mira-de-dois-clubes-espanhois/18094985" },
+      { label: "Abola — França pode ser solução para Faye (18/06)", url: "https://www.abola.pt/noticias/mercado-sporting-franca-pode-ser-solucao-para-faye-2026061815373645392" },
+      { label: "O Jogo — Faye já tem destino: Lorient confirmado (18/06)", url: "https://www.ojogo.pt/futebol/artigo/faye-ja-tem-destino-depois-de-nove-jogos-ao-servico-do-sporting/18096741" },
     ]
   },
   {
@@ -1536,13 +1553,15 @@ const PLAYERS = [
     position: "Ala esq.", age: 21,
     fromClub: "Olympique Lyon", toClub: "Bayer Leverkusen",
     status: "saida_fechada",
-    fee: "€6.8M proc. Sporting (cláusula revenda 20% + solidariedade)", fee_value: null, fee_max: null, contract: null,
+    fee: "€6.4M proc. Sporting (20% mais-valia + solidariedade)", fee_value: null, fee_max: null, contract: null,
     market_value: "€20M",
-    description: "Extremo esquerdo português de 21 anos, formado na Academia do Sporting e vendido ao Olympique Lyon em 2025 por €2 milhões — negócio que incluiu cláusula de revenda de 20% da mais-valia. Na época 2025/26 revelou-se pelo Lyon com 8 golos e 10 assistências em 37 jogos. A 17 de junho de 2026 o Bayer Leverkusen fechou a sua contratação por cerca de €32 milhões — Moreira viajou para a Alemanha para exames médicos e assinatura. O Sporting encaixa aproximadamente €6.8 milhões via cláusula de revenda (20% da mais-valia) e mecanismo de solidariedade FIFA.",
-    notes: "✅ Lyon→Leverkusen fechado (17/06, ≈€32M). Sporting recebe ~€6.8M via cláusula revenda (20%) e solidariedade. Exames médicos e assinatura em curso em Leverkusen.",
+    description: "Extremo esquerdo português de 21 anos, formado na Academia do Sporting e vendido ao Olympique Lyon em 2025 por €2 milhões — negócio que incluiu cláusula de revenda de 20% da mais-valia. Na época 2025/26 revelou-se pelo Lyon com 8 golos e 11 assistências em 37 jogos. A 17 de junho de 2026 o Bayer Leverkusen fechou a sua contratação — Moreira viajou para a Alemanha para exames médicos e assinatura. A 18 de junho o Bayer Leverkusen oficializa via redes sociais a transferência: €29.5M fixos + €4.1M variáveis (total €33.6M), contrato até 2031. O Sporting encaixa €6.4M: €5.52M via cláusula de revenda (20% dos €27.5M de mais-valia) e €0.9M via solidariedade FIFA.",
+    notes: "✅ Leverkusen oficializa Lyon→Leverkusen (18/06): €29.5M+€4.1M=€33.6M. Sporting recebe €6.4M (20% mais-valia + solidariedade FIFA).",
     sources: [
       { label: "Abola — Acordo fechado, leão garante euromilhões (17/06)", url: "https://www.abola.pt/noticias/mercado-sporting-acordo-fechado-e-leao-garante-euromilhoes-com-afonso-moreira-2026061711554687366" },
       { label: "O Jogo — Na Alemanha para assinar (17/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-esfrega-as-maos-afonso-moreira-na-alemanha-para-assinar/18096290" },
+      { label: "Abola — Leverkusen oficializa, cofres do Sporting enchem (18/06)", url: "https://www.abola.pt/noticias/oficial-afonso-moreira-reforca-leverkusen-e-enche-cofres-do-sporting-2026061816205900789" },
+      { label: "Record — Leverkusen oficializa por €33.6M (18/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/bayer-leverkusen-oficializa-afonso-moreira-por-33-6-milhoes-de-euros-e-o-sporting-vai-fazer-encaixe" },
     ]
   },
 ];
@@ -1551,7 +1570,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-18", ids: ["francisco-trincao", "ousmane-diomande", "jesse-derry"] },
+  { date: "2026-06-18", ids: ["francisco-trincao", "ousmane-diomande", "jesse-derry", "afonso-moreira", "souleymane-faye", "georgios-vagiannidis", "will-lankshear"] },
   { date: "2026-06-17", ids: ["rodrigo-zalazar", "maxi-araujo", "morten-hjulmand", "francisco-trincao", "sergi-altimira", "joao-palhinha", "cheveyo-tsawa", "afonso-moreira"] },
   { date: "2026-06-16", ids: ["maxi-araujo", "morten-hjulmand", "ricardo-mangas", "aurelien-guernier"] },
   { date: "2026-06-15", ids: ["sergi-altimira"] },
