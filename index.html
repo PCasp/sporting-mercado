@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-23 12:07";
+const LAST_UPDATED = "2026-06-23 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1437,15 +1437,16 @@ const PLAYERS = [
     fromClub: "Sporting CP", toClub: "Celta de Vigo (interesse)",
     status: "risco",
     fee: null, contract: "até 2030",
-    last_news: "2026-06-13",
+    last_news: "2026-06-23",
     market_value: "€4M",
-    description: "Médio georgiano contratado ao Levante em março de 2025 por €5.5M + €2M variáveis (total potencial €7.5M), com cláusula de rescisão de €80M e contrato até 2030. Realizou 26 jogos pelo Sporting mas nunca se afirmou como titular indiscutível sob Rui Borges — ficou atrás de Hjulmand, Morita, João Simões e Daniel Bragança. A 9 de junho a Abola confirma que Kochorashvili já tomou a decisão de sair: não entra nos planos de Rui Borges para 2026/27. Quer regressar a Espanha, onde jogou no Girona, Levante e Castellón. O Sporting espera recuperar parte dos €5.5M investidos. A 11 de junho, em entrevista ao Record, o próprio admitiu: \"Estou a passar por um período difícil\" — referindo-se à falta de minutos (menos de 1.000 em toda a época) e à incerteza sobre o futuro. Confirmou estar activamente à procura de novo clube. A 13 de junho a A Bola revela que o Celta de Vigo pondera avançar com uma proposta de empréstimo com opção de compra — o destino do médio está 'quase traçado'.",
-    notes: "🔴 Celta de Vigo pondera empréstimo com opção — destino quase traçado (13/06). Sporting quer recuperar investimento.",
+    description: "Médio georgiano contratado ao Levante em março de 2025 por €5.5M + €2M variáveis (total potencial €7.5M), com cláusula de rescisão de €80M e contrato até 2030. Realizou 26 jogos pelo Sporting mas nunca se afirmou como titular indiscutível sob Rui Borges — ficou atrás de Hjulmand, Morita, João Simões e Daniel Bragança. A 9 de junho a Abola confirma que Kochorashvili já tomou a decisão de sair: não entra nos planos de Rui Borges para 2026/27. Quer regressar a Espanha, onde jogou no Girona, Levante e Castellón. O Sporting espera recuperar parte dos €5.5M investidos. A 11 de junho, em entrevista ao Record, o próprio admitiu: \"Estou a passar por um período difícil\" — referindo-se à falta de minutos (menos de 1.000 em toda a época) e à incerteza sobre o futuro. Confirmou estar activamente à procura de novo clube. A 13 de junho a A Bola revela que o Celta de Vigo pondera avançar com uma proposta de empréstimo com opção de compra — o destino do médio está 'quase traçado'. A 23 de junho a A Bola confirma que o Sporting ainda aguarda proposta formal do Celta de Vigo: os galegos propõem empréstimo com opção de compra, mas Alvalade prefere venda definitiva para recuperar os €5.5M investidos. Múltiplos clubes espanhóis acompanham a situação.",
+    notes: "🔴 Sporting aguarda proposta formal do Celta de Vigo (A Bola 23/06). Galegos propõem empréstimo+opção; Sporting quer venda definitiva (≥€5.5M). Jogador quer regressar a Espanha.",
     sources: [
       { label: "O Jogo — Levante atento à situação de Kochorashvili (30/05)", url: "https://www.ojogo.pt/futebol/artigo/sporting-levante-atento-a-situacao-de-kochorashvili/18090082" },
       { label: "Abola — Kochorashvili tomou decisão sobre o futuro (09/06)", url: "https://www.abola.pt/noticias/mercado-sporting-kochorashvili-ja-tomou-decisao-quanto-ao-futuro-2026060909572577073" },
       { label: "Record — 'Estou a passar por um período difícil' (11/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
       { label: "Abola — Celta de Vigo e destino quase traçado (13/06)", url: "https://www.abola.pt/noticias/mercado-sporting-kochorashvili-com-clube-interessado-e-destino-quase-tracado-2026061318452244627" },
+      { label: "A Bola — Leões à espera do Celta de Vigo; sem proposta formal (23/06)", url: "https://www.abola.pt/noticias/sporting-leoes-a-espera-do-celta-de-vigo-por-kochorashvili-2026062316430442090" },
     ]
   },
   {
@@ -1554,7 +1555,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-23", ids: ["luis-suarez", "sergi-altimira"] },
+  { date: "2026-06-23", ids: ["luis-suarez", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-22", ids: ["morten-hjulmand", "joao-palhinha", "pedro-goncalves", "souleymane-faye", "francisco-trincao", "ivan-fresneda", "maxi-araujo"] },
   { date: "2026-06-19", ids: ["yeremay-hernandez", "pedro-goncalves", "souleymane-faye", "sergi-altimira", "joao-palhinha"] },
   { date: "2026-06-18", ids: ["francisco-trincao", "ousmane-diomande", "jesse-derry", "afonso-moreira", "souleymane-faye", "georgios-vagiannidis", "will-lankshear"] },
