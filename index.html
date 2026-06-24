@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-24 08:15";
+const LAST_UPDATED = "2026-06-24 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -954,28 +954,23 @@ const PLAYERS = [
     referrerpolicy: "no-referrer",
     emoji: "🇪🇸",
     position: "MC", age: 24,
-    fromClub: "Real Betis", toClub: "Sporting CP (favorito)",
-    status: "negociacao",
-    fee: "€18M + variáveis (≈€20M total, proposta Sporting)", contract: null,
+    fromClub: "Real Betis", toClub: "Sporting CP",
+    status: "fechado",
+    fee: "€18M + €2M variáveis (€20M total)", contract: "até 2031",
     market_value: "€12M",
-    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis (pedia €20–25M). O Betis precisa de gerar €30M em vendas antes de 30 de junho para não registar prejuízo — deadline que acelera a negociação. A 12 de junho a A Bola revelou que o Sporting preparava novo ataque abaixo dos €20M, tendo ultrapassado o Leipzig na corrida. A 13 de junho de manhã a A Bola avançou com valores de acordo de €18M + €4M variáveis e entendimento pessoal de 5 anos com cláusula de €80M. Contudo, o Record publicou às 17h32 um desmentido parcial: a SAD de Varandas ainda não garantiu qualquer acordo com o jogador nem com o Betis, e o RB Leipzig voltou ao ativo. A 14 de junho o O Jogo reportou que o Leipzig estaria focado em mudanças de treinador; contudo, a A Bola às 18h12 contradisse essa leitura: o Leipzig mantém-se firme na corrida e 'promete chegar aos números que serão apresentados pelos leões'. O Betis aproveita a concorrência para valorizar o jogador. Altimira tem direito a 15% de uma futura transferência. A 16 de junho a A Bola reporta que o Betis está 'em contagem decrescente' e o Sporting está 'em cima'. A 17 de junho o O Jogo confirma que a venda de Altimira é central para o Betis fechar o exercício fiscal. A 19 de junho o O Jogo revela que o Leipzig prepara proposta acima de €20M. A 23 de junho a A Bola confirma que a nomeação de Demichelis colocou o Leipzig na frente, com Altimira inclinado para a Bundesliga — o Betis fixou prazo para os alemães. A 24 de junho há um volte-face completo: o Leipzig não apresentou proposta concreta dentro do prazo estipulado pelo Betis, que perdeu a paciência com os alemães e reabriu o diálogo com o Sporting. O clube sevilhano pressionou Altimira a tomar uma decisão imediata. O Sporting fez um ataque final com uma proposta de €18M fixos mais objetivos (≈€20M total), e o momentum voltou claramente a Alvalade. O Record nota que Altimira continua a ser a segunda opção do Sporting, sendo Palhinha o alvo prioritário para suceder a Hjulmand.",
-    notes: "🟢 Betis reabriu com Sporting após Leipzig não cumprir prazo (A Bola 24/06). Sporting faz ataque final: €18M+obj.≈€20M. Altimira pressionado a decidir. Palhinha ainda é opção nº1.",
-    last_news: "2026-06-24",
+    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis (pedia €20–25M). Depois de um processo longo com concorrência do Leipzig (que nunca chegou a formalizar proposta), o Betis reabriu com o Sporting a 24 de junho após os alemães não cumprirem o prazo fixado. A 24 de junho A Bola, Record, O Jogo e Fabrizio Romano confirmaram que o acordo está fechado: €18M fixos + €2M em objetivos (€20M total), contrato de 5 anos até 2031, cláusula de rescisão de €80M. Sporting venceu a corrida ao Leipzig com a ajuda de Jorge Mendes nas negociações. Altimira chega a Lisboa em breve para exames médicos e assinar contrato.",
+    notes: "✅ Acordo fechado — €18M+€2M, contrato até 2031, cláusula €80M (Record/A Bola/Romano 24/06). Medicals e assinatura iminentes.",
     sources: [
       { label: "Abola — Betis quer vender Altimira antes de 30/06 (09/06)", url: "https://www.abola.pt/noticias/atencao-sporting-betis-quer-vender-altimira-antes-do-dia-30-2026060911123701269" },
-      { label: "O Jogo — Betis abre a porta, ainda na lista do Sporting (10/06)", url: "https://www.ojogo.pt/futebol/artigo/betis-abre-a-porta-a-altimira-ainda-na-lista-do-sporting/18093789" },
-      { label: "Abola — Novo ataque abaixo de €20M (12/06)", url: "https://www.abola.pt/noticias/mercado-sporting-altimira-por-menos-de-euro20-m-vem-ai-novo-ataque-ao-espanhol-2026061119371713415" },
-      { label: "Abola — Sporting e Betis próximos de acordo: €18M+€4M (13/06 manhã)", url: "https://www.abola.pt/noticias/sporting-e-betis-fecham-altimira-os-valores-do-acordo-2026061309521454008" },
-      { label: "Record — Futuro em aberto, sem acordo, Leipzig na corrida (13/06 17h32)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/altimira-com-futuro-em-aberto-ainda-sem-acordo-com-o-sporting-e-a-espera-do-rb-leipzig" },
-      { label: "O Jogo — Betis exige €18M+€4M, Altimira vê Sporting com bons olhos (13/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-betis-apresenta-exigencias-por-sergi-altimira/18094816" },
-      { label: "O Jogo — Leipzig recua; Altimira pode sair mais barato ao Sporting (14/06 manhã)", url: "https://www.ojogo.pt/futebol/artigo/sergi-altimira-pode-sair-mais-barato-ao-sporting/18095053" },
-      { label: "Abola — Leipzig promete igualar proposta do Sporting (14/06 18h12)", url: "https://www.abola.pt/noticias/mercado-sporting-rb-leipzig-promete-elevar-fasquia-por-altimira-2026061418120700535" },
+      { label: "Abola — Sporting e Betis próximos de acordo: €18M+€4M (13/06)", url: "https://www.abola.pt/noticias/sporting-e-betis-fecham-altimira-os-valores-do-acordo-2026061309521454008" },
       { label: "Abola — Betis em contagem decrescente, leão 'em cima' (16/06)", url: "https://www.abola.pt/noticias/mercado-sporting-betis-em-contagem-decrescente-por-altimira-e-leao-em-cima-2026061615395856417" },
-      { label: "O Jogo — Altimira na lista do Sporting, pressão sobre o Betis aumenta (17/06)", url: "https://www.ojogo.pt/futebol/artigo/altimira-ainda-na-lista-do-sporting-e-pressao-aumenta-no-betis/18096150" },
-      { label: "O Jogo — Leipzig prepara proposta acima de €20M; Palhinha foge (19/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-sobe-a-pressao-por-altimira-e-joao-palhinha-a-fugir/18096905" },
+      { label: "O Jogo — Leipzig prepara proposta acima de €20M (19/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-sobe-a-pressao-por-altimira-e-joao-palhinha-a-fugir/18096905" },
       { label: "A Bola — Altimira complica-se, Leipzig na frente com Demichelis (23/06)", url: "https://www.abola.pt/noticias/atencao-sporting-altimira-complica-se-e-espanhol-esta-mais-longe-de-alvalade-2026062219575740255" },
       { label: "A Bola — Volte-face: Betis abre a porta, Sporting faz ataque final (24/06)", url: "https://www.abola.pt/noticias/volte-face-com-altimira-betis-abre-a-porta-e-sporting-faz-ataque-final-ao-medio-2026062320424687551" },
-      { label: "Record — Leões dispostos a atingir €20M por Altimira (24/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/altimira-em-marcha-leoes-dispostos-a-atingir-20-m" },
+      { label: "Record — Sporting fecha Altimira: €18M+€2M, contrato até 2031 (24/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-sporting-fecha-sergi-altimira" },
+      { label: "A Bola — Altimira até 2031, detalhes finais a ser acertados (24/06)", url: "https://www.abola.pt/noticias/mercado-sporting-altimira-ate-2031-2026062410305367955" },
+      { label: "blogvisaodemercado — Fabrizio Romano confirma: deal at final stages (24/06)", url: "https://blogvisaodemercado.pt/sporting-perto-de-fechar-altimira/" },
+      { label: "O Jogo — Sporting e Betis perto de acordo (24/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-e-betis-perto-de-acordo-por-altimira/18098655" },
     ]
   },
   {
