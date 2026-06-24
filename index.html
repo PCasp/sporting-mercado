@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-24 12:07";
+const LAST_UPDATED = "2026-06-24 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1366,15 +1366,16 @@ const PLAYERS = [
     fromClub: "Sporting CP", toClub: "Por confirmar",
     status: "risco",
     fee: null, contract: null,
-    last_news: "2026-06-22",
+    last_news: "2026-06-24",
     market_value: "€40M",
-    description: "Extremo direito português, habitual titular no Sporting. A 28 de maio foi eleito para o onze do ano da Liga pelos capitães e treinadores das 18 equipas — 7 golos e 11 assistências em 34 jogos, o jogador de campo mais utilizado por Rui Borges. O Liverpool é um dos clubes da Premier League a acompanhar o nº17 de Alvalade. O Sporting já assegurou Pedro Lima como substituto, o que sugere que o clube está preparado para a sua eventual saída. A 1 de junho o Record confirma que o Sporting planeia encaixar pelo menos €100M combinados da venda de Trincão e Hjulmand neste verão. A 16 de junho o jornalista Gianluca Di Marzio confirma via O Jogo o interesse do AC Milan de Rúben Amorim: Trincão e Hjulmand são os 'dois favoritos' do técnico português para o projeto milanês. A cláusula de rescisão de Trincão é de €60M. A 18 de junho a A Bola confirma que a saída de Trincão está 'cada vez mais perto': será formalizada após a participação no Mundial, podendo Trincão mesmo não participar na pré-época do Sporting. A Premier League é o destino preferencial, com expectativa de transferência entre €40-50M. A 21 de junho o Transfermarkt e Di Marzio confirmam formalmente que Trincão consta na lista de reforços prioritários do AC Milan de Amorim — o técnico português quer trabalhar com ele na Serie A. O Milan é agora um destino concreto a par dos clubes da Premier League.",
-    notes: "🔴 Saída cada vez mais próxima (A Bola 18/06) — PL destino preferencial, pode não fazer pré-época. Milan (Amorim) confirmado como opção real (21/06). €40-50M esperados. Cláusula €60M.",
+    description: "Extremo direito português, habitual titular no Sporting. A 28 de maio foi eleito para o onze do ano da Liga pelos capitães e treinadores das 18 equipas — 7 golos e 11 assistências em 34 jogos, o jogador de campo mais utilizado por Rui Borges. O Liverpool é um dos clubes da Premier League a acompanhar o nº17 de Alvalade. O Sporting já assegurou Pedro Lima como substituto, o que sugere que o clube está preparado para a sua eventual saída. A 1 de junho o Record confirma que o Sporting planeia encaixar pelo menos €100M combinados da venda de Trincão e Hjulmand neste verão. A 16 de junho o jornalista Gianluca Di Marzio confirma via O Jogo o interesse do AC Milan de Rúben Amorim: Trincão e Hjulmand são os 'dois favoritos' do técnico português para o projeto milanês. A cláusula de rescisão de Trincão é de €60M. A 18 de junho a A Bola confirma que a saída de Trincão está 'cada vez mais perto': será formalizada após a participação no Mundial, podendo Trincão mesmo não participar na pré-época do Sporting. A Premier League é o destino preferencial, com expectativa de transferência entre €40-50M. A 21 de junho o Transfermarkt e Di Marzio confirmam formalmente que Trincão consta na lista de reforços prioritários do AC Milan de Amorim. A 24 de junho a A Bola revela que Amorim não tenciona fazer qualquer avanço para contratar jogadores do Sporting 'pelo menos para já' — a prioridade imediata é analisar o plantel existente antes da pré-época milanesa (12 de julho). Milan mantém-se como opção futura mas sem avanço concreto neste momento.",
+    notes: "🔴 Saída cada vez mais próxima — PL destino preferencial, pode não fazer pré-época. Milan (Amorim) sem avanço imediato (A Bola 24/06). €40-50M esperados. Cláusula €60M.",
     sources: [
       { label: "Record — Liverpool de olho no Trincão", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/trincao-na-rota-inglesa-liverpool-e-um-dos-clubes-de-olho-no-leao" },
       { label: "O Jogo — Di Marzio: Milan (Amorim) quer Trincão e Hjulmand (16/06 23h30)", url: "https://www.ojogo.pt/futebol/artigo/milan-de-ruben-amorim-interessado-em-trincao-e-hjulmand/18096066" },
       { label: "Abola — Trincão cada vez mais perto da saída, PL é destino preferencial (18/06)", url: "https://www.abola.pt/noticias/mercado-sporting-trincao-cada-vez-mais-perto-da-saida-2026061722524615336" },
       { label: "Transfermarkt / Di Marzio — Trincão na lista de Amorim para o Milan (21/06)", url: "https://www.transfermarkt.pt/francisco-trincao/profil/spieler/412669" },
+      { label: "A Bola — Amorim não olha para o Sporting para já (24/06)", url: "https://www.abola.pt/noticias/mercado-amorim-nao-olha-para-o-sporting-pelo-menos-para-ja-2026062416293771402" },
     ]
   },
   {
@@ -1444,6 +1445,24 @@ const PLAYERS = [
       { label: "Record — 'Estou a passar por um período difícil' (11/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
       { label: "Abola — Celta de Vigo e destino quase traçado (13/06)", url: "https://www.abola.pt/noticias/mercado-sporting-kochorashvili-com-clube-interessado-e-destino-quase-tracado-2026061318452244627" },
       { label: "A Bola — Leões à espera do Celta de Vigo; sem proposta formal (23/06)", url: "https://www.abola.pt/noticias/sporting-leoes-a-espera-do-celta-de-vigo-por-kochorashvili-2026062316430442090" },
+    ]
+  },
+  {
+    id: "gabriel-biel",
+    name: "Gabriel Teixeira Aragão (Biel)",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/875328-1684595840.jpg",
+    referrerpolicy: "no-referrer",
+    emoji: "🇧🇷",
+    position: "Ala esq.", age: 25,
+    fromClub: "Sporting CP", toClub: "Pafos FC (empréstimo, iminente)",
+    status: "risco",
+    fee: null, contract: "até 2029",
+    last_news: "2026-06-24",
+    market_value: "€4M",
+    description: "Extremo esquerdo brasileiro contratado ao Bahia em janeiro de 2025 por €6.4M com contrato até 2029. Nunca se afirmou como titular no Sporting, ficando atrás de outros jogadores na hierarquia de Rui Borges. Já esteve em dois empréstimos consecutivos (Atlético Mineiro e Al-Taawoun FC na Arábia Saudita, este último até 30 de junho de 2026). A 24 de junho a A Bola revela que o Sporting está prestes a resolver a sua situação com um terceiro empréstimo consecutivo, desta vez para o Pafos FC (Chipre), treinado pelo português Ricardo Sá Pinto — onde já joga o colega Alexandre Brito. O Pafos disputa a 2.ª pré-eliminatória da Liga Europa frente ao Viktoria Plzen. O anúncio oficial é esperado nos próximos dias.",
+    notes: "🔴 3.º empréstimo consecutivo iminente — Pafos FC (Chipre, Ricardo Sá Pinto). Anúncio oficial em breve (A Bola 24/06).",
+    sources: [
+      { label: "A Bola — Sporting prestes a resolver a questão de Biel (24/06)", url: "https://www.abola.pt/noticias/sporting-prestes-a-solucionar-a-questao-de-biel-2026062416090232156" },
     ]
   },
   {
@@ -1552,7 +1571,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-24", ids: ["sergi-altimira"] },
+  { date: "2026-06-24", ids: ["sergi-altimira", "gabriel-biel", "francisco-trincao"] },
   { date: "2026-06-23", ids: ["luis-suarez", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-22", ids: ["morten-hjulmand", "joao-palhinha", "pedro-goncalves", "souleymane-faye", "francisco-trincao", "ivan-fresneda", "maxi-araujo"] },
   { date: "2026-06-19", ids: ["yeremay-hernandez", "pedro-goncalves", "souleymane-faye", "sergi-altimira", "joao-palhinha"] },
