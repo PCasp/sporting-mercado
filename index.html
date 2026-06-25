@@ -768,7 +768,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-24 18:03";
+const LAST_UPDATED = "2026-06-25 08:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -958,8 +958,8 @@ const PLAYERS = [
     status: "fechado",
     fee: "€18M + €2M variáveis (€20M total)", contract: "até 2031",
     market_value: "€12M",
-    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis (pedia €20–25M). Depois de um processo longo com concorrência do Leipzig (que nunca chegou a formalizar proposta), o Betis reabriu com o Sporting a 24 de junho após os alemães não cumprirem o prazo fixado. A 24 de junho A Bola, Record, O Jogo e Fabrizio Romano confirmaram que o acordo está fechado: €18M fixos + €2M em objetivos (€20M total), contrato de 5 anos até 2031, cláusula de rescisão de €80M. Sporting venceu a corrida ao Leipzig com a ajuda de Jorge Mendes nas negociações. Altimira chega a Lisboa em breve para exames médicos e assinar contrato.",
-    notes: "✅ Acordo fechado — €18M+€2M, contrato até 2031, cláusula €80M (Record/A Bola/Romano 24/06). Medicals e assinatura iminentes.",
+    description: "Médio central espanhol de 24 anos do Real Betis, onde realizou 40 jogos com 2 golos e 3 assistências em 2025/26. O Sporting apresentou proposta de €14M + €3M variáveis, rejeitada pelo Betis (pedia €20–25M). Depois de um processo longo com concorrência do Leipzig (que nunca chegou a formalizar proposta), o Betis reabriu com o Sporting a 24 de junho após os alemães não cumprirem o prazo fixado. A 24 de junho A Bola, Record, O Jogo e Fabrizio Romano confirmaram que o acordo está fechado: €18M fixos + €2M em objetivos (€20M total), contrato de 5 anos até 2031, cláusula de rescisão de €80M. Sporting venceu a corrida ao Leipzig com a ajuda de Jorge Mendes nas negociações. A 25 de junho a A Bola detalha que os exames médicos e assinatura estão agendados para os próximos dias, com apresentação oficial prevista para 1 de julho na Academia Cristiano Ronaldo. A contratação insere-se num investimento total de €50M no meio-campo nesta janela (Altimira €18M+€2M, Doumbia €20M+€6M, Silas Andersen €7.25M+€2.75M, André Lima €4M+€2M).",
+    notes: "✅ Acordo fechado — €18M+€2M, contrato até 2031, cláusula €80M. Medicals e assinatura iminentes; apresentação na Academia CR7 a 1/07 (A Bola 25/06).",
     sources: [
       { label: "Abola — Betis quer vender Altimira antes de 30/06 (09/06)", url: "https://www.abola.pt/noticias/atencao-sporting-betis-quer-vender-altimira-antes-do-dia-30-2026060911123701269" },
       { label: "Abola — Sporting e Betis próximos de acordo: €18M+€4M (13/06)", url: "https://www.abola.pt/noticias/sporting-e-betis-fecham-altimira-os-valores-do-acordo-2026061309521454008" },
@@ -970,7 +970,8 @@ const PLAYERS = [
       { label: "Record — Sporting fecha Altimira: €18M+€2M, contrato até 2031 (24/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-sporting-fecha-sergi-altimira" },
       { label: "A Bola — Altimira até 2031, detalhes finais a ser acertados (24/06)", url: "https://www.abola.pt/noticias/mercado-sporting-altimira-ate-2031-2026062410305367955" },
       { label: "blogvisaodemercado — Fabrizio Romano confirma: deal at final stages (24/06)", url: "https://blogvisaodemercado.pt/sporting-perto-de-fechar-altimira/" },
-      { label: "O Jogo — Sporting e Betis perto de acordo (24/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-e-betis-perto-de-acordo-por-altimira/18098655" },
+      { label: "A Bola — Medicals e apresentação a 1/07 na Academia CR7 (25/06)", url: "https://www.abola.pt/noticias/mercado-sporting-altimira-fecha-miolo-num-total-de-euro50-milhoes-2026062417313802358" },
+      { label: "Record — Altimira liberta Hjulmand, gastos atingem €80M (25/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/altimira-fecha-miolo-milionario-do-sporting-medio-liberta-hjulmand-e-gastos-ja-atingem-os-80-milhoes" },
     ]
   },
   {
@@ -1571,13 +1572,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-06-25", ids: ["sergi-altimira"] },
   { date: "2026-06-24", ids: ["sergi-altimira", "gabriel-biel", "francisco-trincao"] },
   { date: "2026-06-23", ids: ["luis-suarez", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-22", ids: ["morten-hjulmand", "joao-palhinha", "pedro-goncalves", "souleymane-faye", "francisco-trincao", "ivan-fresneda", "maxi-araujo"] },
   { date: "2026-06-19", ids: ["yeremay-hernandez", "pedro-goncalves", "souleymane-faye", "sergi-altimira", "joao-palhinha"] },
   { date: "2026-06-18", ids: ["francisco-trincao", "ousmane-diomande", "jesse-derry", "afonso-moreira", "souleymane-faye", "georgios-vagiannidis", "will-lankshear"] },
   { date: "2026-06-17", ids: ["rodrigo-zalazar", "maxi-araujo", "morten-hjulmand", "francisco-trincao", "sergi-altimira", "joao-palhinha", "cheveyo-tsawa", "afonso-moreira"] },
-  { date: "2026-06-16", ids: ["maxi-araujo", "morten-hjulmand", "ricardo-mangas", "aurelien-guernier"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
