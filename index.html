@@ -1032,7 +1032,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-26 18:03";
+const LAST_UPDATED = "2026-06-27 08:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1246,30 +1246,13 @@ const PLAYERS = [
     emoji: "🇵🇹",
     position: "MC", age: 18,
     fromClub: "Atlético CP", toClub: "Sporting CP B",
-    status: "fechado",
-    fee: "Livre", contract: null,
+    status: "oficial",
+    fee: "Livre", fee_value: 0, fee_max: 0, contract: null,
     market_value: null,
-    description: "Médio central português de 18 anos (nascido a 19 de dezembro de 2007), formado no Atlético CP (Liga 3). A 25 de junho de 2026 o Atlético CP confirmou oficialmente a saída de Catarino César Simões Pascoal para o Sporting, onde integrará a equipa B. É descrito com um perfil semelhante ao de João Neves: coloca os estudos à frente do futebol e imita Kylian Mbappé como ídolo.",
-    notes: "🤝 Atlético CP confirma saída oficial para o Sporting B (Record 25/06). Aguarda anúncio formal do Sporting CP.",
+    description: "Médio central português de 18 anos (nascido a 19 de dezembro de 2007), formado no Atlético CP (Liga 3). A 25 de junho de 2026 o Atlético CP confirmou oficialmente a saída de Catarino César Simões Pascoal para o Sporting, onde integrará a equipa B. No mesmo dia o Sporting CP confirmou a contratação via Instagram oficial. É descrito com um perfil semelhante ao de João Neves: coloca os estudos à frente do futebol e imita Kylian Mbappé como ídolo.",
+    notes: "✅ Sporting CP confirma oficialmente via Instagram (25/06). Livre para a equipa B.",
     sources: [
       { label: "Record — Atlético oficializa saída para o Sporting (25/06)", url: "https://record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/atletico-oficializa-saida-de-catarino-pascoal-para-o-sporting" },
-    ]
-  },
-  {
-    id: "zan-vipotnik",
-    name: "Zan Vipotnik",
-    photo: "https://img.a.transfermarkt.technology/portrait/big/506942-1716317342.jpg",
-    emoji: "🇸🇮",
-    position: "Avançado", age: 24,
-    fromClub: "Swansea City", toClub: "Sporting CP",
-    status: "analise",
-    fee: null, contract: "até 2030",
-    last_news: "2026-06-05",
-    market_value: "€22M",
-    description: "Avançado esloveno de 24 anos em grande época pelo Swansea City na Championship inglesa: 25 golos e 3 assistências em 49 jogos. O Sporting identificou-o como potencial plano B para o ataque caso Luís Suárez saia pelo valor da cláusula de €80M. O Record revela que, 'nesta fase, não houve qualquer abordagem'. Interesse estritamente condicionado à saída de Suárez.",
-    notes: "⚠️ Plano B contingente — só avança se Suárez sair. Nenhuma abordagem efectuada (05/06).",
-    sources: [
-      { label: "Record — Vipotnik como plano B caso Suárez saia (05/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-pensa-em-alternativa-caso-luis-suarez-saia-zan-vipotnik-e-um-possivel-plano-b" },
     ]
   },
   {
@@ -1890,13 +1873,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-06-27", ids: ["catarino-pascoal"] },
   { date: "2026-06-26", ids: ["morten-hjulmand", "joao-palhinha", "sergi-altimira", "gabriel-biel", "ricardo-mangas", "franco-mastantuono"] },
   { date: "2026-06-25", ids: ["sergi-altimira", "morten-hjulmand", "adrian-bernabe", "catarino-pascoal"] },
   { date: "2026-06-24", ids: ["sergi-altimira", "gabriel-biel", "francisco-trincao"] },
   { date: "2026-06-23", ids: ["luis-suarez", "sergi-altimira", "giorgi-kochorashvili"] },
   { date: "2026-06-22", ids: ["morten-hjulmand", "joao-palhinha", "pedro-goncalves", "souleymane-faye", "francisco-trincao", "ivan-fresneda", "maxi-araujo"] },
   { date: "2026-06-19", ids: ["yeremay-hernandez", "pedro-goncalves", "souleymane-faye", "sergi-altimira", "joao-palhinha"] },
-  { date: "2026-06-18", ids: ["francisco-trincao", "ousmane-diomande", "jesse-derry", "afonso-moreira", "souleymane-faye", "georgios-vagiannidis", "will-lankshear"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
