@@ -942,6 +942,10 @@
     .notes-list li { position: relative; padding-left: 14px; line-height: 1.5; margin-bottom: 5px; }
     .notes-list li::before { content: "•"; position: absolute; left: 0; }
     .notes-list li:last-child { margin-bottom: 0; }
+    .desc-list { list-style: none; margin: 0; padding: 0; font-size: .88rem; color: var(--text); line-height: 1.6; }
+    .desc-list li { position: relative; padding-left: 14px; margin-bottom: 6px; }
+    .desc-list li::before { content: "•"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+    .desc-list li:last-child { margin-bottom: 0; }
 
     /* ── TODAY STRIP ── */
     .today-strip {
@@ -2422,7 +2426,9 @@ function renderDetail(id) {
       ${statsHtml}
       <div class="detail-section">
         <div class="detail-label">Situação</div>
-        <div class="detail-text">${p.description}</div>
+        <ul class="desc-list">${
+          p.description.replace(/\.\s*$/, "").split(/\.\s+/).map(b => `<li>${b}</li>`).join("")
+        }</ul>
         ${notesHtml}
       </div>
       ${sourcesHtml}
