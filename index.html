@@ -938,8 +938,9 @@
       color: var(--status-negociacao); margin-top: 8px; display: flex; gap: 6px;
     }
     .notes-box { display: block; }
-    .notes-list { list-style: disc; margin: 0; padding-left: 18px; }
-    .notes-list li { line-height: 1.5; margin-bottom: 5px; }
+    .notes-list { list-style: none; margin: 0; padding: 0; }
+    .notes-list li { position: relative; padding-left: 14px; line-height: 1.5; margin-bottom: 5px; }
+    .notes-list li::before { content: "•"; position: absolute; left: 0; }
     .notes-list li:last-child { margin-bottom: 0; }
 
     /* ── TODAY STRIP ── */
