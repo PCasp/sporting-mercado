@@ -432,6 +432,9 @@
       display: flex;
       gap: 6px;
     }
+    .notes-box { display: block; }
+    .notes-list { list-style: disc; margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+    .notes-list li { line-height: 1.5; }
 
     /* ── BALANCE VIEW ── */
     #balance-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
@@ -2400,7 +2403,9 @@ function renderDetail(id) {
        </div>` : "";
 
   const notesHtml = p.notes
-    ? `<div class="warning-box"><span>ℹ️</span><span>${p.notes}</span></div>` : "";
+    ? `<div class="warning-box notes-box"><ul class="notes-list">${
+        p.notes.replace(/\.\s*$/, "").split(/\.\s+/).map(b => `<li>${b}</li>`).join("")
+      }</ul></div>` : "";
 
   document.getElementById("detail-content").innerHTML = `
     <div class="detail-hero">
