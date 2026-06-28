@@ -1032,7 +1032,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-28 08:15";
+const LAST_UPDATED = "2026-06-28 19:41";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1589,6 +1589,25 @@ const PLAYERS = [
     ]
   },
   {
+    id: "geny-catamo",
+    name: "Geny Catamo",
+    photo: "https://img.a.transfermarkt.technology/portrait/big/701979-1764374966.jpg?lm=1",
+    emoji: "🇲🇿",
+    position: "Ala dto.", age: 25,
+    fromClub: "Sporting CP", toClub: "Como FC (interesse)",
+    status: "risco",
+    fee: null, contract: "até 2028",
+    last_news: "2026-06-27",
+    market_value: "€25M",
+    description: "Extremo direito moçambicano de 25 anos, um dos jogadores mais rápidos do plantel com 30+ jogos esta época. Cesc Fàbregas, treinador do Como FC na sua primeira época na Champions League, 'não larga' o jogador. A 6 de junho a A Bola revela que o Como apresentou uma proposta de €25M — recorde do clube, acima dos €22.5M gastos em Jesús Rodríguez — mas o Sporting recusou, considerando a oferta insuficiente. O clube passou a valorizar Catamo em €30M+ após a forte época 24/25 e só negoceia próximo da cláusula de rescisão de €60M. A 27 de junho o Record confirma que Rui Borges blindou Catamo: o treinador considera-o 'imune à revolução no plantel', protegendo-o de qualquer saída e integrando-o como peça essencial nos seus planos para 2026/27.",
+    notes: "🔴 Rui Borges considera Catamo intocável — imune à revolução, essencial nos planos do treinador (Record 27/06). Como propôs €25M (06/06) — Sporting recusou, pede perto da cláusula de €60M.",
+    sources: [
+      { label: "A Bola — Fàbregas não larga Catamo (26/05)", url: "https://www.abola.pt/noticias/sporting-fabregas-nao-larga-geny-catamo-2026052616580229518" },
+      { label: "A Bola — Como propõe €25M, Sporting recusa (06/06)", url: "https://www.abola.pt/noticias/mercado-como-quer-bater-recorde-por-geny-mas-nao-convence-o-sporting-2026060617004130706" },
+      { label: "Record — Catamo imune à revolução, Rui Borges não mexe (27/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/estrategia-para-geny-catamo-e-nao-mexer-extremo-imune-a-revolucao-no-plantel-do-sporting" },
+    ]
+  },
+  {
     id: "goncalo-inacio",
     name: "Gonçalo Inácio",
     photo: "https://img.a.transfermarkt.technology/portrait/big/549006-1716296254.jpg?lm=1",
@@ -1876,7 +1895,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-28", ids: ["ousmane-diomande"] },
+  { date: "2026-06-28", ids: ["ousmane-diomande", "geny-catamo"] },
   { date: "2026-06-27", ids: ["catarino-pascoal", "francisco-trincao", "yeremay-hernandez", "rodrigo-rodrigues", "sergi-altimira"] },
   { date: "2026-06-26", ids: ["morten-hjulmand", "joao-palhinha", "sergi-altimira", "gabriel-biel", "ricardo-mangas", "franco-mastantuono"] },
   { date: "2026-06-25", ids: ["sergi-altimira", "morten-hjulmand", "adrian-bernabe", "catarino-pascoal"] },
