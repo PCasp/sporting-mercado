@@ -1041,7 +1041,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-06-30 08:15";
+const LAST_UPDATED = "2026-06-30 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1265,12 +1265,13 @@ const PLAYERS = [
     status: "fechado",
     fee: "Troca — José Silva + David Moreira → Gil Vicente", fee_value: null, fee_max: null, contract: null,
     market_value: "€100k",
-    description: "Extremo direito português de 18 anos (nascido a 6 de dezembro de 2007), internacional sub-19 por Portugal. Em 2025/26 realizou 4 jogos pelo plantel principal do Gil Vicente na Liga Portugal e foi peça importante na conquista da Taça Revelação pela equipa sub-23. A 27 de junho de 2026 a A Bola confirma que a contratação está fechada: Rodrigo Rodrigues já assinou vínculo com o Sporting, integrando a equipa B de Tiago Fernandes. O negócio envolve a ida de José Silva e David Moreira para o Gil Vicente. A 29 de junho a A Bola e o O Jogo confirmam os detalhes da operação: a formalização aguarda a conclusão dos trâmites administrativos ligados às transferências paralelas de José Silva e David Moreira para o Gil Vicente — uma contratação encarada como investimento de médio/longo prazo.",
-    notes: "🤝 Já assinou com o Sporting B — negócio confirmado pela A Bola (27/06). Troca: José Silva + David Moreira vão para o Gil Vicente. Formalização pendente dos trâmites ligados às transferências paralelas.",
+    description: "Extremo direito português de 18 anos (nascido a 6 de dezembro de 2007), internacional sub-19 por Portugal. Em 2025/26 realizou 4 jogos pelo plantel principal do Gil Vicente na Liga Portugal e foi peça importante na conquista da Taça Revelação pela equipa sub-23. A 27 de junho de 2026 a A Bola confirma que a contratação está fechada: Rodrigo Rodrigues já assinou vínculo com o Sporting, integrando a equipa B de Tiago Fernandes. O negócio envolve a ida de José Silva e David Moreira para o Gil Vicente. A 29 de junho a A Bola e o O Jogo confirmam os detalhes da operação: a formalização aguarda a conclusão dos trâmites administrativos ligados às transferências paralelas de José Silva e David Moreira para o Gil Vicente — uma contratação encarada como investimento de médio/longo prazo. A 30 de junho a A Bola confirma que David Moreira assinou por 4 anos no Gil Vicente, avançando a componente gilavicense do negócio.",
+    notes: "🤝 Já assinou com o Sporting B — negócio confirmado pela A Bola (27/06). Troca: José Silva + David Moreira vão para o Gil Vicente (Moreira assinou 4 anos, A Bola 30/06). Formalização próxima.",
     sources: [
       { label: "A Bola — Contratação de Rodrigo Rodrigues está fechada (27/06)", url: "https://www.abola.pt/noticias/mercado-sporting-contratacao-de-rodrigo-rodrigues-esta-fechada-2026062717044199726" },
       { label: "A Bola — Rodrigo Rodrigues aguarda luz verde para Alvalade (29/06)", url: "https://www.abola.pt/noticias/mercado-sporting-rodrigo-rodrigues-aguarda-luz-verde-para-rumar-a-alvalade-2026062910351509193" },
       { label: "O Jogo — Rodrigo Rodrigues a caminho da equipa B do Sporting (29/06)", url: "https://www.ojogo.pt/futebol/artigo/rodrigo-rodrigues-a-caminho-da-equipa-b-do-sporting/18100514" },
+      { label: "A Bola — David Moreira assina 4 anos no Gil Vicente (30/06)", url: "https://www.abola.pt/noticias/mercado-gil-vicente-eis-a-duracao-do-contrato-de-reforco-oriundo-do-sporting-2026063010394007098" },
     ]
   },
   {
@@ -1902,7 +1903,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-06-30", ids: ["morten-hjulmand", "pedro-goncalves", "yeremay-hernandez"] },
+  { date: "2026-06-30", ids: ["morten-hjulmand", "pedro-goncalves", "yeremay-hernandez", "rodrigo-rodrigues"] },
   { date: "2026-06-29", ids: ["sergi-altimira", "morten-hjulmand", "rodrigo-rodrigues", "rodrigo-zalazar", "geovany-quenda", "ricardo-mangas", "georgios-vagiannidis"] },
   { date: "2026-06-28", ids: ["ousmane-diomande", "geny-catamo", "rodrigo-zalazar", "maxi-araujo"] },
   { date: "2026-06-27", ids: ["catarino-pascoal", "francisco-trincao", "yeremay-hernandez", "rodrigo-rodrigues", "sergi-altimira"] },
