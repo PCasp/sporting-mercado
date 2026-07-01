@@ -1041,7 +1041,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-01 12:29";
+const LAST_UPDATED = "2026-07-01 12:46";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1871,13 +1871,14 @@ const PLAYERS = [
     emoji: "🇵🇹",
     position: "MC", age: 20,
     fromClub: "Sporting CP", toClub: "Pafos FC",
-    status: "saida_fechada",
-    fee: null, fee_value: null, fee_max: null, contract: null,
+    status: "saida_oficial",
+    fee: "Sem valor (transferência livre)", fee_value: 0, fee_max: 0, contract: "até 2030 (Pafos)",
     market_value: "€175k",
-    description: "Médio de 20 anos com dupla nacionalidade portuguesa e cabo-verdiana, formado no Sporting CP onde sagrou campeão em 2024/25. Passou a última época cedido ao Pafos FC (Chipre), onde realizou 12 jogos (400 minutos) e ajudou o clube a conquistar a Taça cipriota. Tem apenas 1 ano restante de contrato com o Sporting. O treinador Ricardo Sá Pinto, após renovar contrato com o Pafos, 'convenceu' Brito a regressar — saída praticamente fechada a 12 de junho de 2026. O Piast (Polónia) também manifestou interesse, mas Brito prefere o Pafos.",
-    notes: null,
+    description: "Médio de 20 anos com dupla nacionalidade portuguesa e cabo-verdiana, formado no Sporting CP onde sagrou campeão em 2024/25. Passou a última época cedido ao Pafos FC (Chipre), onde realizou 12 jogos (400 minutos) e ajudou o clube a conquistar a Taça cipriota. Tem apenas 1 ano restante de contrato com o Sporting. O treinador Ricardo Sá Pinto, após renovar contrato com o Pafos, 'convenceu' Brito a regressar — saída praticamente fechada a 12 de junho de 2026. O Piast (Polónia) também manifestou interesse, mas Brito prefere o Pafos. A 1 de julho de 2026 a transferência foi confirmada em definitivo: contrato de 4 anos com o Pafos, até junho de 2030, sem valor de transferência divulgado. Despede-se do Sporting após 9 anos na Academia de Alcochete.",
+    notes: "📤 SAÍDA OFICIAL (01/07) — transferência definitiva para o Pafos, contrato até 2030. Sem fee divulgado.",
     sources: [
       { label: "Record — Prestes a assinar pelo Pafos (12/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/alexandre-brito-convence-sa-pinto-medio-prestes-a-deixar-o-sporting-e-a-assinar-pelo-pafos" },
+      { label: "Sapo — Mercado oficial: médio deixa Sporting em definitivo (01/07)", url: "https://sapo.pt/artigo/mercado-oficial-medio-deixa-sporting-em-definitivo-6a44ef4a4787f02fc8cc6f70" },
     ]
   },
   {
@@ -1906,7 +1907,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-07-01", ids: ["sergi-altimira"] },
+  { date: "2026-07-01", ids: ["sergi-altimira", "alexandre-brito"] },
   { date: "2026-06-30", ids: ["morten-hjulmand", "pedro-goncalves", "yeremay-hernandez", "rodrigo-rodrigues"] },
   { date: "2026-06-29", ids: ["sergi-altimira", "morten-hjulmand", "rodrigo-rodrigues", "rodrigo-zalazar", "geovany-quenda", "ricardo-mangas", "georgios-vagiannidis"] },
   { date: "2026-06-28", ids: ["ousmane-diomande", "geny-catamo", "rodrigo-zalazar", "maxi-araujo"] },
