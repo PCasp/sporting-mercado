@@ -1041,7 +1041,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-01 18:33";
+const LAST_UPDATED = "2026-07-02 08:29";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1348,6 +1348,23 @@ const PLAYERS = [
     notes: "🔍 Referenciado pelo Sporting para a ala esquerda (18/06, A Bola). Fase de scouting — sem proposta formal. Sporting aguarda saída de Faye para avançar.",
     sources: [
       { label: "Abola — Jesse Derry referenciado pelo Sporting (18/06)", url: "https://www.abola.pt/noticias/mercado-sporting-jesse-derry-referenciado-2026061723042920364" },
+    ]
+  },
+  {
+    id: "assane-diao",
+    name: "Assane Diao",
+    photo: null,
+    emoji: "🇸🇳",
+    position: "Ala esq.", age: 20,
+    fromClub: "Como 1907", toClub: "Sporting CP",
+    status: "analise",
+    fee: null, contract: null,
+    last_news: "2026-07-01",
+    market_value: "€30M",
+    description: "Extremo esquerdo senegalês de 20 anos, atualmente a representar o Senegal no Mundial 2026. Foi contratado pelo Como 1907 ao Real Betis por €12M em 2024/25, com contrato até 2029. A 1 de julho a A Bola revela que Diao é 'um nome bem identificado' em Alvalade, mas não consta ainda de qualquer lista prioritária de reforços — o alvo principal para a ala esquerda continua a ser Yeremay Hernández. A SAD do Sporting está focada em resolver as saídas de Hjulmand, Pedro Gonçalves e Trincão antes de acelerar contratações; Diao é uma opção identificada mas secundária.",
+    notes: "🔍 'Nome bem identificado' em Alvalade (A Bola 01/07), mas opção secundária — Yeremay continua a ser o alvo principal para a ala esq. Sporting foca-se primeiro nas saídas.",
+    sources: [
+      { label: "A Bola — Assane Diao é nome bem identificado em Alvalade (01/07 21:55)", url: "https://www.abola.pt/noticias/mercado-sporting-assane-diao-e-nome-bem-identificado-em-alvalade-2026070120441907108" },
     ]
   },
   {
@@ -1822,25 +1839,6 @@ const PLAYERS = [
     ]
   },
   {
-    id: "daniel-braganca",
-    name: "Daniel Bragança",
-    photo: "https://img.a.transfermarkt.technology/portrait/big/461943-1765306925.jpg",
-    emoji: "🇵🇹",
-    position: "MC", age: 27,
-    fromClub: "Sporting CP", toClub: "Valencia / Espanha (interesse)",
-    status: "risco",
-    fee: "€8–12M (pedido Sporting)", contract: "até 2027",
-    market_value: "€12M",
-    description: "Médio central português de 27 anos, 19 anos no clube desde a academia. Contrato a expirar em 2027 (último ano). A 2 de junho vários clubes europeus apresentaram propostas financeiras ao jogador. Sem proposta formal de renovação do Sporting (08/06). A 10 de junho a Abola aponta a Espanha como destino mais provável: o Valencia surge como hipótese real graças à relação do agente Jorge Mendes com o acionista maioritário Peter Lim (~90% da SAD). Clube ingleses perderam interesse por preocupações com as lesões no joelho. O Sporting vê esta janela como a última oportunidade para rentabilizar a saída antes de o jogador ficar no último ano — exige €8–12M.",
-    notes: "🔴 Valencia como destino preferencial (Mendes-Lim); Espanha é pista mais provável (10/06). Sporting pede €8–12M. Sem proposta de renovação.",
-    last_news: "2026-06-10",
-    sources: [
-      { label: "Abola — Daniel Bragança desperta cobiça (02/06)", url: "https://www.abola.pt/noticias/sporting-daniel-braganca-desperta-cobica-2026060118152531243" },
-      { label: "A Bola — Sem proposta formal para renovar (08/06)", url: "https://www.abola.pt/noticias/sporting-daniel-braganca-sem-proposta-formal-para-renovar-2026060722304935184" },
-      { label: "Abola — Valencia pode ser hipótese, pista espanhola (10/06)", url: "https://www.abola.pt/noticias/sporting-daniel-braganca-na-pista-espanhola-e-valencia-pode-ser-hipotese-2026061015301625722" },
-    ]
-  },
-  {
     id: "souleymane-faye",
     name: "Souleymane Faye",
     photo: "https://img.a.transfermarkt.technology/portrait/big/666971-1773786729.jpg?lm=1",
@@ -1909,13 +1907,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-07-02", ids: ["assane-diao"] },
   { date: "2026-07-01", ids: ["sergi-altimira", "alexandre-brito", "morten-hjulmand", "goncalo-inacio"] },
   { date: "2026-06-30", ids: ["morten-hjulmand", "pedro-goncalves", "yeremay-hernandez", "rodrigo-rodrigues"] },
   { date: "2026-06-29", ids: ["sergi-altimira", "morten-hjulmand", "rodrigo-rodrigues", "rodrigo-zalazar", "geovany-quenda", "ricardo-mangas", "georgios-vagiannidis"] },
   { date: "2026-06-28", ids: ["ousmane-diomande", "geny-catamo", "rodrigo-zalazar", "maxi-araujo"] },
   { date: "2026-06-27", ids: ["catarino-pascoal", "francisco-trincao", "yeremay-hernandez", "rodrigo-rodrigues", "sergi-altimira"] },
   { date: "2026-06-26", ids: ["morten-hjulmand", "joao-palhinha", "sergi-altimira", "gabriel-biel", "ricardo-mangas", "franco-mastantuono"] },
-  { date: "2026-06-25", ids: ["sergi-altimira", "morten-hjulmand", "adrian-bernabe", "catarino-pascoal"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
