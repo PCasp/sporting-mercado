@@ -1041,7 +1041,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-06 14:05";
+const LAST_UPDATED = "2026-07-06 18:58";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1391,16 +1391,17 @@ const PLAYERS = [
     fromClub: "Sporting CP", toClub: "Por confirmar",
     status: "risco",
     fee: null, contract: "até 2030",
-    last_news: "2026-06-29",
     market_value: "€8M",
-    description: "Lateral direito grego de 24 anos, contratado ao Panathinaikos em agosto de 2025 por ~€13 milhões. Realizou 32 jogos pelo Sporting esta época, mas as suas prestações 'nunca convenceram' por completo a liderança do clube. A 28 de maio revelou-se que Villarreal e Everton fizeram sondagens — ambos os clubes o seguiam antes da sua chegada a Portugal. Rejeitou regressar à Grécia, preferindo estabelecer-se no Sporting ou rumar a um campeonato mais competitivo. A 1 de junho o O Jogo revela que o SSC Napoli avalia Vagiannidis como opção para a defesa direita. A 11 de junho o Record noticia que o Panathinaikos está interessado num empréstimo de Vagiannidis — o Sporting prefere uma transferência definitiva ou acordo financeiramente vantajoso e recusa ceder por empréstimo ao clube de onde o contratou. A 18 de junho a A Bola confirma que Vagiannidis reportará à pré-época do Sporting a 12 de julho de 2026. A 29 de junho a A Bola reporta um volte-face: o Sporting não vai forçar a saída de Vagiannidis nem de Mangas — se não chegarem propostas adequadas, ambos integrarão a pré-época. Com Fresneda como titular preferencial, Vagiannidis assume papel de opção.",
-    notes: "⚠️ Volte-face (A Bola 29/06): Sporting não forçará saída — pode ficar se sem propostas adequadas. Reporta à pré-época a 12/07.",
+    description: "Lateral direito grego de 24 anos, contratado ao Panathinaikos em agosto de 2025 por ~€13 milhões. Realizou 32 jogos pelo Sporting esta época, mas as suas prestações 'nunca convenceram' por completo a liderança do clube. A 28 de maio revelou-se que Villarreal e Everton fizeram sondagens — ambos os clubes o seguiam antes da sua chegada a Portugal. Rejeitou regressar à Grécia, preferindo estabelecer-se no Sporting ou rumar a um campeonato mais competitivo. A 1 de junho o O Jogo revela que o SSC Napoli avalia Vagiannidis como opção para a defesa direita. A 11 de junho o Record noticia que o Panathinaikos está interessado num empréstimo de Vagiannidis — o Sporting prefere uma transferência definitiva ou acordo financeiramente vantajoso e recusa ceder por empréstimo ao clube de onde o contratou. A 18 de junho a A Bola confirma que Vagiannidis reportará à pré-época do Sporting a 12 de julho de 2026. A 29 de junho a A Bola reporta um volte-face: o Sporting não vai forçar a saída de Vagiannidis nem de Mangas — se não chegarem propostas adequadas, ambos integrarão a pré-época. Com Fresneda como titular preferencial, Vagiannidis assume papel de opção. A 6 de julho a A Bola confirma que Vagiannidis quer provar que os €12M investidos não foram mal gastos: em conversas de fim de época com a liderança, o Sporting transmitiu confiança de que a primeira temporada foi apenas um período de adaptação. Já ativou um bónus contratual de €1M por 20 jogos com 45+ minutos. Usou as férias para 'limpar a cabeça'. Compete com Fresneda (titular) e possivelmente Eduardo Quaresma, mas quer tornar a escolha difícil para Rui Borges. Contrato até 2030.",
+    notes: "⚠️ Quer provar que os €12M não foram mal gastos (A Bola 06/07) — Sporting vê a 1ª época como adaptação. Bónus de €1M já ativado. Compete com Fresneda/Quaresma pela titularidade.",
+    last_news: "2026-07-06",
     sources: [
       { label: "Abola — Sondagens de Villarreal e Everton (28/05)", url: "https://www.abola.pt/noticias/mercado-sporting-vagiannidis-recebeu-sondagens-de-dois-clubes-2026052821515807589" },
       { label: "O Jogo — Napoli pode contratar no Sporting (01/06)", url: "https://www.ojogo.pt/futebol/artigo/napoles-pode-voltar-a-contratar-no-sporting-e-tem-um-trunfo/18090878" },
       { label: "Record — Panathinaikos quer empréstimo (11/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
       { label: "Abola — Data de apresentação na pré-época: 12 de julho (18/06)", url: "https://www.abola.pt/noticias/sporting-ja-ha-data-para-a-apresentacao-de-vagiannidis-2026061816460863279" },
       { label: "A Bola — Volte-face: Mangas e Vagiannidis podem ficar (29/06 12h51)", url: "https://www.abola.pt/noticias/mercado-sporting-volte-face-no-futuro-de-mangas-e-vagiannidis-2026062909561693639" },
+      { label: "A Bola — Vagiannidis quer provar que os €12M não foram mal gastos (06/07 11h00)", url: "https://www.abola.pt/noticias/sporting-vagiannidis-quer-provar-que-os-euro12m-nao-foram-mal-gastos-2026070522042411399" },
     ]
   },
   {
@@ -1904,7 +1905,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-07-06", ids: ["morten-hjulmand", "francisco-trincao", "giorgi-kochorashvili", "rodrigo-rodrigues"] },
+  { date: "2026-07-06", ids: ["morten-hjulmand", "francisco-trincao", "giorgi-kochorashvili", "rodrigo-rodrigues", "georgios-vagiannidis"] },
   { date: "2026-07-05", ids: ["morten-hjulmand", "catarino-pascoal", "daniel-braganca", "francisco-trincao", "henrique-rafagnin"] },
   { date: "2026-07-04", ids: ["morten-hjulmand", "maxi-araujo"] },
   { date: "2026-07-03", ids: ["morten-hjulmand", "rodrigo-rodrigues", "giorgi-kochorashvili", "koba-koindredi"] },
