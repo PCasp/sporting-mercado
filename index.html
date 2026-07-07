@@ -1041,7 +1041,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-06 18:58";
+const LAST_UPDATED = "2026-07-07 08:32";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1352,14 +1352,16 @@ const PLAYERS = [
     position: "DC", age: 21,
     fromClub: "Académico de Viseu", toClub: "Sporting CP",
     status: "oficial",
-    fee: "€2M (opção de compra exercida)", fee_value: 2, fee_max: 2, contract: "até 2031",
+    fee: "€2M (50% do passe) + opção de +€2M por mais 40%", fee_value: 2, fee_max: 4, contract: "até 2031",
     market_value: "€250k",
-    description: "Defesa central brasileiro de 21 anos, duas épocas emprestado à equipa B do Sporting proveniente do Académico de Viseu. A 3 de junho de 2026 o Sporting acionou a opção de compra de €2 milhões e Bruno Ramos assinou contrato definitivo de 5 épocas até 2031. Destaca-se pela rapidez de reacção, jogo aéreo e conforto na saída a jogar.",
-    notes: null,
+    description: "Defesa central brasileiro de 21 anos, duas épocas emprestado à equipa B do Sporting proveniente do Académico de Viseu. A 3 de junho de 2026 o Sporting acionou a opção de compra de €2 milhões e Bruno Ramos assinou contrato definitivo de 5 épocas até 2031. Destaca-se pela rapidez de reacção, jogo aéreo e conforto na saída a jogar. O Académico de Viseu oficializa a venda a 6 de julho (19h08), esclarecendo a estrutura real do negócio: os €2M compraram 50% do passe, com opção de o Sporting adquirir mais 40% por outros €2M (ficando o Viseu com 10%). Formaliza um acordo que já estava em curso — Ramos treinava em Alcochete mas sofreu uma lesão traumática com 15+ dias de paragem.",
+    notes: "✅ Estrutura esclarecida (Record 06/07): €2M por 50% do passe + opção de +€2M por mais 40%. Viseu fica com 10%. Lesão traumática, 15+ dias de paragem.",
+    last_news: "2026-07-06",
     sources: [
       { label: "Record — Opção de compra €2M", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/noticia-record-opcao-do-sporting-por-bruno-ramos-e-de-2-milhoes-de-euros" },
       { label: "Record — Assinou em definitivo por 5 temporadas (03/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-garante-reforco-para-a-defesa-bruno-ramos-assinou-em-definitivo-por-cinco-temporadas" },
       { label: "O Jogo — Confirma acordo por 5 épocas (06/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-bruno-ramos-confirma-acordo-por-cinco-epocas/18092357" },
+      { label: "Record — Académico de Viseu oficializa venda; estrutura 50%+opção (06/07 19h08)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/academico-de-viseu-oficializa-venda-do-passe-de-bruno-ramos-ao-sporting" },
     ]
   },
   {
@@ -1510,6 +1512,23 @@ const PLAYERS = [
     notes: "📤 SAÍDA OFICIAL (05/07 16h46) — 4.ª saída confirmada da offseason. Sporting planeia contratar Oleksandr Sukhov (HIT Kiev, Ucrânia) como substituto.",
     sources: [
       { label: "A Bola — Oficial: internacional brasileiro deixa Sporting (05/07 16h46)", url: "https://www.abola.pt/noticias/oficial-internacional-brasileiro-deixa-sporting-2026070515463540901" },
+    ]
+  },
+  {
+    id: "rafael-pontelo",
+    name: "Rafael Pontelo",
+    photo: null,
+    emoji: "🇧🇷",
+    position: "DC", age: 23,
+    fromClub: "Sporting CP", toClub: "Radnik Surdulica",
+    status: "saida_oficial",
+    fee: "Transferência livre", fee_value: 0, fee_max: 0, contract: "até 2028 (percentagem retida)",
+    last_news: "2026-07-06",
+    market_value: "€700k",
+    description: "Defesa central brasileiro de 23 anos, contratado ao Leixões em 2024 por €700 mil, mas nunca se afirmou em Alvalade (apenas 2 jogos pelo plantel principal). Esteve emprestado sucessivamente ao Pafos (Chipre), Auda (Letónia) e, na última época, ao Farense. A 6 de julho (20h53) o Record confirma, citando a Mozzart Sport, que Pontelo ruma em transferência livre ao Radnik Surdulica (Sérvia), assinando contrato de 3 anos. Apesar de sair sem custo, o Sporting retém uma percentagem dos seus direitos económicos, uma vez que o contrato original ia até 2028.",
+    notes: "📤 SAÍDA OFICIAL (06/07 20h53) — transferência livre para o Radnik Surdulica (Sérvia), 3 anos. Sporting retém % dos direitos económicos.",
+    sources: [
+      { label: "Record — Sporting perto de colocar excedentário; Pontelo reforça o Radnik Surdulica (06/07 20h53)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-muito-perto-de-colocar-um-excedentario-rafael-pontelo-vai-reforcar-servios-do-radnik-surdulica" },
     ]
   },
   {
@@ -1905,13 +1924,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-07-07", ids: ["bruno-ramos", "rafael-pontelo"] },
   { date: "2026-07-06", ids: ["morten-hjulmand", "francisco-trincao", "giorgi-kochorashvili", "rodrigo-rodrigues", "georgios-vagiannidis"] },
   { date: "2026-07-05", ids: ["morten-hjulmand", "catarino-pascoal", "daniel-braganca", "francisco-trincao", "henrique-rafagnin"] },
   { date: "2026-07-04", ids: ["morten-hjulmand", "maxi-araujo"] },
   { date: "2026-07-03", ids: ["morten-hjulmand", "rodrigo-rodrigues", "giorgi-kochorashvili", "koba-koindredi"] },
   { date: "2026-07-02", ids: ["assane-diao", "gustavo-sa", "gabriel-biel", "goncalo-inacio", "morten-hjulmand", "koba-koindredi"] },
   { date: "2026-07-01", ids: ["sergi-altimira", "alexandre-brito", "morten-hjulmand", "goncalo-inacio"] },
-  { date: "2026-06-30", ids: ["morten-hjulmand", "pedro-goncalves", "yeremay-hernandez", "rodrigo-rodrigues"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
