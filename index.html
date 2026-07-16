@@ -1061,7 +1061,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-16 02:04";
+const LAST_UPDATED = "2026-07-16 08:47";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1588,17 +1588,18 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/701979-1764374966.jpg?lm=1",
     emoji: "🇲🇿",
     position: "Ala dto.", age: 25,
-    fromClub: "Sporting CP", toClub: "Como FC (interesse)",
+    fromClub: "Sporting CP", toClub: "Por confirmar (Premier League / Arábia Saudita)",
     status: "risco",
-    fee: null, contract: "até 2028",
-    last_news: "2026-06-27",
+    fee: "Cláusula €60M (base de negociação)", contract: "até 2029 (renovação automática)",
+    last_news: "2026-07-16",
     market_value: "€25M",
-    description: "Extremo direito moçambicano de 25 anos, um dos jogadores mais rápidos do plantel com 30+ jogos esta época. Cesc Fàbregas, treinador do Como FC na sua primeira época na Champions League, 'não larga' o jogador. A 6 de junho a A Bola revela que o Como apresentou uma proposta de €25M — recorde do clube, acima dos €22.5M gastos em Jesús Rodríguez — mas o Sporting recusou, considerando a oferta insuficiente. O clube passou a valorizar Catamo em €30M+ após a forte época 24/25 e só negoceia próximo da cláusula de rescisão de €60M. A 27 de junho o Record confirma que Rui Borges blindou Catamo: o treinador considera-o 'imune à revolução no plantel', protegendo-o de qualquer saída e integrando-o como peça essencial nos seus planos para 2026/27.",
-    notes: "🔴 Rui Borges considera Catamo intocável — imune à revolução, essencial nos planos do treinador (Record 27/06). Como propôs €25M (06/06) — Sporting recusou, pede perto da cláusula de €60M.",
+    description: "Extremo direito moçambicano de 25 anos, um dos jogadores mais rápidos do plantel com 30+ jogos esta época. Cesc Fàbregas, treinador do Como FC na sua primeira época na Champions League, 'não larga' o jogador. A 6 de junho a A Bola revela que o Como apresentou uma proposta de €25M — recorde do clube, acima dos €22.5M gastos em Jesús Rodríguez — mas o Sporting recusou, considerando a oferta insuficiente. O clube passou a valorizar Catamo em €30M+ após a forte época 24/25 e só negoceia próximo da cláusula de rescisão de €60M. A 27 de junho o Record confirma que Rui Borges blindou Catamo: o treinador considera-o 'imune à revolução no plantel', protegendo-o de qualquer saída e integrando-o como peça essencial nos seus planos para 2026/27. A A Bola confirma (16/07 08h40) novo interesse forte de clubes da Premier League e da Arábia Saudita — sem nomes específicos confirmados. Contrato renovado automaticamente até 2029. Sporting mantém posição: «quem quiser tirar a pérola moçambicana terá de abrir os cordões à bolsa» — a cláusula de €60M é a base de qualquer conversa.",
+    notes: "🔴 Novo interesse forte de Inglaterra e Arábia Saudita (A Bola 16/07 08h40) — Sporting só negoceia perto dos €60M da cláusula. Rui Borges considera-o intocável.",
     sources: [
       { label: "A Bola — Fàbregas não larga Catamo (26/05)", url: "https://www.abola.pt/noticias/sporting-fabregas-nao-larga-geny-catamo-2026052616580229518" },
       { label: "A Bola — Como propõe €25M, Sporting recusa (06/06)", url: "https://www.abola.pt/noticias/mercado-como-quer-bater-recorde-por-geny-mas-nao-convence-o-sporting-2026060617004130706" },
       { label: "Record — Catamo imune à revolução, Rui Borges não mexe (27/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/estrategia-para-geny-catamo-e-nao-mexer-extremo-imune-a-revolucao-no-plantel-do-sporting" },
+      { label: "A Bola — Geny Catamo sob forte ataque de ingleses e árabes (16/07 08h40)", url: "https://www.abola.pt/noticias/mercado-sporting-geny-catamo-sob-forte-ataque-de-ingleses-e-arabes-2026071522313388273" },
     ]
   },
   {
@@ -1862,7 +1863,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-07-16", ids: ["francisco-trincao", "pedro-goncalves", "daniel-braganca", "sebastian-osorio"] },
+  { date: "2026-07-16", ids: ["francisco-trincao", "pedro-goncalves", "daniel-braganca", "sebastian-osorio", "geny-catamo"] },
   { date: "2026-07-09", ids: ["morten-hjulmand", "jesse-derry", "maxi-araujo", "ricardo-mangas"] },
   { date: "2026-07-08", ids: ["jesse-derry", "pedro-goncalves", "morten-hjulmand"] },
   { date: "2026-07-07", ids: ["bruno-ramos", "rafael-pontelo", "morten-hjulmand", "francisco-trincao", "rodrigo-rodrigues"] },
