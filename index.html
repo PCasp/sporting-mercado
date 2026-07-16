@@ -1061,7 +1061,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-16 12:38";
+const LAST_UPDATED = "2026-07-16 18:35";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1280,6 +1280,41 @@ const PLAYERS = [
       { label: "A Bola — Extremo colombiano reforça Sporting (14/07 16h12)", url: "https://www.abola.pt/noticias/extremo-colombiano-reforca-sporting-2026071415122268695" },
       { label: "Record — Sporting assegura a contratação de extremo colombiano de 18 anos (14/07)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-assegura-a-contratacao-de-extremo-colombiano-de-18-anos" },
       { label: "O Jogo — Extremo colombiano é reforço do Sporting (14/07)", url: "https://www.ojogo.pt/futebol/artigo/extremo-colombiano-e-reforco-do-sporting/18106097" },
+    ]
+  },
+  {
+    id: "tiago-campos",
+    name: "Tiago Campos",
+    photo: null,
+    emoji: "🇵🇹",
+    position: "MC", age: 18,
+    fromClub: "Rio Ave", toClub: "Sporting CP",
+    status: "oficial",
+    fee: null, fee_value: 0, fee_max: 0, contract: null,
+    last_news: "2026-07-16",
+    market_value: null,
+    description: "Médio defensivo português de 18 anos, formado no AD Barroselas e Neves FC, passou pelo FC Porto antes do Rio Ave (Vila do Conde). O Sporting oficializa a contratação a 16 de julho (17h03, A Bola): recupera muitas bolas, joga agressivo e dá boa circulação de bola à equipa. Vai integrar inicialmente o sistema de formação. Campos: «É um sentimento de grande orgulho e um sonho realizado», acrescentando que ver formados do clube chegarem à equipa principal alimenta a sua própria ambição de um dia jogar pela equipa sénior do Sporting.",
+    notes: "✅ OFICIAL (16/07 17h03) — médio defensivo de 18 anos, ex-Rio Ave. Sem valores/termos de contrato divulgados. Junta-se à formação.",
+    sources: [
+      { label: "A Bola — Mercado oficial: Tiago Campos reforça Sporting (16/07 17h03)", url: "https://www.abola.pt/noticias/mercado-oficial-tiago-campos-reforca-sporting-2026071616033413418" },
+      { label: "Record — Tiago Campos chega de Vila do Conde para reforçar o Sporting (16/07)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/tiago-campos-chega-de-vila-do-conde-para-reforcar-o-sporting" },
+    ]
+  },
+  {
+    id: "nelio-batista",
+    name: "Nélio Batista",
+    photo: null,
+    emoji: "🇵🇹",
+    position: "MC", age: 17,
+    fromClub: "CS Marítimo", toClub: "Sporting CP (equipa B)",
+    status: "analise",
+    fee: null, contract: null,
+    last_news: "2026-07-16",
+    market_value: null,
+    description: "Médio central português de 17 anos, seis épocas na formação do Marítimo (desde 2020/21, vindo do Machico), estreou-se pela equipa sénior na época da subida à Liga 2. 16 internacionalizações pelas seleções jovens portuguesas (3 golos), e 2 golos em 21 jogos pela equipa sub-23 do Marítimo. A A Bola confirma (16/07 17h29) que o Sporting está a acompanhar Batista como possível reforço para a equipa B, orientada por Tiago Fernandes. Clubes espanhóis também demonstraram interesse, mas o Sporting mantém-se ativamente na corrida.",
+    notes: "🔍 Sporting acompanha jovem médio do Marítimo para a equipa B (A Bola 16/07 17h29). Clubes espanhóis também interessados.",
+    sources: [
+      { label: "A Bola — Mercado Sporting: médio do Marítimo está referenciado (16/07 17h29)", url: "https://www.abola.pt/noticias/mercado-sporting-medio-do-maritimo-esta-referenciado-2026071616291506091" },
     ]
   },
   {
@@ -1897,7 +1932,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-07-16", ids: ["francisco-trincao", "pedro-goncalves", "daniel-braganca", "sebastian-osorio", "geny-catamo", "samuel-justo", "joao-muniz"] },
+  { date: "2026-07-16", ids: ["francisco-trincao", "pedro-goncalves", "daniel-braganca", "sebastian-osorio", "geny-catamo", "samuel-justo", "joao-muniz", "tiago-campos", "nelio-batista"] },
   { date: "2026-07-09", ids: ["morten-hjulmand", "jesse-derry", "maxi-araujo", "ricardo-mangas"] },
   { date: "2026-07-08", ids: ["jesse-derry", "pedro-goncalves", "morten-hjulmand"] },
   { date: "2026-07-07", ids: ["bruno-ramos", "rafael-pontelo", "morten-hjulmand", "francisco-trincao", "rodrigo-rodrigues"] },
