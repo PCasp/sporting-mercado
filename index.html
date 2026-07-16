@@ -1061,7 +1061,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-09 12:39";
+const LAST_UPDATED = "2026-07-16 02:04";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1264,6 +1264,25 @@ const PLAYERS = [
     ]
   },
   {
+    id: "sebastian-osorio",
+    name: "Sebastián Osorio",
+    photo: null,
+    emoji: "🇨🇴",
+    position: "Ala esq.", age: 18,
+    fromClub: "Universitario (Peru, empréstimo de Universidad César Vallejo)", toClub: "Sporting CP",
+    status: "oficial",
+    fee: "~€750K + objetivos (Universitario retém 20% de futura venda)", fee_value: 0.75, fee_max: 0.75, contract: "3 épocas",
+    last_news: "2026-07-14",
+    market_value: null,
+    description: "Extremo esquerdo colombiano de 18 anos, a jogar por empréstimo no Universitario (Peru) proveniente do Universidad César Vallejo, no escalão sub-23. O Sporting oficializa a contratação a 14 de julho (16h12, A Bola): assinou contrato de 3 épocas, por cerca de €750 mil mais objetivos, com o clube sul-americano a reter 20% de uma futura venda. Jogador criativo, actua sobretudo na ala esquerda. Não deverá integrar de imediato a equipa principal nem a equipa B — a expectativa é que transite entre os escalões de sub-19 (Pedro Guerreiro) e sub-23 (Leandro Grimi, ex-lateral esquerdo argentino), com oportunidades na Liga Revelação e na UEFA Youth League para se adaptar progressivamente às exigências de um clube como o Sporting.",
+    notes: "✅ OFICIAL (14/07 16h12) — 3 épocas, ~€750K+objetivos. Universitario (Peru) retém 20% de futura venda. Vai integrar sub-19/sub-23, não a equipa principal.",
+    sources: [
+      { label: "A Bola — Extremo colombiano reforça Sporting (14/07 16h12)", url: "https://www.abola.pt/noticias/extremo-colombiano-reforca-sporting-2026071415122268695" },
+      { label: "Record — Sporting assegura a contratação de extremo colombiano de 18 anos (14/07)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-assegura-a-contratacao-de-extremo-colombiano-de-18-anos" },
+      { label: "O Jogo — Extremo colombiano é reforço do Sporting (14/07)", url: "https://www.ojogo.pt/futebol/artigo/extremo-colombiano-e-reforco-do-sporting/18106097" },
+    ]
+  },
+  {
     id: "assane-diao",
     name: "Assane Diao",
     photo: null,
@@ -1290,12 +1309,14 @@ const PLAYERS = [
     fromClub: "Tottenham Hotspur", toClub: "Sporting CP",
     status: "analise",
     fee: null, contract: null,
-    last_news: "2026-06-18",
+    last_news: "2026-07-14",
     market_value: "€7M",
-    description: "Avançado centro inglês de 21 anos formado e contratado pelo Tottenham Hotspur. Em 2025/26 esteve cedido ao Oxford United (Championship) onde marcou 12 golos e registou 4 assistências. Regressou ao Tottenham no final de maio de 2026. A 18 de junho o O Jogo revela que o Sporting está entre os clubes interessados na contratação de Lankshear — o clube português vê no jovem atacante potencial para seguir o caminho de Viktor Gyökeres da segunda divisão inglesa para Alvalade. O Tottenham, contudo, recusa libertá-lo actualmente. Clubes do Championship também manifestaram interesse num eventual empréstimo. Contrato com o Tottenham até 2029.",
-    notes: "🔍 Sporting entre os interessados (18/06, O Jogo). Tottenham recusa libertá-lo de momento. Interesse em fase inicial — Spurs exigem ~£20M.",
+    description: "Avançado centro inglês de 21 anos formado e contratado pelo Tottenham Hotspur. Em 2025/26 esteve cedido ao Oxford United (Championship) onde marcou 12 golos e registou 4 assistências. Regressou ao Tottenham no final de maio de 2026. A 18 de junho o O Jogo revela que o Sporting está entre os clubes interessados na contratação de Lankshear — o clube português vê no jovem atacante potencial para seguir o caminho de Viktor Gyökeres da segunda divisão inglesa para Alvalade. O Tottenham, contudo, recusa libertá-lo actualmente. Clubes do Championship também manifestaram interesse num eventual empréstimo. Contrato com o Tottenham até 2029. A situação avança a 13-14 de julho: o Sporting terá feito uma abordagem concreta acima de €10M, com Wolverhampton e Southampton também de olho no jogador. O Notícias ao Minuto (13/07 21h38) reporta que o Tottenham recusou a proposta; já o O Jogo (14/07 08h27) descreve a situação como ainda em fase inicial, sem confirmação de recusa formal — o técnico Roberto De Zerbi quer avaliar Lankshear na pré-época antes de decidir, com a incerteza sobre o futuro de Richarlison também a pesar. Lankshear foi o melhor marcador da Premier League 2 em 2023/24 (32 golos em 35 jogos).",
+    notes: "🔍 Sporting fez abordagem >€10M (Wolves e Southampton também interessados) — reports divergem: Notícias ao Minuto (13/07) diz que foi recusada, O Jogo (14/07) diz que ainda está em fase inicial.",
     sources: [
       { label: "O Jogo — Sporting olha para avançado do Tottenham (18/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-olha-para-avancado-do-tottenham/18096696" },
+      { label: "Notícias ao Minuto — Sporting abordou Tottenham por Lankshear, mas levou nega (13/07 21h38)", url: "https://www.noticiasaominuto.com/desporto/3020932/sporting-abordou-tottenham-pelo-avancado-will-lankshear-mas-levou-nega" },
+      { label: "O Jogo — Jovem avançado do Tottenham colocado na rota do Sporting (14/07 08h27)", url: "https://www.ojogo.pt/futebol/artigo/jovem-avancado-do-tottenham-colocado-na-rota-do-sporting/18105910" },
     ]
   },
   {
@@ -1314,25 +1335,6 @@ const PLAYERS = [
     notes: "🔍 Surgiu no radar do Sporting (Transfermarkt 25/06). Médio criativo, contrato termina em 2027 — pode sair por valor acessível.",
     sources: [
       { label: "Transfermarkt — Adrián Bernabé no radar do Sporting (25/06)", url: "https://www.transfermarkt.pt/adrian-bernabe/profil/spieler/466802" },
-    ]
-  },
-  {
-    id: "franco-mastantuono",
-    name: "Franco Mastantuono",
-    photo: "https://img.a.transfermarkt.technology/portrait/big/1057316-1755702696.jpg?lm=1",
-    referrerpolicy: "no-referrer",
-    emoji: "🇦🇷",
-    position: "Ala dto.", age: 18,
-    fromClub: "Real Madrid", toClub: "Sporting CP",
-    status: "analise",
-    fee: "Empréstimo (sem opção de compra)", contract: "Real Madrid até 2031",
-    last_news: "2026-06-23",
-    market_value: "€45M",
-    description: "Extremo direito canhoto argentino de 18 anos (dupla nacionalidade italiana), contratado pelo Real Madrid ao River Plate em agosto de 2025 por €45M. Com a chegada de Mourinho ao Real Madrid, o técnico não conta com ele para 2026/27 e o clube está disposto a cedê-lo por empréstimo a um clube da Champions League — a participação do Sporting na Champions é um argumento central. O Real Madrid impõe duas condições: o destino deve ser na Europa e num clube participante na Champions. A 23 de junho o O Jogo reporta que o Sporting e o Benfica acompanham o jovem argentino, com vantagem leonina pela participação europeia; Inter, Tottenham, Villarreal e Rennes também na corrida.",
-    notes: "🔍 Sporting acompanha jovem canhoto do Real Madrid — vantagem pela Champions (O Jogo 23/06). Real Madrid exige CL e permanência na Europa. Interesse inicial.",
-    sources: [
-      { label: "O Jogo — Sporting e Benfica atentos a Mastantuono (23/06)", url: "https://www.ojogo.pt/internacional/artigo/sporting-e-benfica-atentos-a-mastantuono/18098367" },
-      { label: "JN — Imprensa espanhola aponta Sporting e Benfica a Mastantuono (23/06)", url: "https://www.jn.pt/desporto/artigo/sporting-e-benfica-seguem-atentos-a-mastantuono-diz-imprensa-espanhola/18098433" },
     ]
   },
   {
@@ -1621,34 +1623,6 @@ const PLAYERS = [
     ]
   },
   {
-    id: "luis-suarez",
-    name: "Luís Suárez",
-    photo: "https://img.a.transfermarkt.technology/portrait/big/424784-1761232078.jpg?lm=1",
-    emoji: "🇵🇹",
-    position: "Avançado", age: 28,
-    fromClub: "Sporting CP", toClub: "Sporting CP (decidiu ficar)",
-    status: "risco",
-    fee: null, contract: "até 2030",
-    market_value: "€30M",
-    description: "Avançado português contratado ao Almério em julho de 2025 por €22.1M. Assinou até 2030. Sagrou-se melhor marcador da Liga (28 golos). A 30 de maio admitiu: 'Tenho contrato mas o futuro é incerto.' Ekrem Konur reportou interesse concreto do Barcelona, Newcastle United e Liverpool; o Record aponta também clubes sauditas. A 3 de junho Fabrizio Romano garantiu que Luís Suárez chegou a acordo pessoal com o projeto Fenerbahçe/Hakan Safi. A 4 de junho Safi declarou: 'Encontrei-me com ele duas vezes — prometeu-me que será o melhor marcador da liga turca.' A 5 de junho Safi foi mais longe: 'Também falámos com o Sporting.' Frederico Varandas reagiu publicamente, acusando o candidato de aplicar 'estratégias de campanha sujas' e fixou o preço em €80M — valor da cláusula de rescisão. A 6 de junho Safi reiterou: 'Não falo sem contratos assinados', reforçando o acordo com o jogador. A 7 de junho, nas eleições do Fenerbahçe, Aziz Yıldırım venceu com 17.245 votos contra 9.927 de Safi. Com a derrota de Safi, o acordo pessoal com o Fenerbahçe caiu por terra. A 8 de junho, após a vitória da Colômbia sobre a Jordânia (2-0), Suárez declarou: 'Estou com ganas e com fome.' A 23 de junho a A Bola confirma que Suárez tomou uma decisão firme: fica no Sporting. Rejeita quaisquer cenários de saída, fecha definitivamente o capítulo Fenerbahçe e aceita o desafio de Varandas de superar os 40 golos na próxima época.",
-    notes: "✅ Decisão firme: FICA no Sporting (A Bola 23/06). Rejeita saídas, aceita desafio 40+ golos. Fenerbahçe encerrado. Risco residual de proposta da cláusula (€80M).",
-    last_news: "2026-06-23",
-    sources: [
-      { label: "@Ekremkonur / X", url: "https://x.com/Ekremkonur/status/2048125609092530379" },
-      { label: "Record — 'O futuro é incerto' (30/05)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/luis-suarez-aborda-possivel-transferencia-tenho-contrato-mas-o-futuro-e-incerto" },
-      { label: "BlogVisãodeMercado — Romano: acordo com Fenerbahçe (03/06)", url: "https://blogvisaodemercado.pt/romano-garante-luis-suarez-tem-acordo-com-o-fenerbahce/" },
-      { label: "Record — Hakan Safi: 'Encontrei-me com Suárez duas vezes' (04/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/hakan-safi-garante-que-acompanha-luis-suarez-ha-meses-encontrei-me-com-ele-duas-vezes" },
-      { label: "A Bola — Hakan Safi: 'Também falámos com o Sporting' (05/06)", url: "https://www.abola.pt/noticias/hakan-safi-volta-a-falar-de-luis-suarez-tambem-falamos-com-o-sporting" },
-      { label: "BlogVisãodeMercado — Varandas reage: 'estratégias sujas', preço €80M (05/06)", url: "https://blogvisaodemercado.pt/suarez-conheco-muito-bem-o-diretor-de-campanha-do-candidato-que-vive-na-cidade-do-porto-e-sabemos-bem-o-manual-que-ele-aplica-ele-e-os-seus-amigos/" },
-      { label: "Record — Safi reitera acordo com Suárez: 'Não falo sem contratos assinados' (06/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/candidato-a-presidencia-do-fenerbahce-volta-a-garantir-acordo-com-suarez-nao-falo-sem-contratos-assinados" },
-      { label: "A Bola — Safi perde eleições, Suárez seguro em Alvalade (07/06)", url: "https://www.abola.pt/noticias/alerta-sporting-hakan-safi-perde-no-fenerbahce-e-suarez-esta-seguro-em-alvalade-2026060718431589716" },
-      { label: "Record — Novela turca chega ao fim: Safi assume derrota (07/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/novela-turca-com-luis-suarez-chega-ao-fim-hakan-safi-assume-derrota-nas-eleicoes-do-fenerbahce" },
-      { label: "A Bola — Promessa de Suárez para o futuro (08/06)", url: "https://www.abola.pt/noticias/sporting-depois-do-fenerbahce-a-promessa-de-suarez-para-o-futuro-2026060721552814636" },
-      { label: "A Bola — Primeiras palavras pós-eleições Fenerbahçe (08/06)", url: "https://www.abola.pt/noticias/sporting-as-primeiras-palavras-de-suarez-depois-das-eleicoes-do-fenerbahce-2026060809143933061" },
-      { label: "A Bola — Suárez toma decisão firme: fica no Sporting (23/06)", url: "https://www.abola.pt/noticias/mercado-sporting-suarez-toma-decisao-firme-quanto-ao-futuro-2026062221380096289" },
-    ]
-  },
-  {
     id: "pedro-goncalves",
     name: "Pedro Gonçalves",
     photo: "https://img.a.transfermarkt.technology/portrait/big/426620-1759778826.jpg?lm=1",
@@ -1658,9 +1632,9 @@ const PLAYERS = [
     status: "risco",
     fee: "€20-25M (pedido reduzido do Sporting)", contract: "até 2030",
     market_value: "€25M",
-    description: "Médio ofensivo português, 'Pote', uma das figuras de Alvalade desde 2020. Saída deste verão considerada definitiva — tanto o Sporting como o jogador concordam que o ciclo terminou após 6 épocas e 239 jogos (97 golos, 66 assist.). O Famalicão retém 10% dos direitos económicos (~€3M nesta operação). A 27 de maio mensagem de despedida polémica gerou reações negativas. A 6 de junho Al Ahli (Rui Pedro Braz) e Al Nassr entram na corrida. A 8 de junho Sporting aguardava proposta formal das arábias. A 11 de junho a Abola confirma que a saída é definitiva: Jorge Mendes assume a negociação após resolver as situações de Mourinho e Marco Silva. Clubes das 5 grandes ligas europeias (de segundo plano, candidatos à Europa) e Arábia Saudita interessados. Sporting pede ~€30M; valor real pode ser inferior. A 19 de junho o Record revela que a contratação de Yeremay Hernández está directamente condicionada à saída de Pote — as duas operações fazem parte do mesmo plano estratégico do clube. Também a 19 de junho a A Bola revela que Cesc Fàbregas (Como FC, 4.º na Serie A com acesso à Champions) manifestou interesse a Jorge Mendes — Pote seria o complemento perfeito para o projecto ambicioso italiano. Pote parece preferir a Europa à Arábia. A 22 de junho o Record confirma que Rúben Amorim, agora treinador do AC Milan, colocou o nome de Pedro Gonçalves 'em cima da mesa' junto da liderança milanesa — o avançado encaixa no sistema 3-4-3 do técnico e os dois tiveram uma relação de muito sucesso em Alvalade. Ainda sem proposta formal do Milan. A 30 de junho — sem propostas concretas recebidas — Pote apresenta-se na pré-época do Sporting em Alcochete, permanecendo à disposição de Rui Borges enquanto Jorge Mendes gere as negociações. A A Bola confirma que o clube mantém as portas abertas a propostas adequadas (~€30M). A 7 de julho a A Bola nota que Pote continua a treinar-se na academia, podendo ainda sair antes do fecho do mercado. A 8 de julho (08h15) a A Bola revela que o Sporting baixou a fasquia: de €30M para uma janela de €20-25M. Pote renovou contrato até 2030 em outubro passado. Jorge Mendes continua a gerir as negociações; sem propostas concretas europeias, mas expectativa de interesse saudita. Sporting mantém o controlo dado a cláusula de rescisão de €80M.",
-    notes: "🔴 Sporting baixa a fasquia de €30M para €20-25M (A Bola 08/07 08h15). Renovou até 2030. Sem propostas concretas ainda; Arábia Saudita pode entrar.",
-    last_news: "2026-07-08",
+    description: "Médio ofensivo português, 'Pote', uma das figuras de Alvalade desde 2020. Saída deste verão considerada definitiva — tanto o Sporting como o jogador concordam que o ciclo terminou após 6 épocas e 239 jogos (97 golos, 66 assist.). O Famalicão retém 10% dos direitos económicos (~€3M nesta operação). A 27 de maio mensagem de despedida polémica gerou reações negativas. A 6 de junho Al Ahli (Rui Pedro Braz) e Al Nassr entram na corrida. A 8 de junho Sporting aguardava proposta formal das arábias. A 11 de junho a Abola confirma que a saída é definitiva: Jorge Mendes assume a negociação após resolver as situações de Mourinho e Marco Silva. Clubes das 5 grandes ligas europeias (de segundo plano, candidatos à Europa) e Arábia Saudita interessados. Sporting pede ~€30M; valor real pode ser inferior. A 19 de junho o Record revela que a contratação de Yeremay Hernández está directamente condicionada à saída de Pote — as duas operações fazem parte do mesmo plano estratégico do clube. Também a 19 de junho a A Bola revela que Cesc Fàbregas (Como FC, 4.º na Serie A com acesso à Champions) manifestou interesse a Jorge Mendes — Pote seria o complemento perfeito para o projecto ambicioso italiano. Pote parece preferir a Europa à Arábia. A 22 de junho o Record confirma que Rúben Amorim, agora treinador do AC Milan, colocou o nome de Pedro Gonçalves 'em cima da mesa' junto da liderança milanesa — o avançado encaixa no sistema 3-4-3 do técnico e os dois tiveram uma relação de muito sucesso em Alvalade. Ainda sem proposta formal do Milan. A 30 de junho — sem propostas concretas recebidas — Pote apresenta-se na pré-época do Sporting em Alcochete, permanecendo à disposição de Rui Borges enquanto Jorge Mendes gere as negociações. A A Bola confirma que o clube mantém as portas abertas a propostas adequadas (~€30M). A 7 de julho a A Bola nota que Pote continua a treinar-se na academia, podendo ainda sair antes do fecho do mercado. A 8 de julho (08h15) a A Bola revela que o Sporting baixou a fasquia: de €30M para uma janela de €20-25M. Pote renovou contrato até 2030 em outubro passado. Jorge Mendes continua a gerir as negociações; sem propostas concretas europeias, mas expectativa de interesse saudita. Sporting mantém o controlo dado a cláusula de rescisão de €80M. Com o negócio de Trincão fechado a 12 de julho, a A Bola (09h10) identifica Pote como «o senhor que se segue na porta de saída», com o mesmo destino provável: Arábia Saudita. Proposta concreta esperada em breve, com Sporting a pedir €20-25M (baixou dos €30M iniciais). A decisão deverá oscilar entre o Al Ittihad (ex-treinador Sérgio Conceição) e o Al Diriyah (Bruno Lage). Jorge Mendes negoceia contrato de 3-4 épocas com salário superior ao atual. Pote regista 239 jogos, 97 golos e 66 assistências pelo Sporting — a ausência do Mundial 2026 (não convocado) terá pesado na avaliação reduzida.",
+    notes: "🔴 «Próximo na porta de saída» após Trincão (A Bola 13/07 09h10) — Arábia Saudita (Al Ittihad ou Al Diriyah) como destino provável, €20-25M. Jorge Mendes negoceia contrato de 3-4 épocas.",
+    last_news: "2026-07-13",
     sources: [
       { label: "A Bola — Famalicão prepara-se para esfregar as mãos", url: "https://www.abola.pt/noticias/famalicao-prepara-se-para-esfregar-as-maos-com-figura-do-sporting-2026052319300052456" },
       { label: "Record — Pote em reflexão (01/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/pote-em-reflexao-criticas-em-momento-dificil-levam-jogador-a-equacionar-saida-do-sporting" },
@@ -1674,6 +1648,7 @@ const PLAYERS = [
       { label: "A Bola — Pote e Hjulmand apresentam-se na pré-época sem propostas concretas (30/06)", url: "https://www.abola.pt/noticias/duvidas-desfeitas-hjulmand-e-pote-apresentam-se-no-sporting-2026062922105449487" },
       { label: "A Bola — Sporting não quer um Pedro Gonçalves no lugar de Pedro Gonçalves (07/07)", url: "https://www.abola.pt/noticias/sporting-nao-quer-um-pedro-goncalves-no-lugar-de-pedro-goncalves-2026070717144910705" },
       { label: "A Bola — Novo preço para a saída de Pedro Gonçalves: €20-25M (08/07 08h15)", url: "https://www.abola.pt/noticias/novo-preco-para-a-saida-de-pedro-goncalves-do-sporting-2026070722204400393" },
+      { label: "A Bola — Pote é o senhor que se segue na porta de saída (13/07 09h10)", url: "https://www.abola.pt/noticias/sporting-pote-e-o-senhor-que-se-segue-na-porta-de-saida-2026071221223111480" },
     ]
   },
   {
@@ -1682,13 +1657,13 @@ const PLAYERS = [
     photo: "https://img.a.transfermarkt.technology/portrait/big/412669-1739308729.jpg?lm=1",
     emoji: "🇵🇹",
     position: "Ala dto. / Avançado", age: 26,
-    fromClub: "Sporting CP", toClub: "Al Ahli (negociações em curso)",
-    status: "saida_negociacao",
-    fee: "€44-45M fixos + variáveis (proposta oficial do Al Ahli)", contract: null,
-    last_news: "2026-07-07",
+    fromClub: "Sporting CP", toClub: "Al Ahli",
+    status: "saida_fechada",
+    fee: "€45M (fixo + variáveis)", fee_value: 45, fee_max: 49, contract: "4 épocas, até 2030",
+    last_news: "2026-07-14",
     market_value: "€40M",
-    description: "Extremo direito português, habitual titular no Sporting. A 28 de maio foi eleito para o onze do ano da Liga pelos capitães e treinadores das 18 equipas — 7 golos e 11 assistências em 34 jogos, o jogador de campo mais utilizado por Rui Borges. O Liverpool é um dos clubes da Premier League a acompanhar o nº17 de Alvalade. O Sporting já assegurou Pedro Lima como substituto, o que sugere que o clube está preparado para a sua eventual saída. A 1 de junho o Record confirma que o Sporting planeia encaixar pelo menos €100M combinados da venda de Trincão e Hjulmand neste verão. A 16 de junho o jornalista Gianluca Di Marzio confirma via O Jogo o interesse do AC Milan de Rúben Amorim: Trincão e Hjulmand são os 'dois favoritos' do técnico português para o projeto milanês. A cláusula de rescisão de Trincão é de €60M. A 18 de junho a A Bola confirma que a saída de Trincão está 'cada vez mais perto': será formalizada após a participação no Mundial. A Premier League é o destino preferencial, com expectativa de transferência entre €40-50M. A 21 de junho o Transfermarkt e Di Marzio confirmam formalmente que Trincão consta na lista de reforços prioritários do AC Milan de Amorim. A 24 de junho a A Bola revela que Amorim não tenciona fazer qualquer avanço para contratar jogadores do Sporting 'pelo menos para já'. A 27 de junho a A Bola confirma que Trincão não participará na pré-época do Sporting — o último treino antes da final da Taça de Portugal terá sido o último pelo clube. A saída concretizar-se-á durante as férias, com a Premier League como destino preferencial e €40-50M esperados. A 5 de julho o cenário muda de forma significativa: o Al Ahli (Arábia Saudita) ataca forte, com conversas já em marcha (A Bola 16h45) e Fabrizio Romano a garantir avanço saudita de €50M (Record). Sporting pede €50-60M (abaixo da cláusula de €60M), com valores 'na mesa' ligeiramente abaixo dos €50M — proposta formal esperada dentro de horas. Trincão, que preferia a Premier League, mostra-se agora mais recetivo à Arábia Saudita como alternativa. Negócio esperado para se resolver durante ou logo após o Mundial. O Record confirma às 04h01 de 6 de julho que o negócio está muito avançado — 'muito perto' de se fechar: o Al Ahli colocou em cima da mesa uma proposta milionária (~€50M entre fixo e variáveis), com Rui Pedro Braz (diretor desportivo português do Al Ahli) a liderar as negociações. Trincão estaria disposto a aceitar — o salário saudita pode chegar a 4x o que aufere no Sporting. O Jogo confirma negociações avançadas e detalhes da investida saudita. O O Jogo confirma às 09h26 de 7 de julho: proposta oficial chegou a 6 de julho, com finalização de contrato na noite desse mesmo dia — €44-45M fixos + pequenas variáveis (investimento total ~€90M incluindo os 4 anos de contrato/salário). Contrato de 4 épocas até 2030. Salário líquido anual de €11M — fator decisivo que mudou a preferência inicial de Trincão pela Premier League. Trincão substituiria Riyad Mahrez, cujo contrato com o Al Ahli termina. Anúncio oficial esperado «nas próximas horas».",
-    notes: "🟠 Proposta oficial recebida (06/07), finalização na mesma noite (O Jogo 07/07 09h26) — €44-45M fixos, contrato 4 anos, salário €11M/ano. Anúncio oficial esperado a qualquer momento.",
+    description: "Extremo direito português, habitual titular no Sporting. A 28 de maio foi eleito para o onze do ano da Liga pelos capitães e treinadores das 18 equipas — 7 golos e 11 assistências em 34 jogos, o jogador de campo mais utilizado por Rui Borges. O Liverpool é um dos clubes da Premier League a acompanhar o nº17 de Alvalade. O Sporting já assegurou Pedro Lima como substituto, o que sugere que o clube está preparado para a sua eventual saída. A 1 de junho o Record confirma que o Sporting planeia encaixar pelo menos €100M combinados da venda de Trincão e Hjulmand neste verão. A 16 de junho o jornalista Gianluca Di Marzio confirma via O Jogo o interesse do AC Milan de Rúben Amorim: Trincão e Hjulmand são os 'dois favoritos' do técnico português para o projeto milanês. A cláusula de rescisão de Trincão é de €60M. A 18 de junho a A Bola confirma que a saída de Trincão está 'cada vez mais perto': será formalizada após a participação no Mundial. A Premier League é o destino preferencial, com expectativa de transferência entre €40-50M. A 21 de junho o Transfermarkt e Di Marzio confirmam formalmente que Trincão consta na lista de reforços prioritários do AC Milan de Amorim. A 24 de junho a A Bola revela que Amorim não tenciona fazer qualquer avanço para contratar jogadores do Sporting 'pelo menos para já'. A 27 de junho a A Bola confirma que Trincão não participará na pré-época do Sporting — o último treino antes da final da Taça de Portugal terá sido o último pelo clube. A saída concretizar-se-á durante as férias, com a Premier League como destino preferencial e €40-50M esperados. A 5 de julho o cenário muda de forma significativa: o Al Ahli (Arábia Saudita) ataca forte, com conversas já em marcha (A Bola 16h45) e Fabrizio Romano a garantir avanço saudita de €50M (Record). Sporting pede €50-60M (abaixo da cláusula de €60M), com valores 'na mesa' ligeiramente abaixo dos €50M — proposta formal esperada dentro de horas. Trincão, que preferia a Premier League, mostra-se agora mais recetivo à Arábia Saudita como alternativa. Negócio esperado para se resolver durante ou logo após o Mundial. O Record confirma às 04h01 de 6 de julho que o negócio está muito avançado — 'muito perto' de se fechar: o Al Ahli colocou em cima da mesa uma proposta milionária (~€50M entre fixo e variáveis), com Rui Pedro Braz (diretor desportivo português do Al Ahli) a liderar as negociações. Trincão estaria disposto a aceitar — o salário saudita pode chegar a 4x o que aufere no Sporting. O Jogo confirma negociações avançadas e detalhes da investida saudita. O O Jogo confirma às 09h26 de 7 de julho: proposta oficial chegou a 6 de julho, com finalização de contrato na noite desse mesmo dia — €44-45M fixos + pequenas variáveis (investimento total ~€90M incluindo os 4 anos de contrato/salário). Contrato de 4 épocas até 2030. Salário líquido anual de €11M — fator decisivo que mudou a preferência inicial de Trincão pela Premier League. Trincão substituiria Riyad Mahrez, cujo contrato com o Al Ahli termina. Anúncio oficial esperado «nas próximas horas». A A Bola confirma às 14h01 de 12 de julho: «Acordo fechado» entre Sporting e Al Ahli — negócio total de €45M. Falta apenas o «sim» do próprio Trincão, que ainda resiste à mudança para o Médio Oriente, na esperança de uma proposta da Premier League (jogou antes pelo Wolverhampton). O Al Ahli (Rui Pedro Braz, diretor desportivo) propõe contrato de 4 épocas até 2030, salário líquido anual acima de €10M (~4x o que aufere no Sporting). O Sporting já contratou Rodrigo Zalazar (Sp. Braga, €30M) como substituto direto nas responsabilidades táticas sob Rui Borges. A 14 de julho (08h17) o O Jogo confirma: acordo entre clubes fechado, faltam apenas trâmites burocráticos/documentais — oficialização «cada vez mais perto». Sporting apura um lucro base de €18,5M com a venda, mais bónus ligados a objetivos. Nos dias seguintes, um restaurante em Guimarães despede-se publicamente de Trincão («Boa sorte para o teu próximo desafio»), sinal simbólico de que a saída é dada como certa nos bastidores, apesar de a assinatura formal ainda não ter sido anunciada.",
+    notes: "🟣 Acordo FECHADO entre clubes (A Bola 12/07 14h01, O Jogo 14/07 08h17) — €45M total, contrato 4 anos até 2030. Falta apenas o «sim» final de Trincão e trâmites burocráticos. Zalazar já contratado como substituto.",
     sources: [
       { label: "Record — Liverpool de olho no Trincão", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/trincao-na-rota-inglesa-liverpool-e-um-dos-clubes-de-olho-no-leao" },
       { label: "O Jogo — Di Marzio: Milan (Amorim) quer Trincão e Hjulmand (16/06 23h30)", url: "https://www.ojogo.pt/futebol/artigo/milan-de-ruben-amorim-interessado-em-trincao-e-hjulmand/18096066" },
@@ -1701,6 +1676,9 @@ const PLAYERS = [
       { label: "Record — Sauditas convencem Trincão, extremo a caminho da Arábia por quase €50M (06/07 04h01)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sauditas-convencem-trincao-extremo-do-sporting-a-caminho-da-arabia-por-quase-50m" },
       { label: "O Jogo — Francisco Trincão negociado pelo Al Ahli: os detalhes da investida", url: "https://www.ojogo.pt/futebol/artigo/francisco-trincao-negociado-pelo-al-ahli-os-detalhes-da-investida/18103034" },
       { label: "O Jogo — A caminho do Al Ahli: €44M dão a volta a Trincão (07/07 09h26)", url: "https://www.ojogo.pt/futebol/artigo/a-caminho-do-al-ahli-44-milhoes-de-euros-dao-a-volta-a-trincao/18103451" },
+      { label: "A Bola — Acordo fechado por Trincão entre Sporting e Al Ahli (12/07 14h01)", url: "https://www.abola.pt/noticias/acordo-fechado-por-trincao-entre-sporting-e-al-ahli-2026071214013841480" },
+      { label: "Record — Acordo total, falta o «sim» do criativo (12/07 16h19)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/acordo-total-entre-sporting-e-al-ahli-por-trincao-falta-o-sim-do-criativo-para-rumar-a-arabia-saudita" },
+      { label: "O Jogo — Transferência dispara lucros no Sporting, oficialização perto (14/07 08h17)", url: "https://www.ojogo.pt/futebol/artigo/transferencia-de-trincao-para-o-al-ahli-dispara-lucros-no-sporting/18105906" },
     ]
   },
   {
@@ -1820,25 +1798,6 @@ const PLAYERS = [
     ]
   },
   {
-    id: "ivan-fresneda",
-    name: "Iván Fresneda",
-    photo: "https://img.a.transfermarkt.technology/portrait/big/946883-1761231757.jpg",
-    emoji: "🇪🇸",
-    position: "LD", age: 21,
-    fromClub: "Sporting CP", toClub: "Por confirmar",
-    status: "risco",
-    fee: "Cláusula €80M", contract: "até 2028",
-    market_value: "€15M",
-    description: "Lateral direito espanhol de 21 anos, ex-formado no Real Madrid, contratado ao Real Valladolid em 2023 por €9 milhões. Realizou 2 épocas no Sporting mas sofreu uma lesão muscular a 11 de abril frente à Estrela da Amadora — retorno previsto para o fim de junho. A 2 de junho a A Bola revela que o Real Madrid o observou recentemente como possível substituto de Carvajal. O Sporting considera-o não negociável. A 4 de junho o O Jogo confirma que o Arsenal colocou Fresneda na sua órbita, acompanhando o lateral após uma boa temporada. Cláusula de rescisão: €80M. A 22 de junho Fresneda, em entrevista à A Bola a partir de Miami (onde acompanhou o Uruguai-Cabo Verde com Maxi Araújo), revelou estar satisfeito com a última época: 'A nível individual, fiquei feliz — tive mais minutos e consegui estar a um nível acima.' Confirmou regresso antecipado a Alcochete antes de 1 de julho. Sem qualquer indicação de transferência iminente.",
-    notes: "⚠️ Arsenal (04/06) e Real Madrid (02/06) com interesse. Sporting considera intransferível (€80M). Fresneda confirmou regresso antecipado (22/06) — sem movimentações de mercado.",
-    last_news: "2026-06-22",
-    sources: [
-      { label: "Abola — Real Madrid observou Fresneda (02/06)", url: "https://www.abola.pt/noticias/mercado-sporting-fresneda-tera-sido-observado-pelo-real-madrid-2026060121404564110" },
-      { label: "O Jogo — Arsenal coloca Fresneda na sua órbita (04/06)", url: "https://www.ojogo.pt/futebol/artigo/fresneda-lateral-do-sporting-colocado-na-orbita-do-arsenal/18091372" },
-      { label: "Abola — 'A nível individual, fiquei feliz pela última época' (22/06)", url: "https://www.abola.pt/noticias/fresneda-a-nivel-individual-fiquei-feliz-pela-ultima-epoca-2026062209341450068" },
-    ]
-  },
-  {
     id: "daniel-braganca",
     name: "Daniel Bragança",
     photo: "https://img.a.transfermarkt.technology/portrait/big/461943-1765306925.jpg",
@@ -1848,39 +1807,15 @@ const PLAYERS = [
     status: "risco",
     fee: "€8–12M (pedido Sporting)", contract: "até 2027 (janeiro)",
     market_value: "€12M",
-    description: "Médio central português de 27 anos, 19 anos no clube desde a academia. Contrato a expirar em janeiro de 2027, o que lhe permitirá negociar livremente com outros clubes a partir dessa data. A 2 de junho vários clubes europeus apresentaram propostas financeiras ao jogador. Sem proposta formal de renovação do Sporting. A 10 de junho a Abola apontou a Espanha como destino mais provável (Valencia, via Jorge Mendes/Peter Lim). A 4 de julho (19h33) a A Bola confirma que o Sporting mantém a fasquia financeira: exige entre €8-12M pelos direitos económicos, valor que coincide com a avaliação da Transfermarkt (€12M). Apesar do interesse internacional, não há ainda propostas concretas — lesões graves no joelho no passado tornam clubes ingleses cautelosos. Bragança está emocionalmente ligado ao clube (chegou aos 8 anos) mas está aberto a sair para assegurar um salário mais alto; fica confortável se não conseguir sair. O cenário é complicado pelo valor pedido, e o Sporting poderá ter de baixar as pretensões para viabilizar uma venda antes da janela de liberdade contratual em janeiro.",
-    notes: "🔴 Sporting mantém fasquia de €8-12M (A Bola 04/07 19h33) — sem propostas concretas ainda. Contrato expira em janeiro 2027 (liberdade contratual). Pode ter de baixar preço.",
-    last_news: "2026-07-04",
+    description: "Médio central português de 27 anos, 19 anos no clube desde a academia. Contrato a expirar em janeiro de 2027, o que lhe permitirá negociar livremente com outros clubes a partir dessa data. A 2 de junho vários clubes europeus apresentaram propostas financeiras ao jogador. Sem proposta formal de renovação do Sporting. A 10 de junho a Abola apontou a Espanha como destino mais provável (Valencia, via Jorge Mendes/Peter Lim). A 4 de julho (19h33) a A Bola confirma que o Sporting mantém a fasquia financeira: exige entre €8-12M pelos direitos económicos, valor que coincide com a avaliação da Transfermarkt (€12M). Apesar do interesse internacional, não há ainda propostas concretas — lesões graves no joelho no passado tornam clubes ingleses cautelosos. Bragança está emocionalmente ligado ao clube (chegou aos 8 anos) mas está aberto a sair para assegurar um salário mais alto; fica confortável se não conseguir sair. O cenário é complicado pelo valor pedido, e o Sporting poderá ter de baixar as pretensões para viabilizar uma venda antes da janela de liberdade contratual em janeiro. O Record confirma (15/07 17h23) que Bragança bisou na vitória por 4-1 sobre o Celtic num particular de pré-época — usando a boa exibição para pressionar por uma resolução rápida do seu futuro. Com apenas um ano de contrato restante, o médio quer clareza sobre a sua situação antes do arranque da época competitiva, para evitar entrar na temporada num impasse desconfortável.",
+    notes: "🔴 Bisou frente ao Celtic (4-1) e usa a boa forma para pressionar por decisão rápida (Record 15/07 17h23). Quer o futuro resolvido antes do arranque da época.",
+    last_news: "2026-07-15",
     sources: [
       { label: "Abola — Daniel Bragança desperta cobiça (02/06)", url: "https://www.abola.pt/noticias/sporting-daniel-braganca-desperta-cobica-2026060118152531243" },
       { label: "A Bola — Sem proposta formal para renovar (08/06)", url: "https://www.abola.pt/noticias/sporting-daniel-braganca-sem-proposta-formal-para-renovar-2026060722304935184" },
       { label: "Abola — Valencia pode ser hipótese, pista espanhola (10/06)", url: "https://www.abola.pt/noticias/sporting-daniel-braganca-na-pista-espanhola-e-valencia-pode-ser-hipotese-2026061015301625722" },
       { label: "A Bola — Sporting não baixa a fasquia financeira por Daniel Bragança (04/07 19h33)", url: "https://www.abola.pt/noticias/sporting-nao-baixa-a-fasquia-financeira-por-daniel-braganca-2026070416332639289" },
-    ]
-  },
-  {
-    id: "souleymane-faye",
-    name: "Souleymane Faye",
-    photo: "https://img.a.transfermarkt.technology/portrait/big/666971-1773786729.jpg?lm=1",
-    emoji: "🇸🇳",
-    position: "Ala dto.", age: 23,
-    fromClub: "Sporting CP", toClub: "Zaragoza / Por confirmar (Espanha)",
-    status: "risco",
-    fee: null, fee_value: null, fee_max: null, contract: "até 2030",
-    last_news: "2026-06-22",
-    market_value: "€3M",
-    description: "Extremo direito senegalês de 23 anos, contratado ao Granada CF em janeiro de 2026 por ~€6.5M. Em 6 meses no Sporting disputou apenas 9 jogos (161 minutos, 1 assistência) e não justificou o investimento. A 4 de junho o Noticiasaominuto reporta que Faye tem 'guia de marcha' — saída em empréstimo ou definitiva. A 6 de junho a A Bola confirma que não faz parte dos planos para 2026/27. A 13 de junho surgem quatro interessados: o Lorient (Ligue 1), o Elche (La Liga), o Rayo Vallecano e o Maiorca. A 18 de junho o O Jogo avançara com Lorient como destino confirmado, mas a 19 de junho a A Bola revela a posição definitiva do Sporting: só aceita venda definitiva para recuperar os ~€6.5M investidos — empréstimos estão fora de questão. Se não houver acordo, Faye integrará a pré-época no Sporting a partir de 1 de julho. A 21 de junho o Record apanha Faye a exibir a camisola do Zaragoza durante as férias no Senegal — sinal claro de onde a sua mente está. Espanha concentra a maioria do interesse no jogador.",
-    notes: "⚠️ Apanhado com camisola do Zaragoza (Record 21/06) — Espanha como destino mais provável. Sporting exige venda definitiva (≥€6.5M). Pré-época a 1/07 se sem acordo.",
-    sources: [
-      { label: "Noticiasaominuto — Faye com 'guia de marcha' (04/06)", url: "https://www.noticiasaominuto.com/desporto/3000498/chegar-ver-e-sair-faye-com-guia-de-marcha-do-sporting-no-verao" },
-      { label: "A Bola — Não convenceu, deve voltar para donde veio (06/06)", url: "https://www.abola.pt/noticias/nao-convenceu-no-sporting-e-deve-voltar-para-donde-veio-2026060613125104057" },
-      { label: "Record — Surge na órbita do Lorient (13/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/faye-nao-entra-nas-contas-do-sporting-e-surge-na-orbita-do-lorient" },
-      { label: "O Jogo — Pretendido pelo Lorient (13/06)", url: "https://www.ojogo.pt/futebol/artigo/sporting-souleymane-faye-pretendido-pelo-lorient/18094750" },
-      { label: "Abola — França pode ser solução para Faye (18/06)", url: "https://www.abola.pt/noticias/mercado-sporting-franca-pode-ser-solucao-para-faye-2026061815373645392" },
-      { label: "O Jogo — Lorient apontado como destino (18/06)", url: "https://www.ojogo.pt/futebol/artigo/faye-ja-tem-destino-depois-de-nove-jogos-ao-servico-do-sporting/18096741" },
-      { label: "A Bola — Sporting só admite venda definitiva (19/06)", url: "https://www.abola.pt/noticias/mercado-sporting-so-admite-um-cenario-para-faye-2026061910241005919" },
-      { label: "Record — Faye apanhado a vestir camisola do Saragoça (21/06)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/faye-apanhado-a-vestir-camisola-do-saragoca" },
-      { label: "A Bola — Faye já veste outra camisola (22/06)", url: "https://www.abola.pt/noticias/sporting-faye-ja-veste-outra-camisola-foto-2026062216193787011" },
+      { label: "Record — Bisa e vende caro: impasse, quer futuro resolvido antes da época (15/07 17h23)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/daniel-braganca-bisa-e-vende-caro-o-impasse-medio-do-sporting-quer-futuro-resolvido-antes-da-epoca-arrancar" },
     ]
   },
   {
@@ -1927,13 +1862,13 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-07-16", ids: ["francisco-trincao", "pedro-goncalves", "daniel-braganca", "sebastian-osorio"] },
   { date: "2026-07-09", ids: ["morten-hjulmand", "jesse-derry", "maxi-araujo", "ricardo-mangas"] },
   { date: "2026-07-08", ids: ["jesse-derry", "pedro-goncalves", "morten-hjulmand"] },
   { date: "2026-07-07", ids: ["bruno-ramos", "rafael-pontelo", "morten-hjulmand", "francisco-trincao", "rodrigo-rodrigues"] },
   { date: "2026-07-06", ids: ["morten-hjulmand", "francisco-trincao", "giorgi-kochorashvili", "rodrigo-rodrigues", "georgios-vagiannidis"] },
   { date: "2026-07-05", ids: ["morten-hjulmand", "catarino-pascoal", "daniel-braganca", "francisco-trincao", "henrique-rafagnin"] },
   { date: "2026-07-04", ids: ["morten-hjulmand", "maxi-araujo"] },
-  { date: "2026-07-03", ids: ["morten-hjulmand", "rodrigo-rodrigues", "giorgi-kochorashvili", "koba-koindredi"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
