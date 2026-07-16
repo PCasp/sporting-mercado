@@ -35,8 +35,12 @@
       --status-saida-oficial-bg: rgba(220,38,38,0.10);
       --status-saida-fechada: #6d28d9;
       --status-saida-fechada-bg: rgba(124,58,237,0.10);
+      --status-saida-negociacao: #be185d;
+      --status-saida-negociacao-bg: rgba(190,24,93,0.10);
       --status-risco: #c2410c;
       --status-risco-bg: rgba(234,88,12,0.10);
+      --status-clausula: #0e7490;
+      --status-clausula-bg: rgba(14,116,144,0.10);
     }
 
     [data-theme="dark"] {
@@ -62,8 +66,12 @@
       --status-saida-oficial-bg: rgba(220,38,38,0.13);
       --status-saida-fechada: #c084fc;
       --status-saida-fechada-bg: rgba(124,58,237,0.13);
+      --status-saida-negociacao: #f472b6;
+      --status-saida-negociacao-bg: rgba(219,39,119,0.13);
       --status-risco: #fb923c;
       --status-risco-bg: rgba(234,88,12,0.13);
+      --status-clausula: #22d3ee;
+      --status-clausula-bg: rgba(14,116,144,0.15);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -314,9 +322,11 @@
     .badge.fechado        { background: var(--status-fechado-bg);        color: var(--status-fechado);        border-color: rgba(37,99,235,0.25); }
     .badge.negociacao     { background: var(--status-negociacao-bg);     color: var(--status-negociacao);     border-color: rgba(217,119,6,0.25); }
     .badge.analise        { background: var(--status-analise-bg);        color: var(--status-analise);        border-color: rgba(107,114,128,0.18); }
-    .badge.saida-oficial  { background: var(--status-saida-oficial-bg);  color: var(--status-saida-oficial);  border-color: rgba(220,38,38,0.25); }
-    .badge.saida-fechada  { background: var(--status-saida-fechada-bg);  color: var(--status-saida-fechada);  border-color: rgba(124,58,237,0.25); }
-    .badge.risco          { background: var(--status-risco-bg);          color: var(--status-risco);          border-color: rgba(234,88,12,0.25); }
+    .badge.saida-oficial     { background: var(--status-saida-oficial-bg);     color: var(--status-saida-oficial);     border-color: rgba(220,38,38,0.25); }
+    .badge.saida-fechada     { background: var(--status-saida-fechada-bg);     color: var(--status-saida-fechada);     border-color: rgba(124,58,237,0.25); }
+    .badge.saida-negociacao  { background: var(--status-saida-negociacao-bg);  color: var(--status-saida-negociacao);  border-color: rgba(190,24,93,0.25); }
+    .badge.risco             { background: var(--status-risco-bg);             color: var(--status-risco);             border-color: rgba(234,88,12,0.25); }
+    .badge.clausula          { background: var(--status-clausula-bg);          color: var(--status-clausula);          border-color: rgba(14,116,144,0.25); }
 
     /* ── DETAIL VIEW ── */
     #detail-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
@@ -711,8 +721,9 @@
     .pos-ind { font-size: .6rem; font-weight: 700; border-radius: 999px; padding: 2px 5px; line-height: 1.3; white-space: nowrap; }
     .pos-ind-in-conf  { background: var(--status-oficial-bg);      color: var(--status-oficial); }
     .pos-ind-in-talk  { background: var(--status-negociacao-bg);    color: var(--status-negociacao); }
-    .pos-ind-out-conf { background: var(--status-saida-oficial-bg); color: var(--status-saida-oficial); }
-    .pos-ind-out-risk { background: var(--status-risco-bg);         color: var(--status-risco); }
+    .pos-ind-out-conf { background: var(--status-saida-oficial-bg);    color: var(--status-saida-oficial); }
+    .pos-ind-out-talk { background: var(--status-saida-negociacao-bg); color: var(--status-saida-negociacao); }
+    .pos-ind-out-risk { background: var(--status-risco-bg);            color: var(--status-risco); }
     .pos-legend { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; font-size: .65rem; color: var(--muted); margin-top: -12px; margin-bottom: 20px; }
 
     /* ── HEADLINES ── */
@@ -734,17 +745,19 @@
       font-family: inherit;
     }
     .cat-btn:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); transform: translateY(-1px); }
-    .cat-btn.entradas { border-left: 4px solid var(--green); }
-    .cat-btn.saidas   { border-left: 4px solid var(--status-saida-oficial); }
+    .cat-btn.entradas  { border-left: 4px solid var(--green); }
+    .cat-btn.saidas    { border-left: 4px solid var(--status-saida-oficial); }
+    .cat-btn.clausulas { border-left: 4px solid var(--status-clausula); }
     .cat-btn-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
     .cat-btn-title { font-size: .95rem; font-weight: 700; }
     .cat-btn-count { font-size: 1.05rem; font-weight: 800; }
-    .cat-btn-count.c-entrada { color: var(--green); }
-    .cat-btn-count.c-saida   { color: var(--status-saida-oficial); }
+    .cat-btn-count.c-entrada  { color: var(--green); }
+    .cat-btn-count.c-saida    { color: var(--status-saida-oficial); }
+    .cat-btn-count.c-clausula { color: var(--status-clausula); }
     .cat-btn-sub { font-size: .72rem; color: var(--muted); }
 
     /* ── CATEGORY VIEWS ── */
-    #entradas-view, #saidas-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
+    #entradas-view, #saidas-view, #clausulas-view { max-width: 720px; margin: 0 auto; padding-bottom: 48px; }
     .cat-view-header { padding: 14px 16px; background: var(--card); border-bottom: 1px solid var(--border); }
     .cat-view-title { font-size: 1rem; font-weight: 700; }
     .cat-view-sub   { font-size: .78rem; color: var(--muted); margin-top: 3px; }
@@ -891,8 +904,9 @@
       font-family: inherit; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     }
     .cat-btn:hover { border-color: rgba(7,160,74,0.35); box-shadow: 0 0 24px rgba(7,160,74,0.09); transform: translateY(-2px); }
-    .cat-btn.entradas { border-left: 3px solid var(--green); }
-    .cat-btn.saidas   { border-left: 3px solid var(--status-saida-oficial); }
+    .cat-btn.entradas  { border-left: 3px solid var(--green); }
+    .cat-btn.saidas    { border-left: 3px solid var(--status-saida-oficial); }
+    .cat-btn.clausulas { border-left: 3px solid var(--status-clausula); }
 
     /* ── RATING + NARRATIVE ── */
     .rating-index {
@@ -1015,6 +1029,12 @@
   <div id="saidas-content"></div>
 </div>
 
+<!-- CLAUSULAS VIEW -->
+<div id="clausulas-view" class="page">
+  <div class="detail-back" onclick="showDashboard()">← Voltar</div>
+  <div id="clausulas-content"></div>
+</div>
+
 <!-- DETAIL VIEW -->
 <div id="detail-view" class="page">
   <div class="detail-back" onclick="goBack()">← Voltar</div>
@@ -1045,13 +1065,15 @@ const LAST_UPDATED = "2026-07-09 12:39";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
-  oficial:       { label: "✅ Oficial",          cls: "oficial" },
-  fechado:       { label: "🤝 Negócio Fechado",  cls: "fechado" },
-  negociacao:    { label: "🔄 Em Negociação",    cls: "negociacao" },
-  analise:       { label: "🔍 Em Análise",       cls: "analise" },
-  saida_oficial: { label: "🚨 Saída Oficial",    cls: "saida-oficial" },
-  saida_fechada: { label: "📤 Saída Fechada",    cls: "saida-fechada" },
-  risco:         { label: "⚠️ Em Risco",         cls: "risco" },
+  oficial:          { label: "✅ Oficial",              cls: "oficial" },
+  fechado:          { label: "🤝 Negócio Fechado",      cls: "fechado" },
+  negociacao:       { label: "🔄 Em Negociação",        cls: "negociacao" },
+  analise:          { label: "🔍 Em Análise",           cls: "analise" },
+  saida_oficial:    { label: "🚨 Saída Oficial",        cls: "saida-oficial" },
+  saida_fechada:    { label: "📤 Saída Fechada",        cls: "saida-fechada" },
+  saida_negociacao: { label: "📤 Saída em Negociação",  cls: "saida-negociacao" },
+  risco:            { label: "⚠️ Em Risco",             cls: "risco" },
+  clausula:         { label: "💰 Cláusula de Revenda",  cls: "clausula" },
 };
 
 const PLAYERS = [
@@ -1661,7 +1683,7 @@ const PLAYERS = [
     emoji: "🇵🇹",
     position: "Ala dto. / Avançado", age: 26,
     fromClub: "Sporting CP", toClub: "Al Ahli (negociações em curso)",
-    status: "risco",
+    status: "saida_negociacao",
     fee: "€44-45M fixos + variáveis (proposta oficial do Al Ahli)", contract: null,
     last_news: "2026-07-07",
     market_value: "€40M",
@@ -1887,7 +1909,7 @@ const PLAYERS = [
     emoji: "🇵🇹",
     position: "Ala esq.", age: 21,
     fromClub: "Olympique Lyon", toClub: "Bayer Leverkusen",
-    status: "saida_fechada",
+    status: "clausula",
     fee: "€6.4M proc. Sporting (20% mais-valia + solidariedade)", fee_value: null, fee_max: null, contract: null,
     market_value: "€20M",
     description: "Extremo esquerdo português de 21 anos, formado na Academia do Sporting e vendido ao Olympique Lyon em 2025 por €2 milhões — negócio que incluiu cláusula de revenda de 20% da mais-valia. Na época 2025/26 revelou-se pelo Lyon com 8 golos e 11 assistências em 37 jogos. A 17 de junho de 2026 o Bayer Leverkusen fechou a sua contratação — Moreira viajou para a Alemanha para exames médicos e assinatura. A 18 de junho o Bayer Leverkusen oficializa via redes sociais a transferência: €29.5M fixos + €4.1M variáveis (total €33.6M), contrato até 2031. O Sporting encaixa €6.4M: €5.52M via cláusula de revenda (20% dos €27.5M de mais-valia) e €0.9M via solidariedade FIFA.",
@@ -1916,13 +1938,15 @@ const UPDATES_LOG = [
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
 const SECTIONS = [
-  { key: "oficial",       label: "Entradas Confirmadas" },
-  { key: "fechado",       label: "Negócio Fechado" },
-  { key: "negociacao",    label: "Em Negociação" },
-  { key: "analise",       label: "Em Análise" },
-  { key: "saida_oficial", label: "Saídas Oficiais" },
-  { key: "saida_fechada", label: "Saídas Fechadas" },
-  { key: "risco",         label: "Em Risco de Sair" },
+  { key: "oficial",          label: "Entradas Confirmadas" },
+  { key: "fechado",          label: "Negócio Fechado" },
+  { key: "negociacao",       label: "Em Negociação" },
+  { key: "analise",          label: "Em Análise" },
+  { key: "saida_oficial",    label: "Saídas Oficiais" },
+  { key: "saida_fechada",    label: "Saídas Fechadas" },
+  { key: "saida_negociacao", label: "Saída em Negociação" },
+  { key: "risco",            label: "Em Risco de Sair" },
+  { key: "clausula",         label: "Cláusulas de Revenda" },
 ];
 
 // ── HELPERS ─────────────────────────────────────────────────────────────────
@@ -1931,7 +1955,7 @@ function badge(statusKey) {
   return `<span class="badge ${s.cls}">${s.label}</span>`;
 }
 
-const RUMOR_STATUSES = new Set(["analise", "negociacao", "risco"]);
+const RUMOR_STATUSES = new Set(["analise", "negociacao", "risco", "saida_negociacao"]);
 
 function daysAgo(dateStr) {
   if (!dateStr) return null;
@@ -2262,15 +2286,18 @@ function renderUpdates() {
 
   let cards = "";
   for (const p of players) {
-    const isOutgoing = ["saida_oficial","saida_fechada","risco"].includes(p.status);
-    const meta = [p.position, p.age ? `${p.age} anos` : null, isOutgoing ? p.toClub : p.fromClub].filter(Boolean).join(" · ");
+    const isOutgoing = ["saida_oficial","saida_fechada","saida_negociacao","risco"].includes(p.status);
+    const clubMeta = p.status === "clausula" ? `${p.fromClub} → ${p.toClub}` : (isOutgoing ? p.toClub : p.fromClub);
+    const meta = [p.position, p.age ? `${p.age} anos` : null, clubMeta].filter(Boolean).join(" · ");
     const feeLabel = p.fee || "";
     const avatarImg = p.photo
       ? `<img src="${p.photo}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=this.parentNode.dataset.emoji" />`
       : p.emoji;
-    const dirTag = isOutgoing
-      ? `<div class="dir-tag saida">↑ Saída</div>`
-      : `<div class="dir-tag entrada">↓ Entrada</div>`;
+    const dirTag = p.status === "clausula"
+      ? `<div class="dir-tag saida">💰 Cláusula</div>`
+      : isOutgoing
+        ? `<div class="dir-tag saida">↑ Saída</div>`
+        : `<div class="dir-tag entrada">↓ Entrada</div>`;
     cards += `
       <div class="player-card" onclick="showDetail('${p.id}')">
         <div class="player-card-left">
@@ -2326,7 +2353,7 @@ function renderList() {
     html += `<div class="section-title">${STATUS[section.key].label.slice(0,2)} ${section.label}</div>`;
 
     for (const p of players) {
-      const isOutgoing = ["saida_oficial","saida_fechada","risco"].includes(p.status);
+      const isOutgoing = ["saida_oficial","saida_fechada","saida_negociacao","risco"].includes(p.status);
       const meta = [p.position, p.age ? `${p.age} anos` : null,
         isOutgoing ? p.toClub : p.fromClub
       ].filter(Boolean).join(" · ");
@@ -2368,9 +2395,11 @@ function renderDetail(id) {
   if (!p) return;
 
   const isIn = ["oficial","fechado","negociacao","analise"].includes(p.status);
-  const clubLine = isIn
-    ? `${p.fromClub} <span style="opacity:.7">→</span> Sporting CP`
-    : `Sporting CP <span style="opacity:.7">→</span> ${p.toClub}`;
+  const clubLine = p.status === "clausula"
+    ? `${p.fromClub} <span style="opacity:.7">→</span> ${p.toClub}`
+    : isIn
+      ? `${p.fromClub} <span style="opacity:.7">→</span> Sporting CP`
+      : `Sporting CP <span style="opacity:.7">→</span> ${p.toClub}`;
 
   const lastNewsStat = (() => {
     if (!RUMOR_STATUSES.has(p.status) || !p.last_news) return null;
@@ -2438,7 +2467,7 @@ let _currentView  = "dashboard-view";
 let _previousView = "dashboard-view";
 
 function showOnly(id) {
-  ["dashboard-view","entradas-view","saidas-view","detail-view","balance-view","updates-view","rating-view"]
+  ["dashboard-view","entradas-view","saidas-view","clausulas-view","detail-view","balance-view","updates-view","rating-view"]
     .forEach(v => { const el = document.getElementById(v); if (el) el.classList.toggle("active", v === id); });
   _currentView = id;
   window.scrollTo(0, 0);
@@ -2449,8 +2478,9 @@ function isUpdatedToday(id) {
 }
 
 function playerCardHtml(p) {
-  const isOut = ["saida_oficial","saida_fechada","risco"].includes(p.status);
-  const meta = [p.position, p.age ? `${p.age} anos` : null, isOut ? p.toClub : p.fromClub].filter(Boolean).join(" · ");
+  const isOut = ["saida_oficial","saida_fechada","saida_negociacao","risco"].includes(p.status);
+  const clubMeta = p.status === "clausula" ? `${p.fromClub} → ${p.toClub}` : (isOut ? p.toClub : p.fromClub);
+  const meta = [p.position, p.age ? `${p.age} anos` : null, clubMeta].filter(Boolean).join(" · ");
   const avatarImg = p.photo
     ? `<img src="${p.photo}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.parentNode.innerHTML=this.parentNode.dataset.emoji" />`
     : p.emoji;
@@ -2498,8 +2528,9 @@ function renderDashboard() {
   const todayPlayers = getTodayUpdates();
   const { net, totalIn, totalOut } = computeBalance();
   const { grade, overall } = computeRating();
-  const entradas = PLAYERS.filter(p => ["oficial","fechado","negociacao","analise"].includes(p.status));
-  const saidas   = PLAYERS.filter(p => ["saida_oficial","saida_fechada","risco"].includes(p.status));
+  const entradas  = PLAYERS.filter(p => ["oficial","fechado","negociacao","analise"].includes(p.status));
+  const saidas    = PLAYERS.filter(p => ["saida_oficial","saida_fechada","saida_negociacao","risco"].includes(p.status));
+  const clausulas = PLAYERS.filter(p => p.status === "clausula");
 
   const inBreakdown = [
     [entradas.filter(p => p.status==="oficial").length,    "oficiais"],
@@ -2509,9 +2540,10 @@ function renderDashboard() {
   ].filter(([n]) => n > 0).map(([n, l]) => `${n} ${l}`).join(" · ");
 
   const outBreakdown = [
-    [saidas.filter(p => p.status==="saida_oficial").length, "oficiais"],
-    [saidas.filter(p => p.status==="saida_fechada").length, "fechadas"],
-    [saidas.filter(p => p.status==="risco").length,         "em risco"],
+    [saidas.filter(p => p.status==="saida_oficial").length,    "oficiais"],
+    [saidas.filter(p => p.status==="saida_fechada").length,    "fechadas"],
+    [saidas.filter(p => p.status==="saida_negociacao").length, "em negociação"],
+    [saidas.filter(p => p.status==="risco").length,             "em risco"],
   ].filter(([n]) => n > 0).map(([n, l]) => `${n} ${l}`).join(" · ");
 
   const netSign = net >= 0 ? "+" : "−";
@@ -2547,13 +2579,14 @@ function renderDashboard() {
   const POS_GROUPS = ["GR","DC","LD","LE","MD","MC","EXT","AV"];
   const POS_NAMES  = { GR:"GR", DC:"DC", LD:"LD", LE:"LE", MD:"MD", MC:"MC", EXT:"EXT", AV:"AV" };
   const posData = {};
-  POS_GROUPS.forEach(g => posData[g] = { inConf:0, inTalk:0, outConf:0, outRisk:0 });
+  POS_GROUPS.forEach(g => posData[g] = { inConf:0, inTalk:0, outConf:0, outTalk:0, outRisk:0 });
   for (const p of PLAYERS) {
     const g = posGroup(p.position);
     if (!g) continue;
     if (["oficial","fechado"].includes(p.status))           posData[g].inConf++;
     else if (["negociacao","analise"].includes(p.status))   posData[g].inTalk++;
     else if (["saida_oficial","saida_fechada"].includes(p.status)) posData[g].outConf++;
+    else if (p.status === "saida_negociacao")               posData[g].outTalk++;
     else if (p.status === "risco")                          posData[g].outRisk++;
   }
   const posMapHtml = `<div class="dash-section-label">🗺️ Mapa de posições</div>
@@ -2564,6 +2597,7 @@ function renderDashboard() {
         d.inConf  ? `<span class="pos-ind pos-ind-in-conf">↓${d.inConf}</span>`  : "",
         d.inTalk  ? `<span class="pos-ind pos-ind-in-talk">↓${d.inTalk}</span>`  : "",
         d.outConf ? `<span class="pos-ind pos-ind-out-conf">↑${d.outConf}</span>` : "",
+        d.outTalk ? `<span class="pos-ind pos-ind-out-talk">↑${d.outTalk}</span>` : "",
         d.outRisk ? `<span class="pos-ind pos-ind-out-risk">↑${d.outRisk}</span>` : "",
       ].join("");
       return `<div class="pos-cell">
@@ -2575,11 +2609,12 @@ function renderDashboard() {
       <span class="pos-ind pos-ind-in-conf">↓</span> Confirmado
       <span class="pos-ind pos-ind-in-talk" style="margin-left:6px">↓</span> Em negociação
       <span class="pos-ind pos-ind-out-conf" style="margin-left:6px">↑</span> Saída conf.
+      <span class="pos-ind pos-ind-out-talk" style="margin-left:6px">↑</span> Saída em neg.
       <span class="pos-ind pos-ind-out-risk" style="margin-left:6px">↑</span> Em risco
     </div>`;
 
   // ── Headlines ──
-  const HEADLINE_STATUS_PRIO = { risco:0, negociacao:1, analise:2, fechado:3, saida_fechada:4, saida_oficial:5, oficial:6 };
+  const HEADLINE_STATUS_PRIO = { risco:0, saida_negociacao:1, negociacao:2, analise:3, fechado:4, saida_fechada:5, saida_oficial:6, oficial:7, clausula:8 };
   const headlinePlayers = PLAYERS
     .filter(p => p.notes)
     .sort((a, b) => {
@@ -2596,7 +2631,7 @@ function renderDashboard() {
       const spaceIdx = note.indexOf(" ");
       const icon = spaceIdx > 0 ? note.slice(0, spaceIdx) : "📌";
       const text = spaceIdx > 0 ? note.slice(spaceIdx + 1) : note;
-      const dir  = ["saida_oficial","saida_fechada","risco"].includes(p.status) ? "↑" : "↓";
+      const dir  = p.status === "clausula" ? "💰" : (["saida_oficial","saida_fechada","saida_negociacao","risco"].includes(p.status) ? "↑" : "↓");
       return `<div class="headline-card" onclick="showDetail('${p.id}')">
         <div class="headline-icon">${icon}</div>
         <div class="headline-body">
@@ -2643,7 +2678,15 @@ function renderDashboard() {
         <span class="cat-btn-count c-saida">${saidas.length} jogadores</span>
       </div>
       <div class="cat-btn-sub">${outBreakdown || "Sem saídas registadas"}</div>
-    </button>`;
+    </button>
+    ${clausulas.length ? `
+    <button class="cat-btn clausulas" onclick="showClausulas()">
+      <div class="cat-btn-row">
+        <span class="cat-btn-title">💰 Cláusulas</span>
+        <span class="cat-btn-count c-clausula">${clausulas.length} jogador${clausulas.length !== 1 ? "es" : ""}</span>
+      </div>
+      <div class="cat-btn-sub">Encaixes por cláusulas de revenda (jogadores já fora do plantel)</div>
+    </button>` : ""}`;
 }
 
 function showDashboard() {
@@ -2686,9 +2729,10 @@ function showEntradas() {
 
 function renderSaidas() {
   const groups = [
-    { key: "saida_oficial", label: STATUS.saida_oficial.label, players: PLAYERS.filter(p => p.status === "saida_oficial") },
-    { key: "saida_fechada", label: STATUS.saida_fechada.label, players: PLAYERS.filter(p => p.status === "saida_fechada") },
-    { key: "risco",         label: STATUS.risco.label,         players: PLAYERS.filter(p => p.status === "risco") },
+    { key: "saida_oficial",    label: STATUS.saida_oficial.label,    players: PLAYERS.filter(p => p.status === "saida_oficial") },
+    { key: "saida_fechada",    label: STATUS.saida_fechada.label,    players: PLAYERS.filter(p => p.status === "saida_fechada") },
+    { key: "saida_negociacao", label: STATUS.saida_negociacao.label, players: PLAYERS.filter(p => p.status === "saida_negociacao") },
+    { key: "risco",            label: STATUS.risco.label,            players: PLAYERS.filter(p => p.status === "risco") },
   ].filter(g => g.players.length > 0);
   const total = groups.reduce((s, g) => s + g.players.length, 0);
   let html = "";
@@ -2714,9 +2758,34 @@ function showSaidas() {
   window.location.hash = "saidas";
 }
 
+function renderClausulas() {
+  const players = PLAYERS.filter(p => p.status === "clausula");
+  const total = players.length;
+  const html = `
+      <div class="col-sec-title" onclick="toggleSection(this)">
+        <span>${STATUS.clausula.label} <span style="opacity:.65">(${total})</span></span>
+        <div class="col-sec-title-line"></div>
+        <span class="col-sec-chevron">▼</span>
+      </div>
+      <div class="col-sec-body">${players.map(playerCardHtml).join("")}</div>`;
+  document.getElementById("clausulas-content").innerHTML = `
+    <div class="cat-view-header">
+      <div class="cat-view-title">💰 Cláusulas · ${total} jogador${total !== 1 ? "es" : ""}</div>
+      <div class="cat-view-sub">Encaixes financeiros de jogadores que já não pertencem ao plantel do Sporting, via cláusulas de revenda / solidariedade FIFA em transferências entre outros clubes.</div>
+    </div>
+    <div style="padding:14px 16px 0">${html}</div>`;
+}
+
+function showClausulas() {
+  renderClausulas();
+  showOnly("clausulas-view");
+  window.location.hash = "clausulas";
+}
+
 function goBack() {
   if (_previousView === "entradas-view") showEntradas();
   else if (_previousView === "saidas-view") showSaidas();
+  else if (_previousView === "clausulas-view") showClausulas();
   else showDashboard();
 }
 
@@ -2732,9 +2801,10 @@ function showDetail(id) {
 
 function handleRoute() {
   const hash = window.location.hash.replace("#", "");
-  if (hash === "entradas")             { renderEntradas(); showOnly("entradas-view"); }
-  else if (hash === "saidas")          { renderSaidas();   showOnly("saidas-view"); }
-  else if (hash === "balance")         { renderBalance();  showOnly("balance-view"); }
+  if (hash === "entradas")             { renderEntradas();  showOnly("entradas-view"); }
+  else if (hash === "saidas")          { renderSaidas();    showOnly("saidas-view"); }
+  else if (hash === "clausulas")       { renderClausulas(); showOnly("clausulas-view"); }
+  else if (hash === "balance")         { renderBalance();   showOnly("balance-view"); }
   else if (hash === "updates")         { renderUpdates();  showOnly("updates-view"); }
   else if (hash === "avaliacao")       { renderRating();   showOnly("rating-view"); }
   else if (hash.startsWith("player/")) { renderDetail(hash.replace("player/","")); showOnly("detail-view"); }
