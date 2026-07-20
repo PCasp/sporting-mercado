@@ -1061,7 +1061,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-07-19 18:10";
+const LAST_UPDATED = "2026-07-20 18:35";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1968,19 +1968,37 @@ const PLAYERS = [
       { label: "Record — Fatawu está de saída do Leicester e Sporting prepara-se para fazer encaixe (19/07 18h00)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/fatawu-esta-de-saida-do-leicester-e-sporting-prepara-se-para-fazer-encaixe-com-a-transferencia" },
     ]
   },
+  {
+    id: "nestory-irankunda",
+    name: "Nestory Irankunda",
+    photo: null,
+    emoji: "🇦🇺",
+    position: "Ala esq. / Ala dto.", age: 20,
+    fromClub: "Watford", toClub: "Sporting CP",
+    status: "analise",
+    fee: null, contract: null,
+    market_value: "€8M",
+    last_news: "2026-07-20",
+    description: "Extremo australiano de 20 anos, ao serviço do Watford (Championship inglesa) desde julho de 2025, com contrato até 2030. Fez 42 jogos, 4 golos e 4 assistências na época passada. Internacional pela Austrália (19 internacionalizações, 6 golos), foi presença assídua no Mundial 2026 — 4 jogos, com golo à Turquia na estreia da fase de grupos, e presenças frente a EUA, Paraguai e Egito. Pode jogar em ambas as alas, como médio ofensivo (10) ou segundo avançado — 1,75m, 75kg. A 20 de julho a A Bola revela que está referenciado pelo Sporting para reforçar o ataque, no seguimento da saída anunciada de Pedro Gonçalves. Sem valores de transferência ou termos de contrato divulgados nesta fase — interesse ainda em estádio muito inicial.",
+    notes: "🔍 Referenciado pelo Sporting para o ataque, após saída anunciada de Pote (A Bola 20/07 17h05) — fase muito inicial, sem valores conhecidos. Watford, contrato até 2030, valor de mercado €8M.",
+    sources: [
+      { label: "A Bola — Nestory Irankunda referenciado pelo Sporting (20/07 17h05)", url: "https://www.abola.pt/noticias/nestory-irankunda-referenciado-pelo-sporting-2026072017051585176" },
+      { label: "A Bola — Assim joga Nestory Irankunda, extremo referenciado pelo Sporting (20/07 17h25)", url: "https://www.abola.pt/noticias/assim-joga-nestory-irankunda-extremo-referenciado-pelo-sporting-2026072017250257767" },
+    ]
+  },
 ];
 
 // ── UPDATES LOG ─────────────────────────────────────────────────────────────
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-07-20", ids: ["nestory-irankunda"] },
   { date: "2026-07-19", ids: ["eduardo-quaresma", "abdul-fatawu", "ousmane-diomande"] },
   { date: "2026-07-18", ids: ["francisco-trincao", "pedro-goncalves"] },
   { date: "2026-07-17", ids: ["ricardo-mangas", "yeremay-hernandez"] },
   { date: "2026-07-16", ids: ["francisco-trincao", "pedro-goncalves", "daniel-braganca", "sebastian-osorio", "geny-catamo", "samuel-justo", "joao-muniz", "tiago-campos", "nelio-batista"] },
   { date: "2026-07-09", ids: ["morten-hjulmand", "jesse-derry", "maxi-araujo", "ricardo-mangas"] },
   { date: "2026-07-08", ids: ["jesse-derry", "pedro-goncalves", "morten-hjulmand"] },
-  { date: "2026-07-07", ids: ["bruno-ramos", "rafael-pontelo", "morten-hjulmand", "francisco-trincao", "rodrigo-rodrigues"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
