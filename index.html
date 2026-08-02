@@ -1061,7 +1061,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-08-02 12:07";
+const LAST_UPDATED = "2026-08-02 18:03";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1270,16 +1270,18 @@ const PLAYERS = [
     photo: null,
     emoji: "🇸🇳",
     position: "Ala esq. / LD", age: 24,
-    fromClub: "Sporting CP", toClub: "Lorient (empréstimo)",
-    status: "saida_negociacao",
-    fee: "Empréstimo sem opção de compra", fee_value: 0, fee_max: 0, contract: null,
+    fromClub: "Sporting CP", toClub: "Lorient (empréstimo, opção de compra €6,5M)",
+    status: "saida_oficial",
+    fee: "Empréstimo (Lorient paga o salário) + opção de compra não obrigatória de €6,5M", fee_value: 0, fee_max: 6.5, contract: null,
     market_value: "€4M",
-    last_news: "2026-08-01",
-    description: "Extremo esquerdo/lateral direito senegalês de 24 anos, contratado ao Granada em janeiro de 2026 por €6,5M. Nunca se afirmou sob Rui Borges — apenas 161 minutos em 9 jogos na posição natural de extremo. O clube testou-o como lateral direito na pré-época, mas continuou sem convencer. Esteve ausente do particular frente ao Mónaco. A 29 de julho (17h43) a A Bola confirma que está no mercado, mas o Sporting só admite venda definitiva (recusa empréstimo), pedindo um valor próximo dos €6,5M investidos — quer recuperar o investimento. Sem clubes interessados identificados publicamente. Enfrenta forte concorrência no plantel ofensivo, o que reduz as suas hipóteses de minutos em Alvalade. Reviravolta a 1 de agosto: o Sporting acaba por ceder e aceita um empréstimo (sem opção de compra) ao Lorient, da Ligue 1 francesa — o técnico Alexandre Dujeux identificou Faye como prioridade para reforçar o ataque da equipa gaulesa. O jogador já viajou para França para formalizar o negócio, com oficialização esperada nos próximos dias. Apesar de recusar inicialmente ceder sem encaixe financeiro, o Sporting prefere agora garantir minutos e desenvolvimento ao jogador a mantê-lo sem espaço em Alvalade.",
-    notes: "🟠 Reviravolta: Sporting aceita ceder por empréstimo (sem opção de compra) ao Lorient — jogador já viajou para França, oficialização esperada em breve (01/08). Tinha inicialmente recusado emprestá-lo, exigindo venda definitiva (~€6,5M).",
+    last_news: "2026-08-02",
+    description: "Extremo esquerdo/lateral direito senegalês de 24 anos, contratado ao Granada em janeiro de 2026 por €6,5M. Nunca se afirmou sob Rui Borges — apenas 161 minutos em 9 jogos na posição natural de extremo. O clube testou-o como lateral direito na pré-época, mas continuou sem convencer. Esteve ausente do particular frente ao Mónaco. A 29 de julho (17h43) a A Bola confirma que está no mercado, mas o Sporting só admite venda definitiva (recusa empréstimo), pedindo um valor próximo dos €6,5M investidos — quer recuperar o investimento. Sem clubes interessados identificados publicamente. Enfrenta forte concorrência no plantel ofensivo, o que reduz as suas hipóteses de minutos em Alvalade. Reviravolta a 1 de agosto: o Sporting acaba por ceder e aceita emprestá-lo ao Lorient, da Ligue 1 francesa — o técnico Alexandre Dujeux identificou Faye como prioridade para reforçar o ataque da equipa gaulesa. O jogador viajou para França para formalizar o negócio. Correção: os moldes exatos do empréstimo (Lorient paga o salário integral, com opção de compra não obrigatória de €6,5M — ligeiramente acima dos €6M pagos ao Granada) foram confirmados tanto pela imprensa portuguesa como pela francesa (Footmercato, Maxifoot). A 2 de agosto (17h24) o Lorient oficializa a contratação: Faye assina e declara «Senti uma verdadeira confiança por parte do clube». O diretor desportivo Laurent Koscielny elogiou a «velocidade e capacidade de drible» do senegalês.",
+    notes: "✅ OFICIAL (02/08 17h24): Faye apresentado pelo Lorient — empréstimo com opção de compra não obrigatória de €6,5M, salário pago pelo clube francês. Koscielny elogia «velocidade e capacidade de drible»; Faye: «Senti uma verdadeira confiança por parte do clube».",
     sources: [
       { label: "A Bola — Faye no mercado mas Sporting só admite venda (29/07 17h43)", url: "https://www.abola.pt/noticias/faye-no-mercado-mas-sporting-so-admite-venda-2026072916070273187" },
       { label: "Notícias ao Minuto — Souleymane Faye já em França para assinar pelo Lorient (01/08)", url: "https://www.noticiasaominuto.com/desporto/sporting" },
+      { label: "A Bola — Sporting: Souleymane Faye já em França para assinar pelo Lorient (01/08 10h28)", url: "https://www.abola.pt/noticias/sporting-souleymane-faye-ja-em-franca-para-assinar-pelo-lorient-2026080110280807431" },
+      { label: "Record — Faye oficializado no Lorient: «Senti uma verdadeira confiança por parte do clube» (02/08 17h24)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting" },
     ]
   },
   {
@@ -2077,7 +2079,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-08-02", ids: ["giorgi-kochorashvili", "sotiris-alexandropoulos", "daniel-braganca"] },
+  { date: "2026-08-02", ids: ["giorgi-kochorashvili", "sotiris-alexandropoulos", "daniel-braganca", "souleymane-faye"] },
   { date: "2026-08-01", ids: ["daniel-braganca", "souleymane-faye", "pedro-goncalves", "nestory-irankunda"] },
   { date: "2026-07-31", ids: ["daniel-braganca", "nestory-irankunda"] },
   { date: "2026-07-30", ids: ["ousmane-diomande", "nestory-irankunda", "eduardo-quaresma", "giorgi-kochorashvili"] },
