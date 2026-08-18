@@ -1061,7 +1061,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-08-17 12:07";
+const LAST_UPDATED = "2026-08-18 08:15";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1603,14 +1603,15 @@ const PLAYERS = [
     position: "LD", age: 21,
     fromClub: "Sporting CP", toClub: "Por confirmar (Roma, interesse)",
     status: "risco",
-    fee: "Roma avalia ~€15M — Sporting pede muito mais (cláusula €80M)", contract: "até 2028",
-    last_news: "2026-08-04",
+    fee: "Roma propôs €25M+variáveis (recusado) — foi depois buscar Molina em alternativa", contract: "até 2028",
+    last_news: "2026-08-17",
     market_value: "€15M",
-    description: "Lateral direito espanhol de 21 anos (sub-21), contratado ao Real Valladolid em agosto de 2023. Titular preferencial na direita, com versatilidade para jogar também a central. Regressou recentemente à competição após três meses de ausência por lesão. A 26 de julho (16h32) o O Jogo revela que a Roma de Gian Piero Gasperini o coloca na lista de alvos para reforçar o corredor direito — depois de sondar primeiro o mexicano Israel Reyes (América), os italianos veem Fresneda como alternativa apetecível pelo perfil ofensivo, à semelhança de Çelik (que rumou à Juventus). A Roma avalia a operação em cerca de €15M (valor de mercado no Transfermarkt), mas o Sporting deverá exigir um valor bem superior, dada a cláusula de rescisão de €80M e a importância do jogador no plantel de Rui Borges. Contra-ataque a 4 de agosto: o O Jogo revela que, depois de garantir as renovações de Eduardo Quaresma e Maxi Araújo (ambos até 2030), o Sporting quer também blindar Fresneda com um novo contrato — sinal de que o clube pretende reter o lateral apesar do interesse da Roma, em vez de o vender.",
-    notes: "🟢 Sporting quer blindar Fresneda com nova renovação, depois de Quaresma e Maxi Araújo (O Jogo 04/08) — sinal de que o clube prefere retê-lo apesar do interesse da Roma (~€15M, 26/07).",
+    description: "Lateral direito espanhol de 21 anos (sub-21), contratado ao Real Valladolid em agosto de 2023. Titular preferencial na direita, com versatilidade para jogar também a central. Regressou recentemente à competição após três meses de ausência por lesão. A 26 de julho (16h32) o O Jogo revela que a Roma de Gian Piero Gasperini o coloca na lista de alvos para reforçar o corredor direito — depois de sondar primeiro o mexicano Israel Reyes (América), os italianos veem Fresneda como alternativa apetecível pelo perfil ofensivo, à semelhança de Çelik (que rumou à Juventus). A Roma avalia a operação em cerca de €15M (valor de mercado no Transfermarkt), mas o Sporting deverá exigir um valor bem superior, dada a cláusula de rescisão de €80M e a importância do jogador no plantel de Rui Borges. Contra-ataque a 4 de agosto: o O Jogo revela que, depois de garantir as renovações de Eduardo Quaresma e Maxi Araújo (ambos até 2030), o Sporting quer também blindar Fresneda com um novo contrato — sinal de que o clube pretende reter o lateral apesar do interesse da Roma, em vez de o vender. Capítulo fechado, revelado a 17 de agosto (22h38, A Bola via jornal espanhol As): a Roma tinha mesmo formalizado uma proposta concreta há cerca de um mês — €25M mais variáveis por objetivos — mas o valor foi considerado insuficiente pelo Sporting e a proposta foi recusada. Perante a recusa, a Roma avançou por outra via e contratou Nahuel Molina ao Atlético de Madrid por €13M para o lado direito da defesa. Fresneda prepara-se agora para reconquistar a titularidade, depois de recuperar de lesão, com Vagiannidis a perder o lugar.",
+    notes: "✅ Capítulo fechado (A Bola/As 17/08 22h38): a Roma tinha formalizado proposta de €25M+variáveis há cerca de um mês, mas o Sporting recusou — os italianos foram depois buscar Nahuel Molina (Atl. Madrid, €13M) em alternativa. Fresneda prepara-se para reconquistar a titularidade.",
     sources: [
       { label: "O Jogo — Sporting: Fresneda está na lista de alvos da Roma (26/07 16h32)", url: "https://www.ojogo.pt/futebol/artigo/sporting-fresneda-esta-na-lista-de-alvos-da-roma/18110050" },
       { label: "O Jogo — Depois de Eduardo Quaresma e Maxi Araújo, Sporting quer segurar Fresneda (04/08)", url: "https://www.ojogo.pt/futebol/i-liga/sporting" },
+      { label: "A Bola — Nega do Sporting à Roma por Fresneda foi há um mês (17/08 22h38)", url: "https://www.abola.pt/noticias/nega-do-sporting-a-roma-por-fresneda-foi-ha-um-mes-2026081722382541626" },
     ]
   },
   {
@@ -2125,19 +2126,36 @@ const PLAYERS = [
       { label: "A Bola — Mercado Sporting: Saint-Étienne fez proposta por Diego Callai (17/08 19h21)", url: "https://www.abola.pt/noticias/mercado-sporting-saint-etienne-fez-proposta-por-diego-callai-2026081718165139048" },
     ]
   },
+  {
+    id: "zan-vipotnik",
+    name: "Žan Vipotnik",
+    photo: null,
+    emoji: "🇸🇮",
+    position: "Avançado", age: 24,
+    fromClub: "Swansea City", toClub: "Sporting CP",
+    status: "analise",
+    fee: "Sporting só avançaria acima dos €20M, e só se Suárez sair", fee_value: null, fee_max: null, contract: null,
+    market_value: null,
+    last_news: "2026-08-17",
+    description: "Avançado esloveno de 24 anos, do Swansea City (Championship inglesa), contrato até junho de 2028. Vindo da melhor época da carreira: 25 golos em 2025/26, o melhor marcador do campeonato inglês de 2ª divisão. Internacional pela Eslovénia. O Sporting continua a contar com Luis Suárez para a nova época e não recebeu qualquer proposta pelo colombiano, mas a estrutura está a monitorizar os movimentos do empresário do jogador (que atravessa um período conturbado) e prepara-se para todos os cenários. Vipotnik surge como plano B definido caso Suárez acabe por sair — um eventual negócio exigiria ultrapassar os €20M, valor que só seria considerado nesse cenário específico.",
+    notes: "🔍 Plano B definido para o ataque, caso Suárez saia (Record 17/08) — Sporting não tem proposta pelo Suárez nem pretende vendê-lo, mas monitoriza a situação. Vipotnik vem da melhor época da carreira (25 golos). Só avançaria acima dos €20M.",
+    sources: [
+      { label: "Record — Sporting acautela saída de Luis Suárez: Vipotnik é o plano B dos leões (17/08)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/sporting-acautela-saida-de-luis-suarez-vipotnik-e-o-plano-b-dos-leoes" },
+    ]
+  },
 ];
 
 // ── UPDATES LOG ─────────────────────────────────────────────────────────────
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
+  { date: "2026-08-18", ids: ["ivan-fresneda", "zan-vipotnik"] },
   { date: "2026-08-17", ids: ["pedro-goncalves", "moncef-zekri", "karim-coulibaly", "diego-callai"] },
   { date: "2026-08-16", ids: ["daniel-braganca"] },
   { date: "2026-08-15", ids: ["joao-virginia", "kaique-pereira"] },
   { date: "2026-08-14", ids: ["manuel-mendonca"] },
   { date: "2026-08-13", ids: ["giorgi-kochorashvili", "nestory-irankunda"] },
   { date: "2026-08-12", ids: ["pedro-goncalves", "koba-koindredi", "nestory-irankunda"] },
-  { date: "2026-08-11", ids: ["geny-catamo", "ousmane-diomande", "nestory-irankunda", "javi-lopez", "joao-virginia"] },
 ];
 
 // ── SECTIONS ────────────────────────────────────────────────────────────────
