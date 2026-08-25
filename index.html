@@ -1061,7 +1061,7 @@
 
 <script>
 // ── LAST UPDATE (updated by cron job on each push) ───────────────────────────
-const LAST_UPDATED = "2026-08-25 08:15";
+const LAST_UPDATED = "2026-08-25 12:07";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 const STATUS = {
@@ -1647,6 +1647,24 @@ const PLAYERS = [
     ]
   },
   {
+    id: "luis-suarez",
+    name: "Luis Suárez",
+    photo: null,
+    emoji: "🇨🇴",
+    position: "Avançado", age: 28,
+    fromClub: "Sporting CP", toClub: "Nottingham Forest / Fenerbahçe / Barcelona (interesse)",
+    status: "risco",
+    fee: "Sem proposta apresentada — Sporting garante continuidade", contract: "até 2030 (cláusula €80M)",
+    market_value: null,
+    last_news: "2026-08-25",
+    description: "Avançado colombiano de 28 anos, melhor marcador do Sporting na época passada (38 golos, 7 assistências) — números só antes atingidos por Gyokeres, Jardel e Manuel Fernandes. Foi vaiado em Alvalade após o jogo com o Alverca e não participou nas interações habituais com os adeptos no final, alimentando especulação sobre o seu futuro. Um candidato à presidência do Fenerbahçe, Hakan Safí, prometeu ao empresário do jogador um contrato de €10M líquidos/ano — negócio que nunca avançou formalmente, mas que gerou ruído mediático. A 23 de agosto (19h00) o presidente Frederico Varandas veio a público garantir a continuidade do jogador: «Para desgosto de muita gente, Suárez vai continuar a ser jogador do Sporting» — considerou-o «um exemplo de profissionalismo» e insinuou que rivais como Benfica e FC Porto teriam todo o interesse em alimentar a saída. Suárez respondeu em campo, marcando na vitória por 3-1 sobre o Alverca — a sua primeira presença como titular esta época. Novo nome a 25 de agosto (12h06/12h29, O Jogo/Record, citando L'Équipe): o Nottingham Forest — que já comprou Ousmane Diomande ao Sporting por €40M este verão — terá iniciado conversações para contratar Suárez. O jornal francês liga ainda o avançado ao Barcelona, além do Fenerbahçe. Varandas reitera que não existe qualquer proposta apresentada pelo jogador.",
+    notes: "🟡 Nottingham Forest inicia conversações (L'Équipe, via O Jogo/Record 25/08) — mesmo clube que comprou Diomande por €40M. Barcelona e Fenerbahçe também associados. Sporting garante continuidade, sem proposta formal recebida.",
+    sources: [
+      { label: "Record — Franceses colocam Luis Suárez na rota do Nottingham Forest (25/08 12h29)", url: "https://www.record.pt/futebol/futebol-nacional/liga-betclic/sporting/detalhe/franceses-colocam-luis-suarez-na-rota-do-nottingham-forest" },
+      { label: "O Jogo — Clube da Premier League terá avançado para contratar Luis Suárez (25/08 12h06)", url: "https://www.ojogo.pt/futebol/artigo/clube-tda-premier-league-tera-avancado-para-contratar-luis-suarez/18119685" },
+    ]
+  },
+  {
     id: "pedro-goncalves",
     name: "Pedro Gonçalves",
     photo: "https://img.a.transfermarkt.technology/portrait/big/426620-1759778826.jpg?lm=1",
@@ -2221,7 +2239,7 @@ const PLAYERS = [
 // Each entry: { date: "YYYY-MM-DD", ids: ["player-id", ...] }
 // Cron job prepends a new entry for the current day whenever players are updated.
 const UPDATES_LOG = [
-  { date: "2026-08-25", ids: ["moncef-zekri", "kaique-pereira", "joao-virginia", "daniel-braganca"] },
+  { date: "2026-08-25", ids: ["moncef-zekri", "kaique-pereira", "joao-virginia", "daniel-braganca", "luis-suarez"] },
   { date: "2026-08-24", ids: ["moncef-zekri", "kaique-pereira", "goncalo-inacio", "daniel-braganca"] },
   { date: "2026-08-23", ids: ["goncalo-inacio", "moncef-zekri", "kaique-pereira", "joao-virginia", "daniel-braganca"] },
   { date: "2026-08-22", ids: ["moncef-zekri"] },
